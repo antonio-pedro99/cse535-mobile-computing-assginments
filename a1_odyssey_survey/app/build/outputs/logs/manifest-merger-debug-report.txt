@@ -1,0 +1,330 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:2:1-37:12
+INJECTED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:2:1-37:12
+INJECTED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:2:1-37:12
+INJECTED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:2:1-37:12
+MERGED from [androidx.databinding:viewbinding:7.4.0] /home/antdev/.gradle/caches/transforms-3/f9edf4dca65c74a4081fbed3a1f00a4b/transformed/viewbinding-7.4.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-ui-ktx:2.5.3] /home/antdev/.gradle/caches/transforms-3/5028348573a0b44c1470a4f4a3b50523/transformed/navigation-ui-ktx-2.5.3/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-ui:2.5.3] /home/antdev/.gradle/caches/transforms-3/e51f31ca8e9210702de93fe779914a55/transformed/navigation-ui-2.5.3/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.material:material:1.8.0] /home/antdev/.gradle/caches/transforms-3/5bf45942ca19c8e30bdd0366b1495316/transformed/material-1.8.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/antdev/.gradle/caches/transforms-3/998332c3da749ba8481cab353fa677b8/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat-resources:1.6.0] /home/antdev/.gradle/caches/transforms-3/0b94369ef47b0383f958bd39b139d46c/transformed/appcompat-resources-1.6.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat:1.6.0] /home/antdev/.gradle/caches/transforms-3/5443879cb498feebd14a3b5e375c3666/transformed/appcompat-1.6.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/antdev/.gradle/caches/transforms-3/916d3149654809809a0123c71f865998/transformed/viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.5.3] /home/antdev/.gradle/caches/transforms-3/2580d91a7b1b226343d40d6b107afa13/transformed/navigation-fragment-ktx-2.5.3/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-fragment:2.5.3] /home/antdev/.gradle/caches/transforms-3/56f23292fd592635d5f91deebeb47ed0/transformed/navigation-fragment-2.5.3/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment-ktx:1.5.4] /home/antdev/.gradle/caches/transforms-3/f9fec11b11a9b683590d006c352ea3ee/transformed/fragment-ktx-1.5.4/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.5.4] /home/antdev/.gradle/caches/transforms-3/33bef2cf71a04926571256f0eed1d6fe/transformed/fragment-1.5.4/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.5.3] /home/antdev/.gradle/caches/transforms-3/6e491d051985627aa9820d8c950e0194/transformed/navigation-runtime-ktx-2.5.3/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-runtime:2.5.3] /home/antdev/.gradle/caches/transforms-3/6a539cb7661ea20cc4fa3c89bc2b69da/transformed/navigation-runtime-2.5.3/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity-ktx:1.6.0] /home/antdev/.gradle/caches/transforms-3/df47f93dd86e4295ec38327f04f42ec8/transformed/activity-ktx-1.6.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.6.0] /home/antdev/.gradle/caches/transforms-3/9439f01b47ad6d8a603cbeed7f295b37/transformed/activity-1.6.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/antdev/.gradle/caches/transforms-3/bf97b371d801c177e17f52a1ad260b1f/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/antdev/.gradle/caches/transforms-3/eed38af1a6ef21e3f0323e5266c7fa63/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/antdev/.gradle/caches/transforms-3/d36da12b5df7e9a25cdb6b47e862ee87/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-common-ktx:2.5.3] /home/antdev/.gradle/caches/transforms-3/f6ef782cada8fa5889968ed2e38f83b6/transformed/navigation-common-ktx-2.5.3/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-common:2.5.3] /home/antdev/.gradle/caches/transforms-3/68461d98c29901553e57af7159d08ffc/transformed/navigation-common-2.5.3/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1] /home/antdev/.gradle/caches/transforms-3/a9f0c079f9686b0baf91ee9fdb0c6d60/transformed/lifecycle-viewmodel-ktx-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] /home/antdev/.gradle/caches/transforms-3/e95da13c9c4e379d7f3d3ab01f8405a4/transformed/lifecycle-viewmodel-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] /home/antdev/.gradle/caches/transforms-3/640f59a8f89fa672bb028ef00ea564c0/transformed/lifecycle-viewmodel-savedstate-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.5.1] /home/antdev/.gradle/caches/transforms-3/e63846258513d56f54e34584ff077560/transformed/lifecycle-runtime-ktx-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] /home/antdev/.gradle/caches/transforms-3/1241ed361356397ab98bf0f730f5b8b3/transformed/slidingpanelayout-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.window:window:1.0.0] /home/antdev/.gradle/caches/transforms-3/c3b734b042e3e1a43ac97bcab800c2b5/transformed/window-1.0.0/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /home/antdev/.gradle/caches/transforms-3/82e21c5c124f0764f68944ac0566b0c9/transformed/emoji2-views-helper-1.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.2.0] /home/antdev/.gradle/caches/transforms-3/c41b4469453a8a9f9613e5cbc1cd1923/transformed/emoji2-1.2.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/antdev/.gradle/caches/transforms-3/d2d498a6217c637e14d3c1416c07af09/transformed/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/antdev/.gradle/caches/transforms-3/27b2118e7bfe2cda35f45d64305d0f05/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/antdev/.gradle/caches/transforms-3/769616fa1b518e3ef877f4d628311990/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/antdev/.gradle/caches/transforms-3/ad5cfac102484cd247fb9a30ba8e7103/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/antdev/.gradle/caches/transforms-3/100e401500e48794a1118ec5941fd8b6/transformed/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/antdev/.gradle/caches/transforms-3/2d63083ca73a7e48a5df62a86653194d/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.1.0] /home/antdev/.gradle/caches/transforms-3/05d64bf9417690afc4fe8b245e5e6d06/transformed/customview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.4.1] /home/antdev/.gradle/caches/transforms-3/d927e6a62d17d007bf499e7e60549732/transformed/transition-1.4.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.9.0] /home/antdev/.gradle/caches/transforms-3/a4522fe6b275a4534bfc0eadc1a8e0f8/transformed/core-1.9.0/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.core:core-ktx:1.9.0] /home/antdev/.gradle/caches/transforms-3/407f04c038b08e7c69adff0833973fb6/transformed/core-ktx-1.9.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/antdev/.gradle/caches/transforms-3/b741823985dfe2c1afae313f01efbd36/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /home/antdev/.gradle/caches/transforms-3/528f10946969151ddeecc9c08cbfcbae/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:17:1-37:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] /home/antdev/.gradle/caches/transforms-3/057661c3a9b24eec0956006e37b29ef3/transformed/lifecycle-runtime-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.0] /home/antdev/.gradle/caches/transforms-3/97bb79880b6cb85ced7d7e8b9e5a3c98/transformed/savedstate-ktx-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.2.0] /home/antdev/.gradle/caches/transforms-3/e770780cb47c29236eb0a4798ce6e924/transformed/savedstate-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cardview:cardview:1.0.0] /home/antdev/.gradle/caches/transforms-3/f7dffa55bd3b8c6d7559cf87e7e15b04/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/antdev/.gradle/caches/transforms-3/b4380f2bee82def908dc06db2056934d/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/antdev/.gradle/caches/transforms-3/5b8eb6b1037b8e306d304c613bf9978c/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] /home/antdev/.gradle/caches/transforms-3/a863767dce11a8e2850337e40c9cc5b7/transformed/tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/antdev/.gradle/caches/transforms-3/7a1d97a07b576ee81394428e82068677/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.5.1] /home/antdev/.gradle/caches/transforms-3/fe2b1085a6b618a76e069ac2c41c5dfb/transformed/lifecycle-livedata-core-ktx-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] /home/antdev/.gradle/caches/transforms-3/76b16a6bd95bf3aaa61014a70fb66ea9/transformed/lifecycle-livedata-core-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/antdev/.gradle/caches/transforms-3/362f3346fe1fb786ca28b083934063d2/transformed/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/antdev/.gradle/caches/transforms-3/1db7e7ed8ffc35b2bb4f03b71f19a077/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/antdev/.gradle/caches/transforms-3/0c762dcd43e00657e4f192a0a2e02fcb/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/antdev/.gradle/caches/transforms-3/114327bbf1c6af7593b0a1a8e245bb1a/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /home/antdev/.gradle/caches/transforms-3/a6089ce1869f340ea741d9b9e92ce46d/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] /home/antdev/.gradle/caches/transforms-3/b46646453c391fe6a706b89dc8b50dc4/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:17:1-22:12
+INJECTED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:2:1-37:12
+INJECTED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:2:1-37:12
+INJECTED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:2:1-37:12
+	package
+		INJECTED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml
+		ADDED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:2:1-37:12
+		INJECTED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml
+		ADDED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:2:1-37:12
+		INJECTED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml
+		ADDED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:2:1-37:12
+		INJECTED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:5:5-35:19
+MERGED from [com.google.android.material:material:1.8.0] /home/antdev/.gradle/caches/transforms-3/5bf45942ca19c8e30bdd0366b1495316/transformed/material-1.8.0/AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.material:material:1.8.0] /home/antdev/.gradle/caches/transforms-3/5bf45942ca19c8e30bdd0366b1495316/transformed/material-1.8.0/AndroidManifest.xml:24:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/antdev/.gradle/caches/transforms-3/998332c3da749ba8481cab353fa677b8/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/antdev/.gradle/caches/transforms-3/998332c3da749ba8481cab353fa677b8/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.window:window:1.0.0] /home/antdev/.gradle/caches/transforms-3/c3b734b042e3e1a43ac97bcab800c2b5/transformed/window-1.0.0/AndroidManifest.xml:24:5-31:19
+MERGED from [androidx.window:window:1.0.0] /home/antdev/.gradle/caches/transforms-3/c3b734b042e3e1a43ac97bcab800c2b5/transformed/window-1.0.0/AndroidManifest.xml:24:5-31:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] /home/antdev/.gradle/caches/transforms-3/c41b4469453a8a9f9613e5cbc1cd1923/transformed/emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] /home/antdev/.gradle/caches/transforms-3/c41b4469453a8a9f9613e5cbc1cd1923/transformed/emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.9.0] /home/antdev/.gradle/caches/transforms-3/a4522fe6b275a4534bfc0eadc1a8e0f8/transformed/core-1.9.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.9.0] /home/antdev/.gradle/caches/transforms-3/a4522fe6b275a4534bfc0eadc1a8e0f8/transformed/core-1.9.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /home/antdev/.gradle/caches/transforms-3/528f10946969151ddeecc9c08cbfcbae/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /home/antdev/.gradle/caches/transforms-3/528f10946969151ddeecc9c08cbfcbae/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/antdev/.gradle/caches/transforms-3/b4380f2bee82def908dc06db2056934d/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/antdev/.gradle/caches/transforms-3/b4380f2bee82def908dc06db2056934d/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/antdev/.gradle/caches/transforms-3/5b8eb6b1037b8e306d304c613bf9978c/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/antdev/.gradle/caches/transforms-3/5b8eb6b1037b8e306d304c613bf9978c/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.9.0] /home/antdev/.gradle/caches/transforms-3/a4522fe6b275a4534bfc0eadc1a8e0f8/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:11:9-35
+	android:label
+		ADDED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:10:9-41
+	android:fullBackupContent
+		ADDED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:8:9-54
+	tools:targetApi
+		ADDED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:13:9-29
+	android:icon
+		ADDED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:9:9-43
+	android:allowBackup
+		ADDED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:12:9-51
+	android:dataExtractionRules
+		ADDED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:7:9-65
+activity#com.example.odysseysurvey.MainActivity
+ADDED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:15:9-23:20
+	android:exported
+		ADDED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:17:13-36
+	android:name
+		ADDED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:16:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:18:13-22:29
+action#android.intent.action.MAIN
+ADDED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:19:17-69
+	android:name
+		ADDED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:19:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:21:17-77
+	android:name
+		ADDED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:21:27-74
+activity#com.example.odysseysurvey.SurveyActivity
+ADDED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:24:9-34:20
+	android:label
+		ADDED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:27:13-58
+	android:exported
+		ADDED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:26:13-36
+	android:theme
+		ADDED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:28:13-67
+	android:name
+		ADDED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml:25:13-43
+uses-sdk
+INJECTED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml
+INJECTED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml
+MERGED from [androidx.databinding:viewbinding:7.4.0] /home/antdev/.gradle/caches/transforms-3/f9edf4dca65c74a4081fbed3a1f00a4b/transformed/viewbinding-7.4.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.databinding:viewbinding:7.4.0] /home/antdev/.gradle/caches/transforms-3/f9edf4dca65c74a4081fbed3a1f00a4b/transformed/viewbinding-7.4.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-ui-ktx:2.5.3] /home/antdev/.gradle/caches/transforms-3/5028348573a0b44c1470a4f4a3b50523/transformed/navigation-ui-ktx-2.5.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui-ktx:2.5.3] /home/antdev/.gradle/caches/transforms-3/5028348573a0b44c1470a4f4a3b50523/transformed/navigation-ui-ktx-2.5.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui:2.5.3] /home/antdev/.gradle/caches/transforms-3/e51f31ca8e9210702de93fe779914a55/transformed/navigation-ui-2.5.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui:2.5.3] /home/antdev/.gradle/caches/transforms-3/e51f31ca8e9210702de93fe779914a55/transformed/navigation-ui-2.5.3/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.material:material:1.8.0] /home/antdev/.gradle/caches/transforms-3/5bf45942ca19c8e30bdd0366b1495316/transformed/material-1.8.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.material:material:1.8.0] /home/antdev/.gradle/caches/transforms-3/5bf45942ca19c8e30bdd0366b1495316/transformed/material-1.8.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/antdev/.gradle/caches/transforms-3/998332c3da749ba8481cab353fa677b8/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/antdev/.gradle/caches/transforms-3/998332c3da749ba8481cab353fa677b8/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat-resources:1.6.0] /home/antdev/.gradle/caches/transforms-3/0b94369ef47b0383f958bd39b139d46c/transformed/appcompat-resources-1.6.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.0] /home/antdev/.gradle/caches/transforms-3/0b94369ef47b0383f958bd39b139d46c/transformed/appcompat-resources-1.6.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.0] /home/antdev/.gradle/caches/transforms-3/5443879cb498feebd14a3b5e375c3666/transformed/appcompat-1.6.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.0] /home/antdev/.gradle/caches/transforms-3/5443879cb498feebd14a3b5e375c3666/transformed/appcompat-1.6.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/antdev/.gradle/caches/transforms-3/916d3149654809809a0123c71f865998/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/antdev/.gradle/caches/transforms-3/916d3149654809809a0123c71f865998/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.5.3] /home/antdev/.gradle/caches/transforms-3/2580d91a7b1b226343d40d6b107afa13/transformed/navigation-fragment-ktx-2.5.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.5.3] /home/antdev/.gradle/caches/transforms-3/2580d91a7b1b226343d40d6b107afa13/transformed/navigation-fragment-ktx-2.5.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment:2.5.3] /home/antdev/.gradle/caches/transforms-3/56f23292fd592635d5f91deebeb47ed0/transformed/navigation-fragment-2.5.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment:2.5.3] /home/antdev/.gradle/caches/transforms-3/56f23292fd592635d5f91deebeb47ed0/transformed/navigation-fragment-2.5.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.5.4] /home/antdev/.gradle/caches/transforms-3/f9fec11b11a9b683590d006c352ea3ee/transformed/fragment-ktx-1.5.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.5.4] /home/antdev/.gradle/caches/transforms-3/f9fec11b11a9b683590d006c352ea3ee/transformed/fragment-ktx-1.5.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.5.4] /home/antdev/.gradle/caches/transforms-3/33bef2cf71a04926571256f0eed1d6fe/transformed/fragment-1.5.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.5.4] /home/antdev/.gradle/caches/transforms-3/33bef2cf71a04926571256f0eed1d6fe/transformed/fragment-1.5.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.5.3] /home/antdev/.gradle/caches/transforms-3/6e491d051985627aa9820d8c950e0194/transformed/navigation-runtime-ktx-2.5.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.5.3] /home/antdev/.gradle/caches/transforms-3/6e491d051985627aa9820d8c950e0194/transformed/navigation-runtime-ktx-2.5.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime:2.5.3] /home/antdev/.gradle/caches/transforms-3/6a539cb7661ea20cc4fa3c89bc2b69da/transformed/navigation-runtime-2.5.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime:2.5.3] /home/antdev/.gradle/caches/transforms-3/6a539cb7661ea20cc4fa3c89bc2b69da/transformed/navigation-runtime-2.5.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.6.0] /home/antdev/.gradle/caches/transforms-3/df47f93dd86e4295ec38327f04f42ec8/transformed/activity-ktx-1.6.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-ktx:1.6.0] /home/antdev/.gradle/caches/transforms-3/df47f93dd86e4295ec38327f04f42ec8/transformed/activity-ktx-1.6.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.6.0] /home/antdev/.gradle/caches/transforms-3/9439f01b47ad6d8a603cbeed7f295b37/transformed/activity-1.6.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.6.0] /home/antdev/.gradle/caches/transforms-3/9439f01b47ad6d8a603cbeed7f295b37/transformed/activity-1.6.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/antdev/.gradle/caches/transforms-3/bf97b371d801c177e17f52a1ad260b1f/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/antdev/.gradle/caches/transforms-3/bf97b371d801c177e17f52a1ad260b1f/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/antdev/.gradle/caches/transforms-3/eed38af1a6ef21e3f0323e5266c7fa63/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/antdev/.gradle/caches/transforms-3/eed38af1a6ef21e3f0323e5266c7fa63/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/antdev/.gradle/caches/transforms-3/d36da12b5df7e9a25cdb6b47e862ee87/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/antdev/.gradle/caches/transforms-3/d36da12b5df7e9a25cdb6b47e862ee87/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common-ktx:2.5.3] /home/antdev/.gradle/caches/transforms-3/f6ef782cada8fa5889968ed2e38f83b6/transformed/navigation-common-ktx-2.5.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common-ktx:2.5.3] /home/antdev/.gradle/caches/transforms-3/f6ef782cada8fa5889968ed2e38f83b6/transformed/navigation-common-ktx-2.5.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common:2.5.3] /home/antdev/.gradle/caches/transforms-3/68461d98c29901553e57af7159d08ffc/transformed/navigation-common-2.5.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common:2.5.3] /home/antdev/.gradle/caches/transforms-3/68461d98c29901553e57af7159d08ffc/transformed/navigation-common-2.5.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1] /home/antdev/.gradle/caches/transforms-3/a9f0c079f9686b0baf91ee9fdb0c6d60/transformed/lifecycle-viewmodel-ktx-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1] /home/antdev/.gradle/caches/transforms-3/a9f0c079f9686b0baf91ee9fdb0c6d60/transformed/lifecycle-viewmodel-ktx-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] /home/antdev/.gradle/caches/transforms-3/e95da13c9c4e379d7f3d3ab01f8405a4/transformed/lifecycle-viewmodel-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] /home/antdev/.gradle/caches/transforms-3/e95da13c9c4e379d7f3d3ab01f8405a4/transformed/lifecycle-viewmodel-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] /home/antdev/.gradle/caches/transforms-3/640f59a8f89fa672bb028ef00ea564c0/transformed/lifecycle-viewmodel-savedstate-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] /home/antdev/.gradle/caches/transforms-3/640f59a8f89fa672bb028ef00ea564c0/transformed/lifecycle-viewmodel-savedstate-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.5.1] /home/antdev/.gradle/caches/transforms-3/e63846258513d56f54e34584ff077560/transformed/lifecycle-runtime-ktx-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.5.1] /home/antdev/.gradle/caches/transforms-3/e63846258513d56f54e34584ff077560/transformed/lifecycle-runtime-ktx-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] /home/antdev/.gradle/caches/transforms-3/1241ed361356397ab98bf0f730f5b8b3/transformed/slidingpanelayout-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] /home/antdev/.gradle/caches/transforms-3/1241ed361356397ab98bf0f730f5b8b3/transformed/slidingpanelayout-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window:1.0.0] /home/antdev/.gradle/caches/transforms-3/c3b734b042e3e1a43ac97bcab800c2b5/transformed/window-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window:1.0.0] /home/antdev/.gradle/caches/transforms-3/c3b734b042e3e1a43ac97bcab800c2b5/transformed/window-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /home/antdev/.gradle/caches/transforms-3/82e21c5c124f0764f68944ac0566b0c9/transformed/emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /home/antdev/.gradle/caches/transforms-3/82e21c5c124f0764f68944ac0566b0c9/transformed/emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] /home/antdev/.gradle/caches/transforms-3/c41b4469453a8a9f9613e5cbc1cd1923/transformed/emoji2-1.2.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] /home/antdev/.gradle/caches/transforms-3/c41b4469453a8a9f9613e5cbc1cd1923/transformed/emoji2-1.2.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/antdev/.gradle/caches/transforms-3/d2d498a6217c637e14d3c1416c07af09/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/antdev/.gradle/caches/transforms-3/d2d498a6217c637e14d3c1416c07af09/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/antdev/.gradle/caches/transforms-3/27b2118e7bfe2cda35f45d64305d0f05/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/antdev/.gradle/caches/transforms-3/27b2118e7bfe2cda35f45d64305d0f05/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/antdev/.gradle/caches/transforms-3/769616fa1b518e3ef877f4d628311990/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/antdev/.gradle/caches/transforms-3/769616fa1b518e3ef877f4d628311990/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/antdev/.gradle/caches/transforms-3/ad5cfac102484cd247fb9a30ba8e7103/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/antdev/.gradle/caches/transforms-3/ad5cfac102484cd247fb9a30ba8e7103/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/antdev/.gradle/caches/transforms-3/100e401500e48794a1118ec5941fd8b6/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/antdev/.gradle/caches/transforms-3/100e401500e48794a1118ec5941fd8b6/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/antdev/.gradle/caches/transforms-3/2d63083ca73a7e48a5df62a86653194d/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/antdev/.gradle/caches/transforms-3/2d63083ca73a7e48a5df62a86653194d/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.1.0] /home/antdev/.gradle/caches/transforms-3/05d64bf9417690afc4fe8b245e5e6d06/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /home/antdev/.gradle/caches/transforms-3/05d64bf9417690afc4fe8b245e5e6d06/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.4.1] /home/antdev/.gradle/caches/transforms-3/d927e6a62d17d007bf499e7e60549732/transformed/transition-1.4.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.4.1] /home/antdev/.gradle/caches/transforms-3/d927e6a62d17d007bf499e7e60549732/transformed/transition-1.4.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.9.0] /home/antdev/.gradle/caches/transforms-3/a4522fe6b275a4534bfc0eadc1a8e0f8/transformed/core-1.9.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.9.0] /home/antdev/.gradle/caches/transforms-3/a4522fe6b275a4534bfc0eadc1a8e0f8/transformed/core-1.9.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.9.0] /home/antdev/.gradle/caches/transforms-3/407f04c038b08e7c69adff0833973fb6/transformed/core-ktx-1.9.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.9.0] /home/antdev/.gradle/caches/transforms-3/407f04c038b08e7c69adff0833973fb6/transformed/core-ktx-1.9.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/antdev/.gradle/caches/transforms-3/b741823985dfe2c1afae313f01efbd36/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/antdev/.gradle/caches/transforms-3/b741823985dfe2c1afae313f01efbd36/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /home/antdev/.gradle/caches/transforms-3/528f10946969151ddeecc9c08cbfcbae/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /home/antdev/.gradle/caches/transforms-3/528f10946969151ddeecc9c08cbfcbae/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] /home/antdev/.gradle/caches/transforms-3/057661c3a9b24eec0956006e37b29ef3/transformed/lifecycle-runtime-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] /home/antdev/.gradle/caches/transforms-3/057661c3a9b24eec0956006e37b29ef3/transformed/lifecycle-runtime-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.0] /home/antdev/.gradle/caches/transforms-3/97bb79880b6cb85ced7d7e8b9e5a3c98/transformed/savedstate-ktx-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.0] /home/antdev/.gradle/caches/transforms-3/97bb79880b6cb85ced7d7e8b9e5a3c98/transformed/savedstate-ktx-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.2.0] /home/antdev/.gradle/caches/transforms-3/e770780cb47c29236eb0a4798ce6e924/transformed/savedstate-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.2.0] /home/antdev/.gradle/caches/transforms-3/e770780cb47c29236eb0a4798ce6e924/transformed/savedstate-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] /home/antdev/.gradle/caches/transforms-3/f7dffa55bd3b8c6d7559cf87e7e15b04/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /home/antdev/.gradle/caches/transforms-3/f7dffa55bd3b8c6d7559cf87e7e15b04/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/antdev/.gradle/caches/transforms-3/b4380f2bee82def908dc06db2056934d/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/antdev/.gradle/caches/transforms-3/b4380f2bee82def908dc06db2056934d/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/antdev/.gradle/caches/transforms-3/5b8eb6b1037b8e306d304c613bf9978c/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/antdev/.gradle/caches/transforms-3/5b8eb6b1037b8e306d304c613bf9978c/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] /home/antdev/.gradle/caches/transforms-3/a863767dce11a8e2850337e40c9cc5b7/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /home/antdev/.gradle/caches/transforms-3/a863767dce11a8e2850337e40c9cc5b7/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/antdev/.gradle/caches/transforms-3/7a1d97a07b576ee81394428e82068677/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/antdev/.gradle/caches/transforms-3/7a1d97a07b576ee81394428e82068677/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.5.1] /home/antdev/.gradle/caches/transforms-3/fe2b1085a6b618a76e069ac2c41c5dfb/transformed/lifecycle-livedata-core-ktx-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.5.1] /home/antdev/.gradle/caches/transforms-3/fe2b1085a6b618a76e069ac2c41c5dfb/transformed/lifecycle-livedata-core-ktx-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] /home/antdev/.gradle/caches/transforms-3/76b16a6bd95bf3aaa61014a70fb66ea9/transformed/lifecycle-livedata-core-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] /home/antdev/.gradle/caches/transforms-3/76b16a6bd95bf3aaa61014a70fb66ea9/transformed/lifecycle-livedata-core-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/antdev/.gradle/caches/transforms-3/362f3346fe1fb786ca28b083934063d2/transformed/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/antdev/.gradle/caches/transforms-3/362f3346fe1fb786ca28b083934063d2/transformed/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/antdev/.gradle/caches/transforms-3/1db7e7ed8ffc35b2bb4f03b71f19a077/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/antdev/.gradle/caches/transforms-3/1db7e7ed8ffc35b2bb4f03b71f19a077/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/antdev/.gradle/caches/transforms-3/0c762dcd43e00657e4f192a0a2e02fcb/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/antdev/.gradle/caches/transforms-3/0c762dcd43e00657e4f192a0a2e02fcb/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/antdev/.gradle/caches/transforms-3/114327bbf1c6af7593b0a1a8e245bb1a/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/antdev/.gradle/caches/transforms-3/114327bbf1c6af7593b0a1a8e245bb1a/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/antdev/.gradle/caches/transforms-3/a6089ce1869f340ea741d9b9e92ce46d/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/antdev/.gradle/caches/transforms-3/a6089ce1869f340ea741d9b9e92ce46d/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] /home/antdev/.gradle/caches/transforms-3/b46646453c391fe6a706b89dc8b50dc4/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] /home/antdev/.gradle/caches/transforms-3/b46646453c391fe6a706b89dc8b50dc4/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
+INJECTED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml
+INJECTED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml
+		ADDED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml
+		INJECTED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml
+		ADDED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml
+		INJECTED from /home/antdev/AndroidStudioProjects/mobile-computing-assignments-2023/a1_odyssey_survey/app/src/main/AndroidManifest.xml
+uses-library#androidx.window.extensions
+ADDED from [androidx.window:window:1.0.0] /home/antdev/.gradle/caches/transforms-3/c3b734b042e3e1a43ac97bcab800c2b5/transformed/window-1.0.0/AndroidManifest.xml:25:9-27:40
+	android:required
+		ADDED from [androidx.window:window:1.0.0] /home/antdev/.gradle/caches/transforms-3/c3b734b042e3e1a43ac97bcab800c2b5/transformed/window-1.0.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.window:window:1.0.0] /home/antdev/.gradle/caches/transforms-3/c3b734b042e3e1a43ac97bcab800c2b5/transformed/window-1.0.0/AndroidManifest.xml:26:13-54
+uses-library#androidx.window.sidecar
+ADDED from [androidx.window:window:1.0.0] /home/antdev/.gradle/caches/transforms-3/c3b734b042e3e1a43ac97bcab800c2b5/transformed/window-1.0.0/AndroidManifest.xml:28:9-30:40
+	android:required
+		ADDED from [androidx.window:window:1.0.0] /home/antdev/.gradle/caches/transforms-3/c3b734b042e3e1a43ac97bcab800c2b5/transformed/window-1.0.0/AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [androidx.window:window:1.0.0] /home/antdev/.gradle/caches/transforms-3/c3b734b042e3e1a43ac97bcab800c2b5/transformed/window-1.0.0/AndroidManifest.xml:29:13-51
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.2.0] /home/antdev/.gradle/caches/transforms-3/c41b4469453a8a9f9613e5cbc1cd1923/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /home/antdev/.gradle/caches/transforms-3/528f10946969151ddeecc9c08cbfcbae/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /home/antdev/.gradle/caches/transforms-3/528f10946969151ddeecc9c08cbfcbae/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/antdev/.gradle/caches/transforms-3/5b8eb6b1037b8e306d304c613bf9978c/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/antdev/.gradle/caches/transforms-3/5b8eb6b1037b8e306d304c613bf9978c/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /home/antdev/.gradle/caches/transforms-3/c41b4469453a8a9f9613e5cbc1cd1923/transformed/emoji2-1.2.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /home/antdev/.gradle/caches/transforms-3/c41b4469453a8a9f9613e5cbc1cd1923/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /home/antdev/.gradle/caches/transforms-3/c41b4469453a8a9f9613e5cbc1cd1923/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /home/antdev/.gradle/caches/transforms-3/c41b4469453a8a9f9613e5cbc1cd1923/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.2.0] /home/antdev/.gradle/caches/transforms-3/c41b4469453a8a9f9613e5cbc1cd1923/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /home/antdev/.gradle/caches/transforms-3/c41b4469453a8a9f9613e5cbc1cd1923/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /home/antdev/.gradle/caches/transforms-3/c41b4469453a8a9f9613e5cbc1cd1923/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] /home/antdev/.gradle/caches/transforms-3/a4522fe6b275a4534bfc0eadc1a8e0f8/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.9.0] /home/antdev/.gradle/caches/transforms-3/a4522fe6b275a4534bfc0eadc1a8e0f8/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.9.0] /home/antdev/.gradle/caches/transforms-3/a4522fe6b275a4534bfc0eadc1a8e0f8/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+permission#com.example.odysseysurvey.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] /home/antdev/.gradle/caches/transforms-3/a4522fe6b275a4534bfc0eadc1a8e0f8/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.9.0] /home/antdev/.gradle/caches/transforms-3/a4522fe6b275a4534bfc0eadc1a8e0f8/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.9.0] /home/antdev/.gradle/caches/transforms-3/a4522fe6b275a4534bfc0eadc1a8e0f8/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] /home/antdev/.gradle/caches/transforms-3/a4522fe6b275a4534bfc0eadc1a8e0f8/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.9.0] /home/antdev/.gradle/caches/transforms-3/a4522fe6b275a4534bfc0eadc1a8e0f8/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+uses-permission#com.example.odysseysurvey.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] /home/antdev/.gradle/caches/transforms-3/a4522fe6b275a4534bfc0eadc1a8e0f8/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.9.0] /home/antdev/.gradle/caches/transforms-3/a4522fe6b275a4534bfc0eadc1a8e0f8/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /home/antdev/.gradle/caches/transforms-3/528f10946969151ddeecc9c08cbfcbae/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /home/antdev/.gradle/caches/transforms-3/528f10946969151ddeecc9c08cbfcbae/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /home/antdev/.gradle/caches/transforms-3/528f10946969151ddeecc9c08cbfcbae/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78

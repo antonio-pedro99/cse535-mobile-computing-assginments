@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/home/antdev/.gradle/daemon/7.5/com.example.odysseysurvey.app-mergeDebugResources-44:/layout/activity_survey.xml",
+        "source": "/home/antdev/.gradle/daemon/7.5/com.example.odysseysurvey.app-main-47:/layout/activity_survey.xml"
+    },
+    {
+        "merged": "/home/antdev/.gradle/daemon/7.5/com.example.odysseysurvey.app-mergeDebugResources-44:/layout/activity_main.xml",
+        "source": "/home/antdev/.gradle/daemon/7.5/com.example.odysseysurvey.app-main-47:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.odysseysurvey.app-mergeDebugResources-44:/layout/activity_survey.xml",
+        "source": "com.example.odysseysurvey.app-main-47:/layout/activity_survey.xml"
+    }
+]
