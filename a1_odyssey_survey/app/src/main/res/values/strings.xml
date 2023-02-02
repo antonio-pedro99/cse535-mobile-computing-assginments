@@ -6,6 +6,7 @@
     <string name="welcome_text">Odyssey Survey</string>
     <string name="name_hint">Enter your name</string>
     <string name="role_hint">What is your role?</string>
+    <string name="option_event">Select event</string>
     <string name="audience_role_text">Audience</string>
     <string name="participant_role_text">Participant</string>
     <string name="music_event_text">Music</string>
@@ -16,5 +17,6 @@
     <string name="rating_text">Rate this event</string>
     <string name="clear_btn_text">Clear</string>
     <string name="submit_btn_text">Submit Survey</string>
+    <string name="survey_page_title">Survey</string>
     <string name="submission_done_message_text">Your feedback has been recorded! Thanks.</string>
 </resources>
