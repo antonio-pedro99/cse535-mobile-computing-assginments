@@ -3,6 +3,7 @@ package com.example.odysseysurvey
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
@@ -10,7 +11,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 
+
 class MainActivity : AppCompatActivity() {
+    private   val TAG = "MainActivity"
     lateinit var btnNext: Button
     lateinit var edtName: EditText
     lateinit var actxtRoles: AutoCompleteTextView
@@ -26,7 +29,8 @@ class MainActivity : AppCompatActivity() {
         actxtRoles = findViewById(R.id.actxt_roles)
         edtName = findViewById(R.id.edt_name)
         buildDropDownMenuItems()
-        Toast.makeText(this, "MainActivity onCreate", Toast.LENGTH_SHORT).show()
+        Log.d(TAG, "$TAG onCreate")
+        Toast.makeText(this, "$TAG onCreate", Toast.LENGTH_SHORT).show()
 
     }
 
@@ -47,11 +51,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onRestart() {
         super.onRestart()
+        Log.d(TAG, "$TAG onRestart")
         Toast.makeText(this, "MainActivity onRestart", Toast.LENGTH_SHORT).show()
     }
 
     override fun onStart() {
         super.onStart()
+        Log.d(TAG, "$TAG onStart")
         Toast.makeText(this, "MainActivity onStart", Toast.LENGTH_SHORT).show()
     }
 
@@ -62,16 +68,19 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        Toast.makeText(this, "MainActivity onDestroy", Toast.LENGTH_SHORT).show()
+        Log.d(TAG, "$TAG onDestroy")
+        Toast.makeText(this, "$TAG onDestroy", Toast.LENGTH_SHORT).show()
     }
 
     override fun onResume() {
         super.onResume()
-        Toast.makeText(this, "MainActivity onResume", Toast.LENGTH_SHORT).show()
+        Log.d(TAG, "$TAG onResume")
+        Toast.makeText(this, "$TAG onResume", Toast.LENGTH_SHORT).show()
     }
 
     override fun onPause() {
-        Toast.makeText(this, "MainActivity onPause", Toast.LENGTH_SHORT).show()
+        Log.d(TAG, "$TAG onPause")
+        Toast.makeText(this, "$TAG onPause", Toast.LENGTH_SHORT).show()
         super.onPause()
     }
 }

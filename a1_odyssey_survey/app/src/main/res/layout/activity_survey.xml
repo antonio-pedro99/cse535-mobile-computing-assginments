@@ -4,19 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="start"
+    android:orientation="vertical"
     tools:context=".SurveyActivity">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:title="@string/survey_page_title"
-        app:titleTextColor="@color/white" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,12 +36,13 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingRight="18dp">
+            android:orientation="horizontal">
+
             <com.google.android.material.checkbox.MaterialCheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/music_event_text" />
+
             <com.google.android.material.checkbox.MaterialCheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -69,19 +61,37 @@
             android:text="@string/fashion_event_text" />
     </LinearLayout>
 
-    <com.google.android.material.button.MaterialButton
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="8dp">
 
-        style="@style/Widget.Material3.Button.IconButton.Filled"
-        android:layout_width="150dp"
-        android:layout_height="64sp"
-        android:layout_gravity="end"
-        android:enabled="true"
-        android:text="@string/submit_btn_text"
-        android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
-        app:icon="@drawable/baseline_done_24"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
-        app:iconGravity="end"
-        app:iconPadding="8sp"
-        />
+        <com.google.android.material.button.MaterialButton
+
+            style="@style/Widget.Material3.Button.IconButton.Filled"
+            android:layout_width="150dp"
+            android:layout_height="64sp"
+            android:layout_gravity="end"
+
+            android:enabled="true"
+            android:text="@string/clear_btn_text"
+            android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+            app:icon="@drawable/baseline_done_24"
+            app:iconGravity="end"
+            app:iconPadding="8sp" />
+
+        <com.google.android.material.button.MaterialButton
+
+            style="@style/Widget.Material3.Button.IconButton.Filled"
+            android:layout_width="150dp"
+            android:layout_height="64sp"
+            android:enabled="true"
+            android:text="@string/submit_btn_text"
+            android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+            app:icon="@drawable/baseline_done_24"
+            app:iconGravity="end"
+            app:iconPadding="8sp" />
+    </LinearLayout>
 </LinearLayout>
