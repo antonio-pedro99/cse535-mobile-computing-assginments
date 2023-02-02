@@ -1,2 +1,2 @@
-# assignment-0-antonio-pedro99
-assignment-0-antonio-pedro99 created by GitHub Classroom
+# iiitd-mobile-computing-assignments-2023
+My code solutions to Mobile Computing's subject at IIITD
