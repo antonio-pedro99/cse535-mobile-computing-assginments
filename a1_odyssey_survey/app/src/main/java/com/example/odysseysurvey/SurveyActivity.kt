@@ -22,9 +22,9 @@ class SurveyActivity : AppCompatActivity() {
     private val fashionStarsValue = mutableListOf<Boolean>(false, false, false, false, false)
 
     lateinit var danceCheckBox: CheckBox
-    lateinit var playCheckBox: CheckBox
-    lateinit var musicCheckBox: CheckBox
-    lateinit var foodCheckBox: CheckBox
+    private lateinit var playCheckBox: CheckBox
+    private lateinit var musicCheckBox: CheckBox
+    private lateinit var foodCheckBox: CheckBox
     lateinit var fashionCheckBox: CheckBox
 
     //linear layout views
@@ -274,5 +274,29 @@ class SurveyActivity : AppCompatActivity() {
             }
         }
         Log.i("st", values.toString())
+    }
+
+
+    fun onClearClicked(v:View){
+        danceCheckBox.isChecked = false
+        fashionCheckBox.isChecked = false
+        foodCheckBox.isChecked = false
+        musicCheckBox.isChecked = false
+        playCheckBox.isChecked = false
+        clearStars()
+    }
+
+    private fun clearStars(){
+        musicStarsValue.forEach { !it }
+        danceStarsValue.forEach { !it }
+        foodStarsValue.forEach { !it }
+        playStarsValue.forEach { !it }
+        fashionStarsValue.forEach { !it }
+        playStars.forEach { it.setImageResource(R.drawable.baseline_star_outline_24)}
+        danceStars.forEach { it.setImageResource(R.drawable.baseline_star_outline_24)}
+        musicStars.forEach { it.setImageResource(R.drawable.baseline_star_outline_24)}
+        foodStars.forEach { it.setImageResource(R.drawable.baseline_star_outline_24)}
+        fashionStars.forEach { it.setImageResource(R.drawable.baseline_star_outline_24)}
+
     }
 }
