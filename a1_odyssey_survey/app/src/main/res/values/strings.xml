@@ -19,4 +19,5 @@
     <string name="submit_btn_text">Submit Survey</string>
     <string name="survey_page_title">Survey</string>
     <string name="submission_done_message_text">Your feedback has been recorded! Thanks.</string>
+    <string name="rating">rating</string>
 </resources>

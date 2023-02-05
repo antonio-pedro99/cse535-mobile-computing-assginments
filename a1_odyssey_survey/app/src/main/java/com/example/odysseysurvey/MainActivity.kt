@@ -21,6 +21,8 @@ class MainActivity : AppCompatActivity() {
         "Audience", "Participant"
     )
 
+    lateinit var attendeeName:String
+    lateinit var attendedRole:String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -82,5 +84,11 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "$TAG onPause")
         Toast.makeText(this, "$TAG onPause", Toast.LENGTH_SHORT).show()
         super.onPause()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        attendedRole = actxtRoles.text.toString()
+        attendeeName = edtName.text.toString()
+        super.onSaveInstanceState(outState)
     }
 }
