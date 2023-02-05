@@ -1,11 +1,13 @@
 package com.example.odysseysurvey
 
+import android.media.Image
 import android.nfc.Tag
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.CheckBox
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.core.view.isVisible
@@ -13,11 +15,11 @@ import androidx.core.view.isVisible
 class SurveyActivity : AppCompatActivity() {
     private val TAG = "SurveyActivity"
 
-    private val danceStars = listOf<Boolean>(false, false, false, false, false)
-    private val playStars = listOf<Boolean>(false, false, false, false, false)
-    private val musicStars = listOf<Boolean>(false, false, false, false, false)
-    private val foodStars = listOf<Boolean>(false, false, false, false, false)
-    private val fashionStars = listOf<Boolean>(false, false, false, false, false)
+    private val danceStarsValue = mutableListOf<Boolean>(false, false, false, false, false)
+    private val playStarsValue = mutableListOf<Boolean>(false, false, false, false, false)
+    private val musicStarsValue = mutableListOf<Boolean>(false, false, false, false, false)
+    private val foodStarsValue = mutableListOf<Boolean>(false, false, false, false, false)
+    private val fashionStarsValue = mutableListOf<Boolean>(false, false, false, false, false)
 
     lateinit var danceCheckBox: CheckBox
     lateinit var playCheckBox: CheckBox
@@ -25,11 +27,19 @@ class SurveyActivity : AppCompatActivity() {
     lateinit var foodCheckBox: CheckBox
     lateinit var fashionCheckBox: CheckBox
 
+    //linear layout views
     lateinit var danceStarsView: LinearLayout
     lateinit var musicStarsView: LinearLayout
     lateinit var playStarsView: LinearLayout
     lateinit var foodStarsView: LinearLayout
     lateinit var fashionStarsView: LinearLayout
+
+    //stars views
+    private var musicStars: MutableList<ImageView> = mutableListOf()
+    private var foodStars: MutableList<ImageView> = mutableListOf()
+    private var fashionStars: MutableList<ImageView> = mutableListOf()
+    private var playStars: MutableList<ImageView> = mutableListOf()
+    private var danceStars: MutableList<ImageView> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -121,9 +131,9 @@ class SurveyActivity : AppCompatActivity() {
             }
         }
 
-
     }
-    private fun initializeViews(){
+
+    private fun initializeViews() {
         foodCheckBox = findViewById(R.id.food_checkbox)
         playCheckBox = findViewById(R.id.play_checkbook)
         musicCheckBox = findViewById(R.id.music_checkbox)
@@ -134,5 +144,135 @@ class SurveyActivity : AppCompatActivity() {
         danceStarsView = findViewById(R.id.dance_stars)
         playStarsView = findViewById(R.id.play_stars)
         fashionStarsView = findViewById(R.id.fashion_stars)
+        initMusicStarsView()
+        initDanceStarsView()
+        initFashionStarsView()
+        initFoodStarsView()
+        initPlayStarsView()
+    }
+
+    private fun initMusicStarsView() {
+        musicStars.add(findViewById(R.id.m_star_1))
+        musicStars.add(findViewById(R.id.m_star_2))
+        musicStars.add(findViewById(R.id.m_star_3))
+        musicStars.add(findViewById(R.id.m_star_4))
+        musicStars.add(findViewById(R.id.m_star_5))
+
+        musicStars.forEachIndexed { index, imageView ->
+            imageView.setOnClickListener {
+                autoFillStarRight(musicStarsValue,index, !musicStarsValue[index])
+                star(values = musicStarsValue, views = musicStars)
+                Toast.makeText(
+                    this,
+                    "Music rate: ${musicStarsValue.filter { it }.size.toString()}",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+    }
+
+    private fun initFashionStarsView() {
+        fashionStars.add(findViewById(R.id.fo_star_1))
+        fashionStars.add(findViewById(R.id.fo_star_2))
+        fashionStars.add(findViewById(R.id.fo_star_3))
+        fashionStars.add(findViewById(R.id.fo_star_4))
+        fashionStars.add(findViewById(R.id.fo_star_5))
+
+        fashionStars.forEachIndexed { index, imageView ->
+            imageView.setOnClickListener {
+                autoFillStarRight(fashionStarsValue, index, !fashionStarsValue[index])
+                star(values = fashionStarsValue, views = fashionStars)
+                Toast.makeText(
+                    this,
+                    "Fashion rate: ${fashionStarsValue.filter { it }.size}",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+    }
+
+    private fun initFoodStarsView() {
+        foodStars.add(findViewById(R.id.f_star_1))
+        foodStars.add(findViewById(R.id.f_star_2))
+        foodStars.add(findViewById(R.id.f_star_3))
+        foodStars.add(findViewById(R.id.f_star_4))
+        foodStars.add(findViewById(R.id.f_star_5))
+
+        foodStars.forEachIndexed { index, imageView ->
+            imageView.setOnClickListener {
+                autoFillStarRight(foodStarsValue, index, !foodStarsValue[index])
+                star(values = foodStarsValue, views = foodStars)
+                Toast.makeText(
+                    this,
+                    "Food rate: ${foodStarsValue.filter { it }.size.toString()}",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+    }
+
+    private fun initPlayStarsView() {
+        playStars.add(findViewById(R.id.p_star_1))
+        playStars.add(findViewById(R.id.p_star_2))
+        playStars.add(findViewById(R.id.p_star_3))
+        playStars.add(findViewById(R.id.p_star_4))
+        playStars.add(findViewById(R.id.p_star_5))
+
+        playStars.forEachIndexed { index, imageView ->
+            imageView.setOnClickListener {
+                autoFillStarRight(playStarsValue, index, !playStarsValue[index])
+                star(values = playStarsValue, views = playStars)
+                Toast.makeText(
+                    this,
+                    "Play rate: ${playStarsValue.filter { it }.size.toString()}",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+    }
+
+    private fun initDanceStarsView() {
+        danceStars.add(findViewById(R.id.d_star_1))
+        danceStars.add(findViewById(R.id.d_star_2))
+        danceStars.add(findViewById(R.id.d_star_3))
+        danceStars.add(findViewById(R.id.d_star_4))
+        danceStars.add(findViewById(R.id.d_star_5))
+
+        danceStars.forEachIndexed { index, imageView ->
+            imageView.setOnClickListener {
+                autoFillStarRight(list = danceStarsValue, index, !danceStarsValue[index])
+                star(values = danceStarsValue, views = danceStars)
+                Toast.makeText(
+                    this,
+                    "Dance rate: ${danceStarsValue.filter { it }.size.toString()}",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+    }
+
+    private fun autoFillStarRight(list: MutableList<Boolean>, index: Int,  value: Boolean) {
+        for (i in 0..index) {
+            list[i] = value
+        }
+        Log.i("st", list.toString())
+    }
+
+    private fun autoFillStarLeft(index: Int, value: Boolean) {
+        for (i in 0..index) {
+            musicStarsValue[i] = value
+        }
+        Log.i("st", musicStarsValue.toString())
+    }
+
+    private fun star(views: MutableList<ImageView>, values: MutableList<Boolean>) {
+        values.forEachIndexed { index, b ->
+            if (b) {
+                views[index].setImageResource(R.drawable.baseline_star_rate_24)
+            } else {
+                views[index].setImageResource(R.drawable.baseline_star_outline_24)
+            }
+        }
+        Log.i("st", values.toString())
     }
 }
