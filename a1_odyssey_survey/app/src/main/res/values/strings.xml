@@ -6,7 +6,7 @@
     <string name="welcome_text">Odyssey Survey</string>
     <string name="name_hint">Enter your name</string>
     <string name="role_hint">What is your role?</string>
-    <string name="option_event">Select event</string>
+    <string name="option_event">Hello, %s!! Select event</string>
     <string name="audience_role_text">Audience</string>
     <string name="participant_role_text">Participant</string>
     <string name="music_event_text">Music</string>

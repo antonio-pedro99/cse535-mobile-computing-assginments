@@ -9,15 +9,19 @@ import android.view.View
 import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.isVisible
+const val MUSIC_RATE = "music"
+const val TAG = "SurveyActivity"
 
 class SurveyActivity : AppCompatActivity() {
-    private val TAG = "SurveyActivity"
+
+
 
     private val danceStarsValue = mutableListOf<Boolean>(false, false, false, false, false)
     private val playStarsValue = mutableListOf<Boolean>(false, false, false, false, false)
-    private val musicStarsValue = mutableListOf<Boolean>(false, false, false, false, false)
+    private var musicStarsValue = mutableListOf<Boolean>(false, false, false, false, false)
     private val foodStarsValue = mutableListOf<Boolean>(false, false, false, false, false)
     private val fashionStarsValue = mutableListOf<Boolean>(false, false, false, false, false)
 
@@ -26,6 +30,7 @@ class SurveyActivity : AppCompatActivity() {
     private lateinit var musicCheckBox: CheckBox
     private lateinit var foodCheckBox: CheckBox
     lateinit var fashionCheckBox: CheckBox
+    private lateinit var saluteTextView: TextView
 
     //linear layout views
     lateinit var danceStarsView: LinearLayout
@@ -41,12 +46,21 @@ class SurveyActivity : AppCompatActivity() {
     private var playStars: MutableList<ImageView> = mutableListOf()
     private var danceStars: MutableList<ImageView> = mutableListOf()
 
+    lateinit var attendName: String
+    lateinit var attendRole: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_survey)
         Log.d(TAG, "$TAG onCreate")
         Toast.makeText(this, "$TAG onCreate", Toast.LENGTH_SHORT).show()
+        saluteTextView = findViewById(R.id.salute)
+        if (savedInstanceState != null) {
+            musicStarsValue = savedInstanceState.getBooleanArray(MUSIC_RATE)?.toMutableList()!!
 
+        }
+        //val saluteResource = resources.getString(R.string.option_event)
+        //saluteTextView.text = String.format(saluteResource, attendName)
         initializeViews()
         setStarsVisibility()
     }
@@ -160,7 +174,7 @@ class SurveyActivity : AppCompatActivity() {
 
         musicStars.forEachIndexed { index, imageView ->
             imageView.setOnClickListener {
-                autoFillStarRight(musicStarsValue,index, !musicStarsValue[index])
+                autoFillStarRight(musicStarsValue, index, !musicStarsValue[index])
                 star(values = musicStarsValue, views = musicStars)
                 Toast.makeText(
                     this,
@@ -251,7 +265,7 @@ class SurveyActivity : AppCompatActivity() {
         }
     }
 
-    private fun autoFillStarRight(list: MutableList<Boolean>, index: Int,  value: Boolean) {
+    private fun autoFillStarRight(list: MutableList<Boolean>, index: Int, value: Boolean) {
         for (i in 0..index) {
             list[i] = value
         }
@@ -273,11 +287,10 @@ class SurveyActivity : AppCompatActivity() {
                 views[index].setImageResource(R.drawable.baseline_star_outline_24)
             }
         }
-        Log.i("st", values.toString())
     }
 
 
-    fun onClearClicked(v:View){
+    fun onClearClicked(v: View) {
         danceCheckBox.isChecked = false
         fashionCheckBox.isChecked = false
         foodCheckBox.isChecked = false
@@ -286,17 +299,24 @@ class SurveyActivity : AppCompatActivity() {
         clearStars()
     }
 
-    private fun clearStars(){
+    private fun clearStars() {
         musicStarsValue.forEach { !it }
         danceStarsValue.forEach { !it }
         foodStarsValue.forEach { !it }
         playStarsValue.forEach { !it }
         fashionStarsValue.forEach { !it }
-        playStars.forEach { it.setImageResource(R.drawable.baseline_star_outline_24)}
-        danceStars.forEach { it.setImageResource(R.drawable.baseline_star_outline_24)}
-        musicStars.forEach { it.setImageResource(R.drawable.baseline_star_outline_24)}
-        foodStars.forEach { it.setImageResource(R.drawable.baseline_star_outline_24)}
-        fashionStars.forEach { it.setImageResource(R.drawable.baseline_star_outline_24)}
+        playStars.forEach { it.setImageResource(R.drawable.baseline_star_outline_24) }
+        danceStars.forEach { it.setImageResource(R.drawable.baseline_star_outline_24) }
+        musicStars.forEach { it.setImageResource(R.drawable.baseline_star_outline_24) }
+        foodStars.forEach { it.setImageResource(R.drawable.baseline_star_outline_24) }
+        fashionStars.forEach { it.setImageResource(R.drawable.baseline_star_outline_24) }
 
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        Log.i("save", musicStarsValue.toString())
+        outState.putBooleanArray(MUSIC_RATE, musicStarsValue.toBooleanArray())
+
+        super.onSaveInstanceState(outState)
     }
 }

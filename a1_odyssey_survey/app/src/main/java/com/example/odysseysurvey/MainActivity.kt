@@ -46,9 +46,11 @@ class MainActivity : AppCompatActivity() {
 
     fun goToNextPage(view:View) {
         val surveyPageIntent:Intent = Intent(this, SurveyActivity::class.java)
+        //surveyPageIntent.putExtra("name", attendeeName)
+        //surveyPageIntent.putExtra("role", attendedRole)
         startActivity(surveyPageIntent)
 
-        //Toast.makeText(this, "Hello World", Toast.LENGTH_SHORT).show()
+
     }
 
     override fun onRestart() {
