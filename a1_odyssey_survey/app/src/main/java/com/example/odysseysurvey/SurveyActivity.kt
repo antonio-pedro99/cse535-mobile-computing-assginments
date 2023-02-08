@@ -107,6 +107,8 @@ class SurveyActivity : AppCompatActivity() {
         }
 
         if (valid) {
+            Toast.makeText(this
+                , "Form Submitted!", Toast.LENGTH_SHORT).show()
             confirmationIntent.putExtra("events", attendedEvent as Serializable)
             startActivity(confirmationIntent)
         } else {
