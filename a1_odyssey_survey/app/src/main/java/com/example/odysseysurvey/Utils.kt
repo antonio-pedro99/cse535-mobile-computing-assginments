@@ -8,7 +8,7 @@ import android.widget.Toast
 class Utils {
     fun showLogToast(context: Context, activityName: String, stateFrom: String, stateTo: String) {
         val message = "$activityName change from $stateFrom to $stateTo"
-        Log.d(TAG, message)
+        Log.i(TAG, message)
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
 }
