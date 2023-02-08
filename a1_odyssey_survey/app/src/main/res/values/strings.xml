@@ -20,6 +20,7 @@
     <string name="survey_page_title">Survey</string>
     <string name="submission_done_message_text">Your feedback has been recorded! Thanks.</string>
     <string name="rating">rating</string>
+    <string name="role">Role: %s</string>
     <string name="submission_confirmation">Thanks for your feedback, we have received your answers</string>
     <string name="submission_message">We hope you enjoy Odyssey\'23! Your input is important to us and helps us improve our next events. We appreciate your taking the time to share your thoughts with us.\n\nSee you in 2024!</string>
     <string name="confirmation_headline">Submission Confirmation</string>
@@ -29,4 +30,5 @@
     <string name="details">Details</string>
     <string name="here_is_what_you_enjoyed">Here is what you enjoyed</string>
     <string name="image">image</string>
+
 </resources>

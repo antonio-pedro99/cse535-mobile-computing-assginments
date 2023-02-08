@@ -42,7 +42,8 @@
             android:text="@string/confirmation_participant_name"
             android:textAlignment="textStart"
             android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            />
 
         <TextView
             android:layout_width="300dp"
@@ -50,8 +51,18 @@
             android:text="@string/submission_confirmation"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="@color/white"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:layout_marginBottom="20dp"
+            />
 
+        <TextView
+            android:id="@+id/confirmation_role"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/role"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
     </LinearLayout>
 
     <LinearLayout

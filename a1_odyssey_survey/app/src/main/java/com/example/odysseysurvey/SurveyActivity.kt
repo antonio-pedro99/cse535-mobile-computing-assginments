@@ -73,23 +73,23 @@ class SurveyActivity : AppCompatActivity() {
         var valid = false
         if (musicCheckBox.isChecked) {
             valid = true
-            attendedEvent["music"] = musicStarsValue.filter { it }.size
+            attendedEvent["Music"] = musicStarsValue.filter { it }.size
         }
         if (danceCheckBox.isChecked) {
             valid = true
-            attendedEvent["dance"] = danceStarsValue.filter { it }.size
+            attendedEvent["Dance"] = danceStarsValue.filter { it }.size
         }
         if (playCheckBox.isChecked) {
             valid = true
-            attendedEvent["play"] = playStarsValue.filter { it }.size
+            attendedEvent["Play"] = playStarsValue.filter { it }.size
         }
         if (foodCheckBox.isChecked) {
             valid = true
-            attendedEvent["food"] = foodStarsValue.filter { it }.size
+            attendedEvent["Food"] = foodStarsValue.filter { it }.size
         }
         if (fashionCheckBox.isChecked) {
             valid = true
-            attendedEvent["fashion"] = fashionStarsValue.filter { it }.size
+            attendedEvent["Fashion"] = fashionStarsValue.filter { it }.size
         }
 
        if (valid){
@@ -294,12 +294,6 @@ class SurveyActivity : AppCompatActivity() {
             list[i] = value
         }
 
-    }
-
-    private fun autoFillStarLeft(index: Int, value: Boolean) {
-        for (i in 0..index) {
-            musicStarsValue[i] = value
-        }
     }
 
     private fun star(views: MutableList<ImageView>, values: MutableList<Boolean>) {

@@ -12,12 +12,12 @@ class ConfirmationActivity : AppCompatActivity() {
     private val TAG = "ConfirmationActivity"
     private var activityState = "onCreate"
 
-
     private lateinit var attendName: String
-    lateinit var attendRole: String
+    private lateinit var attendRole: String
     lateinit var attendeeNameTextView: TextView
     lateinit var submissionDetailsTextView: TextView
     lateinit var eventRatingTextView: TextView
+    lateinit var attendeeRoleTextView: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -32,16 +32,18 @@ class ConfirmationActivity : AppCompatActivity() {
         attendeeNameTextView = findViewById(R.id.confirmation_attendee_name)
         submissionDetailsTextView = findViewById(R.id.submission_details)
         eventRatingTextView = findViewById(R.id.event_raring)
+        attendeeRoleTextView  = findViewById(R.id.confirmation_role)
         attendName = intent.getStringExtra("SurveyEventAttendeeName").toString()
         attendRole = intent.getStringExtra("SurveyEventAttendeeRole").toString()
         val map = intent.getSerializableExtra("events") as MutableMap<*, *>
         attendeeNameTextView.text =
             resources.getString(R.string.confirmation_participant_name, attendName)
+        attendeeRoleTextView.text = resources.getString(R.string.role, attendRole)
         val details = resources.getString(R.string.confirmation_details, map.keys.size.toString())
         submissionDetailsTextView.text = details
         var eventsAttended = StringBuilder().apply {
             map.forEach { (e, r) ->
-                append("$e: $r\n")
+                append("$e: $r stars\n")
             }
         }.toString()
         eventRatingTextView.text = eventsAttended
