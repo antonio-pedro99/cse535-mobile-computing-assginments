@@ -1,11 +1,14 @@
 package com.example.odysseysurvey
 
 import android.content.Intent
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.widget.LinearLayoutCompat.OrientationMode
 import androidx.appcompat.widget.Toolbar
 
 class ConfirmationActivity : AppCompatActivity() {
@@ -18,6 +21,7 @@ class ConfirmationActivity : AppCompatActivity() {
     lateinit var submissionDetailsTextView: TextView
     lateinit var eventRatingTextView: TextView
     lateinit var attendeeRoleTextView: TextView
+    lateinit var layoutContainer:LinearLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -33,6 +37,7 @@ class ConfirmationActivity : AppCompatActivity() {
         submissionDetailsTextView = findViewById(R.id.submission_details)
         eventRatingTextView = findViewById(R.id.event_raring)
         attendeeRoleTextView  = findViewById(R.id.confirmation_role)
+        layoutContainer = findViewById(R.id.layout_container_3)
         attendName = intent.getStringExtra("SurveyEventAttendeeName").toString()
         attendRole = intent.getStringExtra("SurveyEventAttendeeRole").toString()
         val map = intent.getSerializableExtra("events") as MutableMap<*, *>
@@ -43,7 +48,11 @@ class ConfirmationActivity : AppCompatActivity() {
         submissionDetailsTextView.text = details
         var eventsAttended = StringBuilder().apply {
             map.forEach { (e, r) ->
-                append("$e: $r stars\n")
+                if (r.toString() == "0"){
+                    append("$e: Not rated\n")
+                } else{
+                    append("$e: $r stars\n")
+                }
             }
         }.toString()
         eventRatingTextView.text = eventsAttended
