@@ -293,14 +293,13 @@ class SurveyActivity : AppCompatActivity() {
         for (i in 0..index) {
             list[i] = value
         }
-        Log.i("st", list.toString())
+
     }
 
     private fun autoFillStarLeft(index: Int, value: Boolean) {
         for (i in 0..index) {
             musicStarsValue[i] = value
         }
-        Log.i("st", musicStarsValue.toString())
     }
 
     private fun star(views: MutableList<ImageView>, values: MutableList<Boolean>) {
@@ -334,13 +333,10 @@ class SurveyActivity : AppCompatActivity() {
         musicStars.forEach { it.setImageResource(R.drawable.baseline_star_outline_24) }
         foodStars.forEach { it.setImageResource(R.drawable.baseline_star_outline_24) }
         fashionStars.forEach { it.setImageResource(R.drawable.baseline_star_outline_24) }
-
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
-        Log.i("save", musicStarsValue.toString())
         outState.putBooleanArray(MUSIC_RATE, musicStarsValue.toBooleanArray())
-
         super.onSaveInstanceState(outState)
     }
 

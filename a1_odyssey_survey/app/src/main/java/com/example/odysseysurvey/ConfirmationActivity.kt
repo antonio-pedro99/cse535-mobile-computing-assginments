@@ -40,7 +40,7 @@ class ConfirmationActivity : AppCompatActivity() {
         val details = resources.getString(R.string.confirmation_details, map.keys.size.toString())
         submissionDetailsTextView.text = details
         var eventsAttended = StringBuilder().apply {
-            map.forEach {(e, r) ->
+            map.forEach { (e, r) ->
                 append("$e: $r\n")
             }
         }.toString()
@@ -49,10 +49,13 @@ class ConfirmationActivity : AppCompatActivity() {
 
     override fun onRestart() {
         super.onRestart()
-        val message = "$TAG change from $activityState to onStop"
-        Log.d(TAG, message)
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-        activityState = "onStop"
+        Utils().showLogToast(
+            this,
+            activityName = TAG,
+            stateFrom = activityState,
+            stateTo = "onRestart"
+        )
+        activityState = "onRestart"
     }
 
     override fun onStart() {
