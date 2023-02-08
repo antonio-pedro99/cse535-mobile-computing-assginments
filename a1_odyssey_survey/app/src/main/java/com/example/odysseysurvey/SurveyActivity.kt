@@ -9,15 +9,19 @@ import android.widget.*
 import java.io.Serializable
 
 const val MUSIC_RATE = "music"
+const val DANCE_RATE = "dance"
+const val FASHION_RATE = "fashion"
+const val FOOD_RATE = "food"
+const val PLAY_RATE = "play"
 const val TAG = "SurveyActivity"
 
 class SurveyActivity : AppCompatActivity() {
 
-    private val danceStarsValue = mutableListOf<Boolean>(false, false, false, false, false)
-    private val playStarsValue = mutableListOf<Boolean>(false, false, false, false, false)
+    private var danceStarsValue = mutableListOf<Boolean>(false, false, false, false, false)
+    private var playStarsValue = mutableListOf<Boolean>(false, false, false, false, false)
     private var musicStarsValue = mutableListOf<Boolean>(false, false, false, false, false)
-    private val foodStarsValue = mutableListOf<Boolean>(false, false, false, false, false)
-    private val fashionStarsValue = mutableListOf<Boolean>(false, false, false, false, false)
+    private var foodStarsValue = mutableListOf<Boolean>(false, false, false, false, false)
+    private var fashionStarsValue = mutableListOf<Boolean>(false, false, false, false, false)
 
     lateinit var danceCheckBox: CheckBox
     private lateinit var playCheckBox: CheckBox
@@ -58,12 +62,22 @@ class SurveyActivity : AppCompatActivity() {
         val formatted = resources.getString(R.string.option_event, attendName)
 
         saluteTextView.text = formatted
-        if (savedInstanceState != null) {
-            musicStarsValue = savedInstanceState.getBooleanArray(MUSIC_RATE)?.toMutableList()!!
-        }
-
         initializeViews()
         setStarsVisibility()
+        if (savedInstanceState != null) {
+            musicStarsValue = savedInstanceState.getBooleanArray(MUSIC_RATE)?.toMutableList()!!
+            danceStarsValue = savedInstanceState.getBooleanArray(DANCE_RATE)?.toMutableList()!!
+            fashionStarsValue = savedInstanceState.getBooleanArray(FASHION_RATE)?.toMutableList()!!
+            foodStarsValue = savedInstanceState.getBooleanArray(FOOD_RATE)?.toMutableList()!!
+            playStarsValue = savedInstanceState.getBooleanArray(PLAY_RATE)?.toMutableList()!!
+            star(musicStars, musicStarsValue)
+            star(foodStars, foodStarsValue)
+            star(fashionStars, fashionStarsValue)
+            star(playStars, playStarsValue)
+            star(danceStars, danceStarsValue)
+        }
+
+
     }
 
     fun goToNextPage(view: View) {
@@ -92,14 +106,16 @@ class SurveyActivity : AppCompatActivity() {
             attendedEvent["Fashion"] = fashionStarsValue.filter { it }.size
         }
 
-       if (valid){
-           confirmationIntent.putExtra("events", attendedEvent as Serializable)
-           startActivity(confirmationIntent)
-       } else {
-           Toast.makeText(this,
-               "You have to select at least one event",
-               Toast.LENGTH_SHORT).show()
-       }
+        if (valid) {
+            confirmationIntent.putExtra("events", attendedEvent as Serializable)
+            startActivity(confirmationIntent)
+        } else {
+            Toast.makeText(
+                this,
+                "You have to select at least one event",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
     }
 
     override fun onRestart() {
@@ -331,6 +347,11 @@ class SurveyActivity : AppCompatActivity() {
 
     override fun onSaveInstanceState(outState: Bundle) {
         outState.putBooleanArray(MUSIC_RATE, musicStarsValue.toBooleanArray())
+        outState.putBooleanArray(DANCE_RATE, danceStarsValue.toBooleanArray())
+        outState.putBooleanArray(FASHION_RATE, fashionStarsValue.toBooleanArray())
+        outState.putBooleanArray(FOOD_RATE, foodStarsValue.toBooleanArray())
+        outState.putBooleanArray(PLAY_RATE, playStarsValue.toBooleanArray())
+
         super.onSaveInstanceState(outState)
     }
 
