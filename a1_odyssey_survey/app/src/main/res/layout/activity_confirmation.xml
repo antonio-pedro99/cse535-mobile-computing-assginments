@@ -4,29 +4,104 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorPrimary"
-    android:gravity="center_horizontal"
     android:layout_gravity="center"
-    android:padding="16sp"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".ConfirmationActivity"
-    >
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/confirmation_headline"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        />
+    tools:context=".ConfirmationActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/submission_confirmation"
-        android:textColor="@color/white"
-        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
-        android:textAlignment="center"
-        android:layout_marginTop="16sp"
-        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="340dp"
+        android:layout_gravity="end"
+        android:background="?attr/colorPrimary"
+        android:gravity="start"
+        android:orientation="vertical"
+        android:padding="16sp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="45dp"
+            android:text="@string/event_name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/image"
+            android:src="@drawable/baseline_check_circle_24" />
+
+        <TextView
+            android:id="@+id/confirmation_attendee_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16sp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/confirmation_participant_name"
+            android:textAlignment="textStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="@string/submission_confirmation"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="16sp"
+        android:paddingRight="16sp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16sp"
+            android:text="@string/details"
+            android:textAlignment="textStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle" />
+
+        <TextView
+
+            android:id="@+id/submission_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/confirmation_details"
+            android:textAlignment="textStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/submission_message"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16sp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/here_is_what_you_enjoyed"
+            android:textAlignment="textStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle" />
+
+        <TextView
+            android:id="@+id/event_raring"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:textSize="16sp" />
+
+    </LinearLayout>
 </LinearLayout>

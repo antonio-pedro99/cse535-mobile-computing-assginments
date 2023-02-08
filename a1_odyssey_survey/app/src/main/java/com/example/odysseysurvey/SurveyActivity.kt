@@ -16,7 +16,6 @@ const val TAG = "SurveyActivity"
 
 class SurveyActivity : AppCompatActivity() {
 
-
     private val danceStarsValue = mutableListOf<Boolean>(false, false, false, false, false)
     private val playStarsValue = mutableListOf<Boolean>(false, false, false, false, false)
     private var musicStarsValue = mutableListOf<Boolean>(false, false, false, false, false)
@@ -47,6 +46,7 @@ class SurveyActivity : AppCompatActivity() {
     lateinit var attendName: String
     lateinit var attendRole: String
     private var activityState = "onCreate"
+    private var attendedEvent = mutableMapOf<String, Int>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Utils().showLogToast(
@@ -55,23 +55,48 @@ class SurveyActivity : AppCompatActivity() {
             stateFrom = "non-existing",
             stateTo = activityState
         )
+        attendName = intent.getStringExtra("name").toString()
+        attendRole = intent.getStringExtra("role").toString()
         setContentView(R.layout.activity_survey)
         setTitle(R.string.survey_page_title)
 
         saluteTextView = findViewById(R.id.salute)
+        val formatted = resources.getString(R.string.option_event, attendName)
+
+        saluteTextView.text = formatted
         if (savedInstanceState != null) {
             musicStarsValue = savedInstanceState.getBooleanArray(MUSIC_RATE)?.toMutableList()!!
-
         }
-        //val saluteResource = resources.getString(R.string.option_event)
-        //saluteTextView.text = String.format(saluteResource, attendName)
+
         initializeViews()
         setStarsVisibility()
     }
 
-
     fun goToNextPage(view: View) {
         val confirmationIntent = Intent(this, ConfirmationActivity::class.java)
+        confirmationIntent.putExtra("SurveyEventAttendeeName", attendName)
+        confirmationIntent.putExtra("SurveyEventAttendeeRole", attendRole)
+
+        when {
+            musicCheckBox.isChecked -> {
+
+                attendedEvent["music"] = musicStarsValue.filter { it }.size
+            }
+            danceCheckBox.isChecked -> {
+                attendedEvent["dance"] = danceStarsValue.filter { it }.size
+            }
+            playCheckBox.isChecked -> {
+                attendedEvent["play"] = playStarsValue.filter { it }.size
+            }
+            foodCheckBox.isChecked -> {
+                attendedEvent["food"] = foodStarsValue.filter { it }.size
+            }
+            fashionCheckBox.isChecked -> {
+                attendedEvent["fashion"] = fashionStarsValue.filter { it }.size
+            }
+        }
+        confirmationIntent.putExtra("events", attendedEvent as java.io.Serializable)
+
         startActivity(confirmationIntent)
     }
 
@@ -217,11 +242,7 @@ class SurveyActivity : AppCompatActivity() {
             imageView.setOnClickListener {
                 autoFillStarRight(musicStarsValue, index, !musicStarsValue[index])
                 star(values = musicStarsValue, views = musicStars)
-                Toast.makeText(
-                    this,
-                    "Music rate: ${musicStarsValue.filter { it }.size.toString()}",
-                    Toast.LENGTH_SHORT
-                ).show()
+
             }
         }
     }
@@ -237,11 +258,7 @@ class SurveyActivity : AppCompatActivity() {
             imageView.setOnClickListener {
                 autoFillStarRight(fashionStarsValue, index, !fashionStarsValue[index])
                 star(values = fashionStarsValue, views = fashionStars)
-                Toast.makeText(
-                    this,
-                    "Fashion rate: ${fashionStarsValue.filter { it }.size}",
-                    Toast.LENGTH_SHORT
-                ).show()
+
             }
         }
     }
@@ -257,11 +274,7 @@ class SurveyActivity : AppCompatActivity() {
             imageView.setOnClickListener {
                 autoFillStarRight(foodStarsValue, index, !foodStarsValue[index])
                 star(values = foodStarsValue, views = foodStars)
-                Toast.makeText(
-                    this,
-                    "Food rate: ${foodStarsValue.filter { it }.size.toString()}",
-                    Toast.LENGTH_SHORT
-                ).show()
+
             }
         }
     }
@@ -277,11 +290,7 @@ class SurveyActivity : AppCompatActivity() {
             imageView.setOnClickListener {
                 autoFillStarRight(playStarsValue, index, !playStarsValue[index])
                 star(values = playStarsValue, views = playStars)
-                Toast.makeText(
-                    this,
-                    "Play rate: ${playStarsValue.filter { it }.size.toString()}",
-                    Toast.LENGTH_SHORT
-                ).show()
+
             }
         }
     }
@@ -297,11 +306,6 @@ class SurveyActivity : AppCompatActivity() {
             imageView.setOnClickListener {
                 autoFillStarRight(list = danceStarsValue, index, !danceStarsValue[index])
                 star(values = danceStarsValue, views = danceStars)
-                Toast.makeText(
-                    this,
-                    "Dance rate: ${danceStarsValue.filter { it }.size.toString()}",
-                    Toast.LENGTH_SHORT
-                ).show()
             }
         }
     }
@@ -360,4 +364,5 @@ class SurveyActivity : AppCompatActivity() {
 
         super.onSaveInstanceState(outState)
     }
+
 }

@@ -39,7 +39,6 @@ class MainActivity : AppCompatActivity() {
         edtName = findViewById(R.id.edt_name)
         buildDropDownMenuItems()
 
-
     }
 
     private fun buildDropDownMenuItems() {
@@ -51,12 +50,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun goToNextPage(view: View) {
+        attendeeName = edtName.text.toString()
+        attendedRole = actxtRoles.text.toString()
         val surveyPageIntent: Intent = Intent(this, SurveyActivity::class.java)
-        //surveyPageIntent.putExtra("name", attendeeName)
-        //surveyPageIntent.putExtra("role", attendedRole)
+        surveyPageIntent.putExtra("name", attendeeName)
+        surveyPageIntent.putExtra("role", attendedRole)
         startActivity(surveyPageIntent)
-
-
     }
 
     override fun onRestart() {
@@ -129,5 +128,9 @@ class MainActivity : AppCompatActivity() {
         attendedRole = actxtRoles.text.toString()
         attendeeName = edtName.text.toString()
         super.onSaveInstanceState(outState)
+    }
+
+    override fun onBackPressed() {
+
     }
 }

@@ -6,7 +6,7 @@
     <string name="welcome_text">Odyssey Survey</string>
     <string name="name_hint">Enter your name</string>
     <string name="role_hint">What is your role?</string>
-    <string name="option_event">Hello, %s!! Select event</string>
+    <string name="option_event">Hello %s, Select event</string>
     <string name="audience_role_text">Audience</string>
     <string name="participant_role_text">Participant</string>
     <string name="music_event_text">Music</string>
@@ -20,6 +20,13 @@
     <string name="survey_page_title">Survey</string>
     <string name="submission_done_message_text">Your feedback has been recorded! Thanks.</string>
     <string name="rating">rating</string>
-    <string name="submission_confirmation">Thanks for your feedback, we have received your answers, you can confirm them bellow</string>
+    <string name="submission_confirmation">Thanks for your feedback, we have received your answers</string>
+    <string name="submission_message">We hope you enjoy Odyssey\'23! Your input is important to us and helps us improve our next events. We appreciate your taking the time to share your thoughts with us.\n\nSee you in 2024!</string>
     <string name="confirmation_headline">Submission Confirmation</string>
+    <string name="event_name">IIID Odyssey\'23</string>
+    <string name="confirmation_participant_name">Hi %s,</string>
+    <string name="confirmation_details">Date: 27–28th January\nEvents attended: %s</string>
+    <string name="details">Details</string>
+    <string name="here_is_what_you_enjoyed">Here is what you enjoyed</string>
+    <string name="image">image</string>
 </resources>
