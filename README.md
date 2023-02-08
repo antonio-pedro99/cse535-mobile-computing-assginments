@@ -7,4 +7,10 @@ My code solutions to Mobile Computing's subject at IIITD
 <p>For each change in the state of the activities, the app should log an INFO statement and display a Toast indicating the change in state. For example, if the state of the first activity changes from Resumed to Paused, the log should contain the statement "State of activity &lt;name_of_the_activity&gt; changed from Resumed to Paused". The app should log and provide a Toast for all possible state transitions for each activity.</p>
 <h3>Bonus:</h3>
 <p>Design the rating in a star-marked way on a scale of 1-5.</p>
+## Results
 
+<p float="right">
+  <img src="https://user-images.githubusercontent.com/42675180/217604393-cc40c0da-bd9b-4573-a4a4-dcab0f48984b.jpeg" width="200"/>
+  <img src="https://user-images.githubusercontent.com/42675180/217604398-3eb25cc3-f4ff-44fc-a896-aea1c6902025.jpeg" width="200"/>
+  <img src="https://user-images.githubusercontent.com/42675180/217604410-92aaf279-1c89-46fd-a097-73c2d3076e4d.jpeg" width="200"/>
+</p>
