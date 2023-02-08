@@ -1,73 +1,34 @@
 package com.example.odysseysurvey
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
-import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 
-
-class MainActivity : AppCompatActivity() {
-    private val TAG = "MainActivity"
+class ConfirmationActivity : AppCompatActivity() {
+    private val TAG = "ConfirmationActivity"
     private var activityState = "onCreate"
-    lateinit var btnNext: Button
-    lateinit var edtName: EditText
-    lateinit var actxtRoles: AutoCompleteTextView
-    private val roles = listOf<String>(
-        "Audience", "Participant"
-    )
-
-    lateinit var attendeeName: String
-    lateinit var attendedRole: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         Utils().showLogToast(
             this,
             activityName = TAG,
             stateFrom = "non-existing",
             stateTo = activityState
         )
-        setContentView(R.layout.activity_main)
-
-        btnNext = findViewById(R.id.btn_next)
-        actxtRoles = findViewById(R.id.actxt_roles)
-        edtName = findViewById(R.id.edt_name)
-        buildDropDownMenuItems()
-
-
-    }
-
-    private fun buildDropDownMenuItems() {
-        val adapter = ArrayAdapter<String>(
-            this,
-            android.R.layout.simple_dropdown_item_1line, roles
-        )
-        actxtRoles.setAdapter(adapter)
-    }
-
-    fun goToNextPage(view: View) {
-        val surveyPageIntent: Intent = Intent(this, SurveyActivity::class.java)
-        //surveyPageIntent.putExtra("name", attendeeName)
-        //surveyPageIntent.putExtra("role", attendedRole)
-        startActivity(surveyPageIntent)
-
+        setContentView(R.layout.activity_confirmation)
+        supportActionBar?.hide()
 
     }
 
     override fun onRestart() {
         super.onRestart()
-        Utils().showLogToast(
-            this,
-            activityName = TAG,
-            stateFrom = activityState,
-            stateTo = "onRestart"
-        )
-        activityState = "onRestart"
+        val message = "$TAG change from $activityState to onStop"
+        Log.d(TAG, message)
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+        activityState = "onStop"
     }
 
     override fun onStart() {
@@ -101,6 +62,7 @@ class MainActivity : AppCompatActivity() {
             stateTo = "onDestroy"
         )
         activityState = "onDestroy"
+
     }
 
     override fun onResume() {
@@ -125,9 +87,5 @@ class MainActivity : AppCompatActivity() {
         activityState = "onPause"
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        attendedRole = actxtRoles.text.toString()
-        attendeeName = edtName.text.toString()
-        super.onSaveInstanceState(outState)
-    }
+
 }

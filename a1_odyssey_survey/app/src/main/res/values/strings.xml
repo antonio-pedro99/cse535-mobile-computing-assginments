@@ -20,4 +20,6 @@
     <string name="survey_page_title">Survey</string>
     <string name="submission_done_message_text">Your feedback has been recorded! Thanks.</string>
     <string name="rating">rating</string>
+    <string name="submission_confirmation">Thanks for your feedback, we have received your answers, you can confirm them bellow</string>
+    <string name="confirmation_headline">Submission Confirmation</string>
 </resources>

@@ -400,7 +400,8 @@
             android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
             app:icon="@drawable/baseline_done_24"
             app:iconGravity="textStart"
-            app:iconPadding="8sp" />
+            app:iconPadding="8sp"
+            android:onClick="goToNextPage"/>
     </LinearLayout>
 
 </LinearLayout>

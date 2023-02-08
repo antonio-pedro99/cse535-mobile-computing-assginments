@@ -1,22 +1,20 @@
 package com.example.odysseysurvey
 
+import android.content.Intent
 import android.media.Image
 import android.nfc.Tag
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.AttributeSet
 import android.util.Log
 import android.view.View
-import android.widget.CheckBox
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.core.view.isVisible
+
 const val MUSIC_RATE = "music"
 const val TAG = "SurveyActivity"
 
 class SurveyActivity : AppCompatActivity() {
-
 
 
     private val danceStarsValue = mutableListOf<Boolean>(false, false, false, false, false)
@@ -48,12 +46,18 @@ class SurveyActivity : AppCompatActivity() {
 
     lateinit var attendName: String
     lateinit var attendRole: String
-
+    private var activityState = "onCreate"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Utils().showLogToast(
+            this,
+            activityName = TAG,
+            stateFrom = "non-existing",
+            stateTo = activityState
+        )
         setContentView(R.layout.activity_survey)
-        Log.d(TAG, "$TAG onCreate")
-        Toast.makeText(this, "$TAG onCreate", Toast.LENGTH_SHORT).show()
+        setTitle(R.string.survey_page_title)
+
         saluteTextView = findViewById(R.id.salute)
         if (savedInstanceState != null) {
             musicStarsValue = savedInstanceState.getBooleanArray(MUSIC_RATE)?.toMutableList()!!
@@ -65,39 +69,76 @@ class SurveyActivity : AppCompatActivity() {
         setStarsVisibility()
     }
 
+
+    fun goToNextPage(view: View) {
+        val confirmationIntent = Intent(this, ConfirmationActivity::class.java)
+        startActivity(confirmationIntent)
+    }
+
     override fun onRestart() {
         super.onRestart()
-        Log.d(TAG, "$TAG onRestart")
-        Toast.makeText(this, "$TAG onRestart", Toast.LENGTH_SHORT).show()
+        Utils().showLogToast(
+            this,
+            activityName = TAG,
+            stateFrom = activityState,
+            stateTo = "onRestart"
+        )
+        activityState = "onRestart"
     }
 
     override fun onStart() {
         super.onStart()
-        Toast.makeText(this, "$TAG onStart", Toast.LENGTH_SHORT).show()
+        Utils().showLogToast(
+            this,
+            activityName = TAG,
+            stateFrom = activityState,
+            stateTo = "onStart"
+        )
+        activityState = "onStart"
     }
 
     override fun onStop() {
         super.onStop()
-        Log.d(TAG, "$TAG onStop")
-        Toast.makeText(this, "$TAG onStop", Toast.LENGTH_SHORT).show()
+        Utils().showLogToast(
+            this,
+            activityName = TAG,
+            stateFrom = activityState,
+            stateTo = "onStop"
+        )
+        activityState = "onStop"
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d(TAG, "$TAG onDestroy")
-        Toast.makeText(this, "$TAG onDestroy", Toast.LENGTH_SHORT).show()
+        Utils().showLogToast(
+            this,
+            activityName = TAG,
+            stateFrom = activityState,
+            stateTo = "onDestroy"
+        )
+        activityState = "onDestroy"
     }
 
     override fun onResume() {
         super.onResume()
-        Log.d(TAG, "$TAG onResume")
-        Toast.makeText(this, "$TAG onResume", Toast.LENGTH_SHORT).show()
+        Utils().showLogToast(
+            this,
+            activityName = TAG,
+            stateFrom = activityState,
+            stateTo = "onResume"
+        )
+        activityState = "onResume"
     }
 
     override fun onPause() {
-        Log.d(TAG, "$TAG onPause")
-        Toast.makeText(this, "$TAG onPause", Toast.LENGTH_SHORT).show()
         super.onPause()
+        Utils().showLogToast(
+            this,
+            activityName = TAG,
+            stateFrom = activityState,
+            stateTo = "onPause"
+        )
+        activityState = "onPause"
     }
 
     private fun setStarsVisibility() {
