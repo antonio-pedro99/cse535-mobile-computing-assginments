@@ -50,12 +50,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun goToNextPage(view: View) {
-        attendeeName = edtName.text.toString()
-        attendedRole = actxtRoles.text.toString()
-        val surveyPageIntent: Intent = Intent(this, SurveyActivity::class.java)
-        surveyPageIntent.putExtra("name", attendeeName)
-        surveyPageIntent.putExtra("role", attendedRole)
-        startActivity(surveyPageIntent)
+
+    if (edtName.validateText() && actxtRoles.validateText()) {
+           attendeeName = edtName.text.toString()
+           attendedRole = actxtRoles.text.toString()
+           val surveyPageIntent: Intent = Intent(this, SurveyActivity::class.java)
+           surveyPageIntent.putExtra("name", attendeeName)
+           surveyPageIntent.putExtra("role", attendedRole)
+           startActivity(surveyPageIntent)
+       } else {
+           Toast.makeText(this,
+               "Enter your correct information",
+               Toast.LENGTH_SHORT).show()
+       }
     }
 
     override fun onRestart() {

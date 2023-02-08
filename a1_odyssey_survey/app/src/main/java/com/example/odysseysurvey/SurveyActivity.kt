@@ -1,15 +1,12 @@
 package com.example.odysseysurvey
 
 import android.content.Intent
-import android.media.Image
-import android.nfc.Tag
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.AttributeSet
 import android.util.Log
 import android.view.View
 import android.widget.*
-import androidx.core.view.isVisible
+import java.io.Serializable
 
 const val MUSIC_RATE = "music"
 const val TAG = "SurveyActivity"
@@ -50,10 +47,7 @@ class SurveyActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Utils().showLogToast(
-            this,
-            activityName = TAG,
-            stateFrom = "non-existing",
-            stateTo = activityState
+            this, activityName = TAG, stateFrom = "non-existing", stateTo = activityState
         )
         attendName = intent.getStringExtra("name").toString()
         attendRole = intent.getStringExtra("role").toString()
@@ -76,37 +70,42 @@ class SurveyActivity : AppCompatActivity() {
         val confirmationIntent = Intent(this, ConfirmationActivity::class.java)
         confirmationIntent.putExtra("SurveyEventAttendeeName", attendName)
         confirmationIntent.putExtra("SurveyEventAttendeeRole", attendRole)
-
-        when {
-            musicCheckBox.isChecked -> {
-
-                attendedEvent["music"] = musicStarsValue.filter { it }.size
-            }
-            danceCheckBox.isChecked -> {
-                attendedEvent["dance"] = danceStarsValue.filter { it }.size
-            }
-            playCheckBox.isChecked -> {
-                attendedEvent["play"] = playStarsValue.filter { it }.size
-            }
-            foodCheckBox.isChecked -> {
-                attendedEvent["food"] = foodStarsValue.filter { it }.size
-            }
-            fashionCheckBox.isChecked -> {
-                attendedEvent["fashion"] = fashionStarsValue.filter { it }.size
-            }
+        var valid = false
+        if (musicCheckBox.isChecked) {
+            valid = true
+            attendedEvent["music"] = musicStarsValue.filter { it }.size
         }
-        confirmationIntent.putExtra("events", attendedEvent as java.io.Serializable)
+        if (danceCheckBox.isChecked) {
+            valid = true
+            attendedEvent["dance"] = danceStarsValue.filter { it }.size
+        }
+        if (playCheckBox.isChecked) {
+            valid = true
+            attendedEvent["play"] = playStarsValue.filter { it }.size
+        }
+        if (foodCheckBox.isChecked) {
+            valid = true
+            attendedEvent["food"] = foodStarsValue.filter { it }.size
+        }
+        if (fashionCheckBox.isChecked) {
+            valid = true
+            attendedEvent["fashion"] = fashionStarsValue.filter { it }.size
+        }
 
-        startActivity(confirmationIntent)
+       if (valid){
+           confirmationIntent.putExtra("events", attendedEvent as Serializable)
+           startActivity(confirmationIntent)
+       } else {
+           Toast.makeText(this,
+               "You have to select at least one event",
+               Toast.LENGTH_SHORT).show()
+       }
     }
 
     override fun onRestart() {
         super.onRestart()
         Utils().showLogToast(
-            this,
-            activityName = TAG,
-            stateFrom = activityState,
-            stateTo = "onRestart"
+            this, activityName = TAG, stateFrom = activityState, stateTo = "onRestart"
         )
         activityState = "onRestart"
     }
@@ -114,10 +113,7 @@ class SurveyActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         Utils().showLogToast(
-            this,
-            activityName = TAG,
-            stateFrom = activityState,
-            stateTo = "onStart"
+            this, activityName = TAG, stateFrom = activityState, stateTo = "onStart"
         )
         activityState = "onStart"
     }
@@ -125,10 +121,7 @@ class SurveyActivity : AppCompatActivity() {
     override fun onStop() {
         super.onStop()
         Utils().showLogToast(
-            this,
-            activityName = TAG,
-            stateFrom = activityState,
-            stateTo = "onStop"
+            this, activityName = TAG, stateFrom = activityState, stateTo = "onStop"
         )
         activityState = "onStop"
     }
@@ -136,10 +129,7 @@ class SurveyActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         Utils().showLogToast(
-            this,
-            activityName = TAG,
-            stateFrom = activityState,
-            stateTo = "onDestroy"
+            this, activityName = TAG, stateFrom = activityState, stateTo = "onDestroy"
         )
         activityState = "onDestroy"
     }
@@ -147,10 +137,7 @@ class SurveyActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         Utils().showLogToast(
-            this,
-            activityName = TAG,
-            stateFrom = activityState,
-            stateTo = "onResume"
+            this, activityName = TAG, stateFrom = activityState, stateTo = "onResume"
         )
         activityState = "onResume"
     }
@@ -158,10 +145,7 @@ class SurveyActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
         Utils().showLogToast(
-            this,
-            activityName = TAG,
-            stateFrom = activityState,
-            stateTo = "onPause"
+            this, activityName = TAG, stateFrom = activityState, stateTo = "onPause"
         )
         activityState = "onPause"
     }
@@ -171,16 +155,14 @@ class SurveyActivity : AppCompatActivity() {
             if (isChecked) {
                 musicStarsView.visibility = View.VISIBLE
             } else {
-                musicStarsView
-                    .visibility = View.INVISIBLE
+                musicStarsView.visibility = View.INVISIBLE
             }
         }
         fashionCheckBox.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
                 fashionStarsView.visibility = View.VISIBLE
             } else {
-                fashionStarsView
-                    .visibility = View.INVISIBLE
+                fashionStarsView.visibility = View.INVISIBLE
             }
         }
 
@@ -188,8 +170,7 @@ class SurveyActivity : AppCompatActivity() {
             if (isChecked) {
                 playStarsView.visibility = View.VISIBLE
             } else {
-                playStarsView
-                    .visibility = View.INVISIBLE
+                playStarsView.visibility = View.INVISIBLE
             }
         }
 
@@ -197,8 +178,7 @@ class SurveyActivity : AppCompatActivity() {
             if (isChecked) {
                 danceStarsView.visibility = View.VISIBLE
             } else {
-                danceStarsView
-                    .visibility = View.INVISIBLE
+                danceStarsView.visibility = View.INVISIBLE
             }
         }
 
@@ -206,8 +186,7 @@ class SurveyActivity : AppCompatActivity() {
             if (isChecked) {
                 foodStarsView.visibility = View.VISIBLE
             } else {
-                foodStarsView
-                    .visibility = View.INVISIBLE
+                foodStarsView.visibility = View.INVISIBLE
             }
         }
 

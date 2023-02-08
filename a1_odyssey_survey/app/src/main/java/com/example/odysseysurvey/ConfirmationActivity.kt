@@ -33,12 +33,18 @@ class ConfirmationActivity : AppCompatActivity() {
         submissionDetailsTextView = findViewById(R.id.submission_details)
         eventRatingTextView = findViewById(R.id.event_raring)
         attendName = intent.getStringExtra("SurveyEventAttendeeName").toString()
-        attendRole  =  intent.getStringExtra("SurveyEventAttendeeRole").toString()
-        val map  = intent.getSerializableExtra("events") as MutableMap<*, *>
-        attendeeNameTextView.text =  resources.getString(R.string.confirmation_participant_name, attendName)
+        attendRole = intent.getStringExtra("SurveyEventAttendeeRole").toString()
+        val map = intent.getSerializableExtra("events") as MutableMap<*, *>
+        attendeeNameTextView.text =
+            resources.getString(R.string.confirmation_participant_name, attendName)
         val details = resources.getString(R.string.confirmation_details, map.keys.size.toString())
         submissionDetailsTextView.text = details
-        //map.forEach { e, r -> eventRatingTextView.text = "$e : $r\n"}
+        var eventsAttended = StringBuilder().apply {
+            map.forEach {(e, r) ->
+                append("$e: $r\n")
+            }
+        }.toString()
+        eventRatingTextView.text = eventsAttended
     }
 
     override fun onRestart() {
@@ -104,6 +110,7 @@ class ConfirmationActivity : AppCompatActivity() {
         )
         activityState = "onPause"
     }
+
     override fun onBackPressed() {
         val mainActivity = Intent(this, MainActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
