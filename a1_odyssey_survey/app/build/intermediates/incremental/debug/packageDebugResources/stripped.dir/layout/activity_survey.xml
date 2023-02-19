@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="start"
+    android:orientation="vertical"
+    tools:context=".SurveyActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp"
+        >
+
+        <TextView
+            android:id="@+id/salute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/option_event"
+            android:layout_marginBottom="16dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/border"
+            android:layout_gravity="center"
+            android:layout_marginBottom="8dp"
+            >
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/dance_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dance_event_text" />
+            <LinearLayout
+                android:id="@+id/dance_stars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:paddingStart="9dp"
+                android:visibility="invisible"
+                >
+                <ImageView
+                    android:id="@+id/d_star_1"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:src="@drawable/baseline_star_outline_24"
+                    android:focusable="true"
+                    android:contentDescription="@string/rating" />
+                <ImageView
+                    android:id="@+id/d_star_2"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:src="@drawable/baseline_star_outline_24"
+                    android:focusable="true"
+                    android:contentDescription="@string/rating" />
+                <ImageView
+                    android:id="@+id/d_star_3"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:src="@drawable/baseline_star_outline_24"
+                    android:focusable="true"
+                    android:contentDescription="@string/rating" />
+                <ImageView
+                    android:id="@+id/d_star_4"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:src="@drawable/baseline_star_outline_24"
+                    android:focusable="true"
+                    android:contentDescription="@string/rating" />
+                <ImageView
+                    android:id="@+id/d_star_5"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:src="@drawable/baseline_star_outline_24"
+                    android:focusable="true"
+                    android:contentDescription="@string/rating" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/border"
+            android:layout_gravity="center"
+            android:layout_marginBottom="8dp"
+            >
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/play_checkbook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/play_event_text" />
+            <LinearLayout
+                android:id="@+id/play_stars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:paddingStart="9dp"
+                android:visibility="invisible"
+                >
+
+                <ImageView
+                    android:id="@+id/p_star_1"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:src="@drawable/baseline_star_outline_24"
+                    android:focusable="true"
+                    android:contentDescription="@string/rating" />
+                <ImageView
+                    android:id="@+id/p_star_2"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:src="@drawable/baseline_star_outline_24"
+                    android:focusable="true"
+                    android:contentDescription="@string/rating" />
+                <ImageView
+                    android:id="@+id/p_star_3"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:src="@drawable/baseline_star_outline_24"
+                    android:focusable="true"
+                    android:contentDescription="@string/rating" />
+                <ImageView
+                    android:id="@+id/p_star_4"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:src="@drawable/baseline_star_outline_24"
+                    android:focusable="true"
+                    android:contentDescription="@string/rating" />
+                <ImageView
+                    android:id="@+id/p_star_5"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:src="@drawable/baseline_star_outline_24"
+                    android:focusable="true"
+                    android:contentDescription="@string/rating" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/border"
+            android:layout_gravity="center"
+            android:layout_marginBottom="8dp"
+            >
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/music_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/music_event_text" />
+            <LinearLayout
+                android:id="@+id/music_stars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:paddingStart="9dp"
+                android:visibility="invisible"
+                >
+
+                <ImageView
+                    android:id="@+id/m_star_1"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:src="@drawable/baseline_star_outline_24"
+                    android:focusable="true"
+                    android:contentDescription="@string/rating" />
+                <ImageView
+                    android:id="@+id/m_star_2"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:src="@drawable/baseline_star_outline_24"
+                    android:focusable="true"
+                    android:contentDescription="@string/rating" />
+                <ImageView
+                    android:id="@+id/m_star_3"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:src="@drawable/baseline_star_outline_24"
+                    android:focusable="true"
+                    android:contentDescription="@string/rating" />
+                <ImageView
+                    android:id="@+id/m_star_4"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:src="@drawable/baseline_star_outline_24"
+                    android:focusable="true"
+                    android:contentDescription="@string/rating" />
+                <ImageView
+                    android:id="@+id/m_star_5"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:src="@drawable/baseline_star_outline_24"
+                    android:focusable="true"
+                    android:contentDescription="@string/rating" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/border"
+            android:layout_gravity="center"
+            android:layout_marginBottom="8dp"
+            >
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/food_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/food_event_text" />
+            <LinearLayout
+                android:id="@+id/food_stars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:paddingStart="9dp"
+                android:visibility="invisible"
+                >
+
+                <ImageView
+                    android:id="@+id/f_star_1"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:src="@drawable/baseline_star_outline_24"
+                    android:focusable="true"
+                    android:contentDescription="@string/rating" />
+                <ImageView
+                    android:id="@+id/f_star_2"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:src="@drawable/baseline_star_outline_24"
+                    android:focusable="true"
+                    android:contentDescription="@string/rating" />
+                <ImageView
+                    android:id="@+id/f_star_3"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:src="@drawable/baseline_star_outline_24"
+                    android:focusable="true"
+                    android:contentDescription="@string/rating" />
+                <ImageView
+                    android:id="@+id/f_star_4"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:src="@drawable/baseline_star_outline_24"
+                    android:focusable="true"
+                    android:contentDescription="@string/rating" />
+                <ImageView
+                    android:id="@+id/f_star_5"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:src="@drawable/baseline_star_outline_24"
+                    android:focusable="true"
+                    android:contentDescription="@string/rating" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/border"
+            android:layout_gravity="center"
+            android:layout_marginBottom="8dp"
+            >
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/fasion_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fashion_event_text" />
+            <LinearLayout
+                android:id="@+id/fashion_stars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:paddingStart="9dp"
+                android:visibility="invisible"
+                >
+
+                <ImageView
+                    android:id="@+id/fo_star_1"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:src="@drawable/baseline_star_outline_24"
+                    android:focusable="true"
+                    android:contentDescription="@string/rating" />
+                <ImageView
+                    android:id="@+id/fo_star_2"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:src="@drawable/baseline_star_outline_24"
+                    android:focusable="true"
+                    android:contentDescription="@string/rating" />
+                <ImageView
+                    android:id="@+id/fo_star_3"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:src="@drawable/baseline_star_outline_24"
+                    android:focusable="true"
+                    android:contentDescription="@string/rating" />
+                <ImageView
+                    android:id="@+id/fo_star_4"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:src="@drawable/baseline_star_outline_24"
+                    android:focusable="true"
+                    android:contentDescription="@string/rating" />
+                <ImageView
+                    android:id="@+id/fo_star_5"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:src="@drawable/baseline_star_outline_24"
+                    android:focusable="true"
+                    android:contentDescription="@string/rating" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <com.google.android.material.button.MaterialButton
+
+            style="@style/Widget.Material3.Button.IconButton.Filled"
+            android:layout_width="150dp"
+            android:layout_height="64sp"
+            android:enabled="true"
+            android:text="@string/clear_btn_text"
+            android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+            app:icon="@drawable/baseline_delete_24"
+            app:iconGravity="textStart"
+            app:iconPadding="8sp"
+            android:onClick="onClearClicked"
+            />
+
+        <com.google.android.material.button.MaterialButton
+
+            style="@style/Widget.Material3.Button.IconButton.Filled"
+            android:layout_width="150dp"
+            android:layout_height="64sp"
+            android:enabled="true"
+            android:text="@string/submit_btn_text"
+            android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+            app:icon="@drawable/baseline_done_24"
+            app:iconGravity="textStart"
+            app:iconPadding="8sp"
+            android:onClick="goToNextPage"/>
+    </LinearLayout>
+
+</LinearLayout>

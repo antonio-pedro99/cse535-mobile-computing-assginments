@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="yellow">#FFFF00</color>
+    <dimen name="fab_margin">16dp</dimen>
+    <string name="app_name">Odyssey Survey</string>
+    <string name="audience_role_text">Audience</string>
+    <string name="clear_btn_text">Clear</string>
+    <string name="confirmation_details">Date: 27–28th January\nEvents attended: %s</string>
+    <string name="confirmation_headline">Submission Confirmation</string>
+    <string name="confirmation_participant_name">Hi %s,</string>
+    <string name="dance_event_text">Dance</string>
+    <string name="details">Details</string>
+    <string name="event_name">IIID Odyssey\'23</string>
+    <string name="fashion_event_text">Fashion</string>
+    <string name="food_event_text">Food</string>
+    <string name="here_is_what_you_enjoyed">Here is what you enjoyed</string>
+    <string name="image">image</string>
+    <string name="music_event_text">Music</string>
+    <string name="name_hint">Enter your name</string>
+    <string name="next">Next</string>
+    <string name="option_event">Hello %s, Select event</string>
+    <string name="participant_role_text">Participant</string>
+    <string name="play_event_text">Play</string>
+    <string name="rating">rating</string>
+    <string name="rating_text">Rate this event</string>
+    <string name="role">Role: %s</string>
+    <string name="role_hint">What is your role?</string>
+    <string name="submission_confirmation">Thanks for your feedback, we have received your answers</string>
+    <string name="submission_done_message_text">Your feedback has been recorded! Thanks.</string>
+    <string name="submission_message">We hope you enjoy Odyssey\'23! Your input is important to us and helps us improve our next events. We appreciate your taking the time to share your thoughts with us.\n\nSee you in 2024!</string>
+    <string name="submit_btn_text">Submit Survey</string>
+    <string name="survey_page_title">Survey</string>
+    <string name="title_activity_survey">SurveyActivity</string>
+    <string name="welcome_text">Odyssey Survey</string>
+    <style name="Theme.OdysseySurvey" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        
+    </style>
+    <style name="Theme.OdysseySurvey.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="Theme.OdysseySurvey.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.OdysseySurvey.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+</resources>

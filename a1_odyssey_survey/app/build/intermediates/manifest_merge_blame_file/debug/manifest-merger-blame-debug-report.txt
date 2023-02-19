@@ -1,0 +1,108 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.odysseysurvey"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+8-->/home/antdev/AndroidStudioProjects/assignment-0-antonio-pedro99/a1_odyssey_survey/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->/home/antdev/AndroidStudioProjects/assignment-0-antonio-pedro99/a1_odyssey_survey/app/src/main/AndroidManifest.xml
+10
+11    <permission
+11-->[androidx.core:core:1.10.0-alpha02] /home/antdev/.gradle/caches/transforms-3/3f3983196ea43f9852b73d92cef8d27a/transformed/core-1.10.0-alpha02/AndroidManifest.xml:22:5-24:47
+12        android:name="com.example.odysseysurvey.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+12-->[androidx.core:core:1.10.0-alpha02] /home/antdev/.gradle/caches/transforms-3/3f3983196ea43f9852b73d92cef8d27a/transformed/core-1.10.0-alpha02/AndroidManifest.xml:23:9-81
+13        android:protectionLevel="signature" />
+13-->[androidx.core:core:1.10.0-alpha02] /home/antdev/.gradle/caches/transforms-3/3f3983196ea43f9852b73d92cef8d27a/transformed/core-1.10.0-alpha02/AndroidManifest.xml:24:9-44
+14
+15    <uses-permission android:name="com.example.odysseysurvey.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+15-->[androidx.core:core:1.10.0-alpha02] /home/antdev/.gradle/caches/transforms-3/3f3983196ea43f9852b73d92cef8d27a/transformed/core-1.10.0-alpha02/AndroidManifest.xml:26:5-97
+15-->[androidx.core:core:1.10.0-alpha02] /home/antdev/.gradle/caches/transforms-3/3f3983196ea43f9852b73d92cef8d27a/transformed/core-1.10.0-alpha02/AndroidManifest.xml:26:22-94
+16
+17    <application
+17-->/home/antdev/AndroidStudioProjects/assignment-0-antonio-pedro99/a1_odyssey_survey/app/src/main/AndroidManifest.xml:5:5-27:19
+18        android:allowBackup="true"
+18-->/home/antdev/AndroidStudioProjects/assignment-0-antonio-pedro99/a1_odyssey_survey/app/src/main/AndroidManifest.xml:6:9-35
+19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+19-->[androidx.core:core:1.10.0-alpha02] /home/antdev/.gradle/caches/transforms-3/3f3983196ea43f9852b73d92cef8d27a/transformed/core-1.10.0-alpha02/AndroidManifest.xml:28:18-86
+20        android:dataExtractionRules="@xml/data_extraction_rules"
+20-->/home/antdev/AndroidStudioProjects/assignment-0-antonio-pedro99/a1_odyssey_survey/app/src/main/AndroidManifest.xml:7:9-65
+21        android:debuggable="true"
+22        android:extractNativeLibs="false"
+23        android:fullBackupContent="@xml/backup_rules"
+23-->/home/antdev/AndroidStudioProjects/assignment-0-antonio-pedro99/a1_odyssey_survey/app/src/main/AndroidManifest.xml:8:9-54
+24        android:icon="@mipmap/ic_launcher"
+24-->/home/antdev/AndroidStudioProjects/assignment-0-antonio-pedro99/a1_odyssey_survey/app/src/main/AndroidManifest.xml:9:9-43
+25        android:label="@string/app_name"
+25-->/home/antdev/AndroidStudioProjects/assignment-0-antonio-pedro99/a1_odyssey_survey/app/src/main/AndroidManifest.xml:10:9-41
+26        android:supportsRtl="true"
+26-->/home/antdev/AndroidStudioProjects/assignment-0-antonio-pedro99/a1_odyssey_survey/app/src/main/AndroidManifest.xml:11:9-35
+27        android:testOnly="true"
+28        android:theme="@style/Theme.OdysseySurvey" >
+28-->/home/antdev/AndroidStudioProjects/assignment-0-antonio-pedro99/a1_odyssey_survey/app/src/main/AndroidManifest.xml:12:9-51
+29        <activity
+29-->/home/antdev/AndroidStudioProjects/assignment-0-antonio-pedro99/a1_odyssey_survey/app/src/main/AndroidManifest.xml:14:9-16:40
+30            android:name="com.example.odysseysurvey.ConfirmationActivity"
+30-->/home/antdev/AndroidStudioProjects/assignment-0-antonio-pedro99/a1_odyssey_survey/app/src/main/AndroidManifest.xml:15:13-49
+31            android:exported="false" />
+31-->/home/antdev/AndroidStudioProjects/assignment-0-antonio-pedro99/a1_odyssey_survey/app/src/main/AndroidManifest.xml:16:13-37
+32        <activity
+32-->/home/antdev/AndroidStudioProjects/assignment-0-antonio-pedro99/a1_odyssey_survey/app/src/main/AndroidManifest.xml:17:9-25:20
+33            android:name="com.example.odysseysurvey.MainActivity"
+33-->/home/antdev/AndroidStudioProjects/assignment-0-antonio-pedro99/a1_odyssey_survey/app/src/main/AndroidManifest.xml:18:13-41
+34            android:exported="true" >
+34-->/home/antdev/AndroidStudioProjects/assignment-0-antonio-pedro99/a1_odyssey_survey/app/src/main/AndroidManifest.xml:19:13-36
+35            <intent-filter>
+35-->/home/antdev/AndroidStudioProjects/assignment-0-antonio-pedro99/a1_odyssey_survey/app/src/main/AndroidManifest.xml:20:13-24:29
+36                <action android:name="android.intent.action.MAIN" />
+36-->/home/antdev/AndroidStudioProjects/assignment-0-antonio-pedro99/a1_odyssey_survey/app/src/main/AndroidManifest.xml:21:17-69
+36-->/home/antdev/AndroidStudioProjects/assignment-0-antonio-pedro99/a1_odyssey_survey/app/src/main/AndroidManifest.xml:21:25-66
+37
+38                <category android:name="android.intent.category.LAUNCHER" />
+38-->/home/antdev/AndroidStudioProjects/assignment-0-antonio-pedro99/a1_odyssey_survey/app/src/main/AndroidManifest.xml:23:17-77
+38-->/home/antdev/AndroidStudioProjects/assignment-0-antonio-pedro99/a1_odyssey_survey/app/src/main/AndroidManifest.xml:23:27-74
+39            </intent-filter>
+40        </activity>
+41        <activity android:name="com.example.odysseysurvey.SurveyActivity" />
+41-->/home/antdev/AndroidStudioProjects/assignment-0-antonio-pedro99/a1_odyssey_survey/app/src/main/AndroidManifest.xml:26:9-52
+41-->/home/antdev/AndroidStudioProjects/assignment-0-antonio-pedro99/a1_odyssey_survey/app/src/main/AndroidManifest.xml:26:19-49
+42
+43        <uses-library
+43-->[androidx.window:window:1.0.0] /home/antdev/.gradle/caches/transforms-3/6245438cf593f1bbf895dc564a17e612/transformed/window-1.0.0/AndroidManifest.xml:25:9-27:40
+44            android:name="androidx.window.extensions"
+44-->[androidx.window:window:1.0.0] /home/antdev/.gradle/caches/transforms-3/6245438cf593f1bbf895dc564a17e612/transformed/window-1.0.0/AndroidManifest.xml:26:13-54
+45            android:required="false" />
+45-->[androidx.window:window:1.0.0] /home/antdev/.gradle/caches/transforms-3/6245438cf593f1bbf895dc564a17e612/transformed/window-1.0.0/AndroidManifest.xml:27:13-37
+46        <uses-library
+46-->[androidx.window:window:1.0.0] /home/antdev/.gradle/caches/transforms-3/6245438cf593f1bbf895dc564a17e612/transformed/window-1.0.0/AndroidManifest.xml:28:9-30:40
+47            android:name="androidx.window.sidecar"
+47-->[androidx.window:window:1.0.0] /home/antdev/.gradle/caches/transforms-3/6245438cf593f1bbf895dc564a17e612/transformed/window-1.0.0/AndroidManifest.xml:29:13-51
+48            android:required="false" />
+48-->[androidx.window:window:1.0.0] /home/antdev/.gradle/caches/transforms-3/6245438cf593f1bbf895dc564a17e612/transformed/window-1.0.0/AndroidManifest.xml:30:13-37
+49
+50        <provider
+50-->[androidx.emoji2:emoji2:1.2.0] /home/antdev/.gradle/caches/transforms-3/cbe4eba4714e222ca5fe488b7c84d339/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+51            android:name="androidx.startup.InitializationProvider"
+51-->[androidx.emoji2:emoji2:1.2.0] /home/antdev/.gradle/caches/transforms-3/cbe4eba4714e222ca5fe488b7c84d339/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+52            android:authorities="com.example.odysseysurvey.androidx-startup"
+52-->[androidx.emoji2:emoji2:1.2.0] /home/antdev/.gradle/caches/transforms-3/cbe4eba4714e222ca5fe488b7c84d339/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+53            android:exported="false" >
+53-->[androidx.emoji2:emoji2:1.2.0] /home/antdev/.gradle/caches/transforms-3/cbe4eba4714e222ca5fe488b7c84d339/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
+54            <meta-data
+54-->[androidx.emoji2:emoji2:1.2.0] /home/antdev/.gradle/caches/transforms-3/cbe4eba4714e222ca5fe488b7c84d339/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+55                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+55-->[androidx.emoji2:emoji2:1.2.0] /home/antdev/.gradle/caches/transforms-3/cbe4eba4714e222ca5fe488b7c84d339/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+56                android:value="androidx.startup" />
+56-->[androidx.emoji2:emoji2:1.2.0] /home/antdev/.gradle/caches/transforms-3/cbe4eba4714e222ca5fe488b7c84d339/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+57            <meta-data
+57-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/antdev/.gradle/caches/transforms-3/adcd9b4d47cdf221aa7218c1f6ff4c2e/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+58                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+58-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/antdev/.gradle/caches/transforms-3/adcd9b4d47cdf221aa7218c1f6ff4c2e/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+59                android:value="androidx.startup" />
+59-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/antdev/.gradle/caches/transforms-3/adcd9b4d47cdf221aa7218c1f6ff4c2e/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+60        </provider>
+61    </application>
+62
+63</manifest>
