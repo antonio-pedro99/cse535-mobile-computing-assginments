@@ -4,12 +4,10 @@ import android.app.Service
 import android.content.Intent
 import android.os.Handler
 import android.os.IBinder
-import android.util.Log
 import com.antonio20028.alarmapp.models.Alarm
 import com.antonio20028.alarmapp.utils.AlarmServiceUtils
 import com.antonio20028.alarmapp.utils.LoggingUtils
 import java.util.*
-import kotlin.reflect.typeOf
 
 class AlarmService: Service() {
 
@@ -35,7 +33,7 @@ class AlarmService: Service() {
 
         timer.scheduleAtFixedRate(object : TimerTask() {
             override fun run() {
-               AlarmServiceUtils().trackCurrentTime(applicationContext, alarms)
+               AlarmServiceUtils.trackCurrentTime(applicationContext, alarms)
             }
         }, 0, 10000)
         return START_STICKY
@@ -45,6 +43,7 @@ class AlarmService: Service() {
         super.onDestroy()
         timer.cancel()
         LoggingUtils().showServiceStopped(applicationContext)
-        AlarmServiceUtils().serviceIsRunning = !AlarmServiceUtils().serviceIsRunning
+        AlarmServiceUtils.serviceIsRunning = !AlarmServiceUtils.serviceIsRunning
+        AlarmServiceUtils.ringtone.stop()
     }
 }

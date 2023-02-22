@@ -1,20 +1,16 @@
 package com.antonio20028.alarmapp.ui
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.AdapterView.OnItemClickListener
-import android.widget.AdapterView.OnItemSelectedListener
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Button
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -24,7 +20,6 @@ import com.antonio20028.alarmapp.adapters.AlarmItemAdapter
 import com.antonio20028.alarmapp.data.AlarmsList
 import com.antonio20028.alarmapp.models.Alarm
 import com.antonio20028.alarmapp.services.AlarmService
-import com.antonio20028.alarmapp.utils.AlarmServiceUtils
 import com.antonio20028.alarmapp.utils.LoggingUtils
 
 class AlarmFragment: Fragment() , OnItemClickListener{

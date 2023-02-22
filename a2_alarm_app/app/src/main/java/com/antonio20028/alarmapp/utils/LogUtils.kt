@@ -1,12 +1,14 @@
 package com.antonio20028.alarmapp.utils
 
 import android.content.Context
+import android.media.Ringtone
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 
 class LoggingUtils {
     private val ALARM_TAG = "AlarmService"
-    private val ALARM_BROADCAST = "AlarmBroadcast"
+    val ALARM_BROADCAST = "AlarmBroadcast"
 
     fun  showServiceStopped(context: Context){
         showLog("Service Stopped")
@@ -30,7 +32,18 @@ class LoggingUtils {
         Log.d(ALARM_TAG, msg)
     }
 
-    private fun showToast(context: Context, msg:String) {
+    fun showToast(context: Context, msg:String) {
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
     }
+    fun showAlert(context: Context, title: String, message: String, ringtone: Ringtone) {
+        val builder = AlertDialog.Builder(context)
+        builder.setTitle(title)
+        builder.setMessage(message)
+        builder.setPositiveButton("Dismiss") { dialog, _ ->
+            ringtone.stop()
+            dialog.dismiss()
+        }
+        builder.create().show()
+    }
+
 }
