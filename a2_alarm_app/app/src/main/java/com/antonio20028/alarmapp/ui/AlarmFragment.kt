@@ -65,6 +65,6 @@ class AlarmFragment: Fragment() , OnItemClickListener{
 
         Log.d("T", "Item selected ${alarms[0].inputTime}")*/
         val alarms = AlarmsList().get(position)
-        alarmRecyclerView.adapter = AlarmItemAdapter(alarms)
+        alarmRecyclerView.adapter = AlarmItemAdapter(requireContext(), alarms)
     }
 }
