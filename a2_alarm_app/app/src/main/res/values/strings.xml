@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Alarm App</string>
-    <string name="text_label_1">New Alarm</string>
+    <string name="start_alarm_text">Start Alarms</string>
+    <string name="stop_alarm_text">Stop Alarms</string>
     <string name="alarm_quantity">Number of Alarms</string>
-    <string name="text_label_3">Set</string>
+
 </resources>
