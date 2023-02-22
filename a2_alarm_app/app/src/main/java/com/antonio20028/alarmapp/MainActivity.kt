@@ -5,14 +5,13 @@ import android.os.Bundle
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.antonio20028.alarmapp.ui.AlarmFragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationBarView
+import com.antonio20028.alarmapp.viewmodels.AlarmViewModel
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
 
         val fragManager: FragmentManager = supportFragmentManager
         val fragTransaction: FragmentTransaction = fragManager.beginTransaction()
