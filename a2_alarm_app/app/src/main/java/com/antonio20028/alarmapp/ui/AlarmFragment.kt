@@ -25,6 +25,7 @@ import com.antonio20028.alarmapp.data.AlarmsList
 import com.antonio20028.alarmapp.models.Alarm
 import com.antonio20028.alarmapp.services.AlarmService
 import com.antonio20028.alarmapp.utils.AlarmServiceUtils
+import com.antonio20028.alarmapp.utils.LoggingUtils
 
 class AlarmFragment: Fragment() , OnItemClickListener{
 
@@ -33,7 +34,7 @@ class AlarmFragment: Fragment() , OnItemClickListener{
     lateinit var alarmRecyclerView: RecyclerView
     lateinit var btnStartAlarmService:Button
     lateinit var btnStopAlarmService:Button
-
+    private var alarms = arrayListOf<Alarm>()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -63,7 +64,12 @@ class AlarmFragment: Fragment() , OnItemClickListener{
 
     private fun startAlarmService(){
         val intent = Intent(requireContext(), AlarmService::class.java)
-        requireContext().startService(intent)
+        if (alarms.isNotEmpty()) {
+            intent.putExtra("ALARMS", alarms)
+            requireContext().startService(intent)
+        } else {
+            LoggingUtils().showCantStartService(requireContext())
+        }
     }
    private fun stopAlarmService(){
         val intent = Intent(requireContext(), AlarmService::class.java)
@@ -76,7 +82,7 @@ class AlarmFragment: Fragment() , OnItemClickListener{
     }
 
     override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        val alarms = AlarmsList().get(position)
+        alarms = AlarmsList().get(position) as ArrayList<Alarm>
         alarmRecyclerView.adapter = AlarmItemAdapter(requireContext(), alarms)
     }
 }

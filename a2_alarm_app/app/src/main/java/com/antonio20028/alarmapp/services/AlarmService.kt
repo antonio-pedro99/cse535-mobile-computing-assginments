@@ -4,22 +4,23 @@ import android.app.Service
 import android.content.Intent
 import android.os.Handler
 import android.os.IBinder
+import android.util.Log
+import com.antonio20028.alarmapp.models.Alarm
 import com.antonio20028.alarmapp.utils.AlarmServiceUtils
 import com.antonio20028.alarmapp.utils.LoggingUtils
+import java.util.*
+import kotlin.reflect.typeOf
 
 class AlarmService: Service() {
 
-
     lateinit var timeHandler: Handler
     lateinit var timeRunnable: Runnable
+    lateinit var timer:Timer
 
     override fun onCreate() {
         super.onCreate()
         timeHandler = Handler()
-        timeRunnable = Runnable {
-            AlarmServiceUtils().trackCurrentTime(applicationContext)
-            timeHandler.postDelayed(timeRunnable, AlarmServiceUtils().INTERVAL)
-        }
+
     }
 
     override fun onBind(intent: Intent?): IBinder? {
@@ -28,13 +29,22 @@ class AlarmService: Service() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         LoggingUtils().showServiceStarted(applicationContext)
-        timeHandler.postDelayed(timeRunnable, AlarmServiceUtils().INTERVAL)
+
+        val alarms = intent?.getParcelableArrayListExtra<Alarm>("ALARMS")
+        timer = Timer()
+
+        timer.scheduleAtFixedRate(object : TimerTask() {
+            override fun run() {
+               AlarmServiceUtils().trackCurrentTime(applicationContext, alarms)
+            }
+        }, 0, 10000)
         return START_STICKY
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        timeHandler.removeCallbacks(timeRunnable)
+        timer.cancel()
         LoggingUtils().showServiceStopped(applicationContext)
+        AlarmServiceUtils().serviceIsRunning = !AlarmServiceUtils().serviceIsRunning
     }
 }

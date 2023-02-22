@@ -16,7 +16,7 @@ class TimePickerUtils {
                 alarm.selectedHour = hourOfDay
                 alarm.selectedMinute = minute
                 alarm.format = getPeriodOfTime(hourOfDay)
-                alarm.inputTime = "${alarm.selectedHour}:${alarm.selectedMinute} ${alarm.format}"
+                alarm.inputTime = "${alarm.selectedHour}:${alarm.selectedMinute}"
 
                 holder.alarmInputTimeTextView.text = alarm.inputTime
             },

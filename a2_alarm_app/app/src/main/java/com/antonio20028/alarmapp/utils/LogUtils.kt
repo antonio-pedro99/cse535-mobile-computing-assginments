@@ -13,6 +13,14 @@ class LoggingUtils {
         showToast(context, "Service Stopped")
     }
 
+    fun showCantStartService(context: Context){
+        showToast(context, "Can't Start Service")
+    }
+
+    fun showCantStopService(context: Context){
+        showToast(context, "Can't Start Service")
+    }
+
     fun  showServiceStarted(context: Context){
         showToast(context, "Service Started")
         showLog("Service Started")
