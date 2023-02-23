@@ -4,9 +4,11 @@ import android.app.Service
 import android.content.Intent
 import android.os.Handler
 import android.os.IBinder
+import android.os.Looper
 import com.antonio20028.alarmapp.models.Alarm
 import com.antonio20028.alarmapp.utils.AlarmServiceUtils
 import com.antonio20028.alarmapp.utils.LoggingUtils
+import com.antonio20028.alarmapp.utils.RingtonePlayer
 import java.util.*
 
 class AlarmService: Service() {
@@ -17,7 +19,8 @@ class AlarmService: Service() {
 
     override fun onCreate() {
         super.onCreate()
-        timeHandler = Handler()
+       // Looper.prepare()
+        //timeHandler = Looper.myLooper()?.let { Handler(it) }!!
 
     }
 
@@ -33,6 +36,7 @@ class AlarmService: Service() {
 
         timer.scheduleAtFixedRate(object : TimerTask() {
             override fun run() {
+                AlarmServiceUtils.serviceIsRunning = true
                AlarmServiceUtils.trackCurrentTime(applicationContext, alarms)
             }
         }, 0, 10000)
@@ -43,7 +47,8 @@ class AlarmService: Service() {
         super.onDestroy()
         timer.cancel()
         LoggingUtils().showServiceStopped(applicationContext)
-        AlarmServiceUtils.serviceIsRunning = !AlarmServiceUtils.serviceIsRunning
-        AlarmServiceUtils.ringtone.stop()
+        AlarmServiceUtils.serviceIsRunning = false
+        //AlarmServiceUtils.ringtone.stop()
+        RingtonePlayer.stopRingtone()
     }
 }

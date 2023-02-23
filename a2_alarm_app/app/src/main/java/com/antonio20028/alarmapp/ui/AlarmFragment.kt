@@ -20,6 +20,7 @@ import com.antonio20028.alarmapp.adapters.AlarmItemAdapter
 import com.antonio20028.alarmapp.data.AlarmsList
 import com.antonio20028.alarmapp.models.Alarm
 import com.antonio20028.alarmapp.services.AlarmService
+import com.antonio20028.alarmapp.utils.AlarmServiceUtils
 import com.antonio20028.alarmapp.utils.LoggingUtils
 
 class AlarmFragment: Fragment() , OnItemClickListener{
@@ -68,7 +69,11 @@ class AlarmFragment: Fragment() , OnItemClickListener{
     }
    private fun stopAlarmService(){
         val intent = Intent(requireContext(), AlarmService::class.java)
-        requireContext().stopService(intent)
+        if (AlarmServiceUtils.serviceIsRunning){
+            requireContext().stopService(intent)
+        }else {
+            LoggingUtils().showCantStopService(requireContext())
+        }
     }
 
     private fun buildAlarmQuantityDropDownItems() {

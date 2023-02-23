@@ -1,8 +1,7 @@
 package com.antonio20028.alarmapp.utils
 
+import android.app.AlertDialog
 import android.content.Context
-import android.media.Ringtone
-import android.media.RingtoneManager
 import android.util.Log
 import com.antonio20028.alarmapp.models.Alarm
 import java.text.SimpleDateFormat
@@ -13,7 +12,8 @@ object AlarmServiceUtils {
     private val TIME_PATTERN: String = "HH:mm"
 
     var serviceIsRunning:Boolean = false
-    lateinit var ringtone:Ringtone
+
+
     fun trackCurrentTime(context:Context, alarms: ArrayList<Alarm>?) {
         val cal = Calendar.getInstance()
         val currentTime = SimpleDateFormat(TIME_PATTERN, Locale.getDefault()).format(cal.time)
@@ -24,18 +24,22 @@ object AlarmServiceUtils {
             for (alarm in alarms){
                 if (hour == alarm.selectedHour && minute == alarm.selectedMinute && period == alarm.format){
                     Log.d("TIME", "${alarm.name} is ringing")
-                    ringtone =  playAlarmRingtone(context, alarm).also { ringtone ->  ringtone.play()}
-                }
+                    RingtonePlayer.startRingtone(context)
+                    //ringtone =  playAlarmRingtone(context, alarm).also {r-> r.play()}
 
+                   /* object : CountDownTimer(10000, 10000){
+                        override fun onFinish() {
+                            ringtone.stop()
+                        }
+
+                        override fun onTick(millisUntilFinished: Long) {
+                            Log.d("TIMER_RINGTONE", "$millisUntilFinished to stop the ringtone")
+                        }
+                    }*/
+                    //LoggingUtils().showAlarm(context,  "${alarm.name} is ringing", duration = 10)
+                }
             }
         }
-
-    }
-    private fun playAlarmRingtone(context: Context, alarm: Alarm):Ringtone{
-        val notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM)
-        val tone = RingtoneManager.getRingtone(context, notification)
-
-        return tone
     }
 
 }

@@ -2,9 +2,14 @@ package com.antonio20028.alarmapp.utils
 
 import android.content.Context
 import android.media.Ringtone
+import android.os.Build
 import android.util.Log
+import android.view.WindowManager
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import java.time.Duration
 
 class LoggingUtils {
     private val ALARM_TAG = "AlarmService"
@@ -35,15 +40,9 @@ class LoggingUtils {
     fun showToast(context: Context, msg:String) {
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
     }
-    fun showAlert(context: Context, title: String, message: String, ringtone: Ringtone) {
-        val builder = AlertDialog.Builder(context)
-        builder.setTitle(title)
-        builder.setMessage(message)
-        builder.setPositiveButton("Dismiss") { dialog, _ ->
-            ringtone.stop()
-            dialog.dismiss()
-        }
-        builder.create().show()
+
+    fun showAlarm(context: Context, message: String, duration: Int) {
+        Toast.makeText(context, message, duration).show()
     }
 
 }
