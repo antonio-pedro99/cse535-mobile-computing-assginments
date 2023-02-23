@@ -13,7 +13,7 @@ import java.time.Duration
 
 class LoggingUtils {
     private val ALARM_TAG = "AlarmService"
-    val ALARM_BROADCAST = "AlarmBroadcast"
+    val  ALARM_BROADCAST:String = "AlarmBroadcast"
 
     fun  showServiceStopped(context: Context){
         showLog("Service Stopped")

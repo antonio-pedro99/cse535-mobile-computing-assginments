@@ -13,7 +13,6 @@ class TimePickerUtils {
         val timePickerDialog = TimePickerDialog(
             context,
             { _, hourOfDay, minute ->
-
                 alarm.selectedHour = hourOfDay
                 alarm.selectedMinute = minute
                 alarm.format = getPeriodOfTime(hourOfDay)
@@ -24,9 +23,9 @@ class TimePickerUtils {
             alarm.selectedHour,
             alarm.selectedMinute,
 
-            false // Set this to true if you want to use 24-hour time format
+            false
         )
-        // Show the dialog
+
         timePickerDialog.show()
     }
 
