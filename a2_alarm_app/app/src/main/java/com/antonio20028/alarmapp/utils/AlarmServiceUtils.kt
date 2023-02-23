@@ -8,11 +8,10 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 object AlarmServiceUtils {
-    val INTERVAL: Long = 10000
-    private val TIME_PATTERN: String = "HH:mm"
+    const val INTERVAL: Long = 10000
+    private const val TIME_PATTERN: String = "HH:mm"
 
     var serviceIsRunning:Boolean = false
-
 
     fun trackCurrentTime(context:Context, alarms: ArrayList<Alarm>?) {
         val cal = Calendar.getInstance()
@@ -25,18 +24,6 @@ object AlarmServiceUtils {
                 if (hour == alarm.selectedHour && minute == alarm.selectedMinute && period == alarm.format){
                     Log.d("TIME", "${alarm.name} is ringing")
                     RingtonePlayer.startRingtone(context)
-                    //ringtone =  playAlarmRingtone(context, alarm).also {r-> r.play()}
-
-                   /* object : CountDownTimer(10000, 10000){
-                        override fun onFinish() {
-                            ringtone.stop()
-                        }
-
-                        override fun onTick(millisUntilFinished: Long) {
-                            Log.d("TIMER_RINGTONE", "$millisUntilFinished to stop the ringtone")
-                        }
-                    }*/
-                    //LoggingUtils().showAlarm(context,  "${alarm.name} is ringing", duration = 10)
                 }
             }
         }

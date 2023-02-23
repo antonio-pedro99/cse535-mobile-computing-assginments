@@ -23,7 +23,6 @@ class RingtonePlayer {
                 handlerThread.start()
             }
 
-
             ringtone?.play()
 
             // Stop the ringtone after the specified duration on the background thread
@@ -31,8 +30,12 @@ class RingtonePlayer {
                 stopRingtone()
 
             }
+            val toastRunnable = Runnable {
+                LoggingUtils().showToast(context, "Alarm Ringing")
+            }
+
             handlerThread.postRunnableDelayed(runnable, durationMillis)
-            handlerThread.postRunnableDelayed({LoggingUtils().showToast(context, "Alarm Ringing")}, durationMillis)
+            handlerThread.postRunnableDelayed(toastRunnable, durationMillis)
         }
 
         fun stopRingtone() {

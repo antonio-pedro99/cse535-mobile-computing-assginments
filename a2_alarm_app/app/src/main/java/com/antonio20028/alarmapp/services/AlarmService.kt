@@ -12,16 +12,10 @@ import com.antonio20028.alarmapp.utils.RingtonePlayer
 import java.util.*
 
 class AlarmService: Service() {
-
-    lateinit var timeHandler: Handler
-    lateinit var timeRunnable: Runnable
     lateinit var timer:Timer
 
     override fun onCreate() {
         super.onCreate()
-       // Looper.prepare()
-        //timeHandler = Looper.myLooper()?.let { Handler(it) }!!
-
     }
 
     override fun onBind(intent: Intent?): IBinder? {
@@ -39,7 +33,7 @@ class AlarmService: Service() {
                 AlarmServiceUtils.serviceIsRunning = true
                AlarmServiceUtils.trackCurrentTime(applicationContext, alarms)
             }
-        }, 0, 10000)
+        }, 0, AlarmServiceUtils.INTERVAL)
         return START_STICKY
     }
 
@@ -48,7 +42,6 @@ class AlarmService: Service() {
         timer.cancel()
         LoggingUtils().showServiceStopped(applicationContext)
         AlarmServiceUtils.serviceIsRunning = false
-        //AlarmServiceUtils.ringtone.stop()
         RingtonePlayer.stopRingtone()
     }
 }
