@@ -32,8 +32,9 @@ class AlarmItemAdapter(private val context: Context, private val alarms:List<Ala
     override fun onBindViewHolder(holder: AlarmItemViewHolder, position: Int) {
         val item : Alarm = alarms[position]
         holder.alarmNameTextVew.text = item.name
-        holder.alarmInputTimeTextView.text = item.inputTime
-
+        //holder.alarmInputTimeTextView.text = item.inputTime
+        val timing = context.resources.getString(R.string.alarm_timing, "${item.inputTime} ${item.format}")
+        holder.alarmInputTimeTextView.text = timing
         holder.itemView.setOnClickListener {
            TimePickerUtils().onTimeClicked(context, item, holder)
         }

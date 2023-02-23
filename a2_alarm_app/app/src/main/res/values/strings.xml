@@ -3,5 +3,5 @@
     <string name="start_alarm_text">Start Alarms</string>
     <string name="stop_alarm_text">Stop Alarms</string>
     <string name="alarm_quantity">Number of Alarms</string>
-
+    <string name="alarm_timing">%s</string>
 </resources>
