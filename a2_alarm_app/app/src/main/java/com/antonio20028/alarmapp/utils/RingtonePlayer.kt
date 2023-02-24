@@ -42,6 +42,10 @@ class RingtonePlayer {
             ringtone?.stop()
             handlerThread.removeCallbacksAndMessages(null)
         }
+
+        fun isPlaying() : Boolean? {
+            return ringtone?.isPlaying
+        }
     }
 }
 

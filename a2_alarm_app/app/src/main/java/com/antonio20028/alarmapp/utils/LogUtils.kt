@@ -13,11 +13,10 @@ import java.time.Duration
 
 class LoggingUtils {
     private val ALARM_TAG = "AlarmService"
-    val  ALARM_BROADCAST:String = "AlarmBroadcast"
 
-    fun  showServiceStopped(context: Context){
-        showLog("Service Stopped")
-        showToast(context, "Service Stopped")
+    fun  showServiceStopped(context: Context, reason:String){
+        showLog("Service Stopped, $reason")
+        showToast(context, "Service Stopped, $reason")
     }
 
     fun showCantStartService(context: Context){
@@ -40,9 +39,4 @@ class LoggingUtils {
     fun showToast(context: Context, msg:String) {
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
     }
-
-    fun showAlarm(context: Context, message: String, duration: Int) {
-        Toast.makeText(context, message, duration).show()
-    }
-
 }

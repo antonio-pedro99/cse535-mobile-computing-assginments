@@ -1,10 +1,12 @@
 package com.antonio20028.alarmapp.services
 
 import android.app.Service
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
-import android.os.Handler
+import android.content.IntentFilter
 import android.os.IBinder
-import android.os.Looper
+import com.antonio20028.alarmapp.broadcasts.CustomIntentFilter
 import com.antonio20028.alarmapp.models.Alarm
 import com.antonio20028.alarmapp.utils.AlarmServiceUtils
 import com.antonio20028.alarmapp.utils.LoggingUtils
@@ -14,8 +16,10 @@ import java.util.*
 class AlarmService: Service() {
     lateinit var timer:Timer
 
+    lateinit var stopReasonBroadcastReceiver : BroadcastReceiver
     override fun onCreate() {
         super.onCreate()
+        setupAlarmServiceStopBroadcastReceiver()
     }
 
     override fun onBind(intent: Intent?): IBinder? {
@@ -40,8 +44,31 @@ class AlarmService: Service() {
     override fun onDestroy() {
         super.onDestroy()
         timer.cancel()
-        LoggingUtils().showServiceStopped(applicationContext)
+
         AlarmServiceUtils.serviceIsRunning = false
-        RingtonePlayer.stopRingtone()
+        if (RingtonePlayer.isPlaying() == true){
+            RingtonePlayer.stopRingtone()
+        }
+        applicationContext.unregisterReceiver(stopReasonBroadcastReceiver)
+    }
+    private fun setupAlarmServiceStopBroadcastReceiver() {
+        val intFilter = IntentFilter(CustomIntentFilter.ACTION_USER_STOP_DETECTED)
+        intFilter.addAction(CustomIntentFilter.ACTION_PHONE_CALL_DETECTED)
+        intFilter.addAction(CustomIntentFilter.ACTION_POWER_CONNECTED_DETECTED)
+
+        stopReasonBroadcastReceiver = object: BroadcastReceiver(){
+            override fun onReceive(context: Context?, intent: Intent?) {
+                var message = "Unknown"
+
+                when(intent?.action){
+                    CustomIntentFilter.ACTION_USER_STOP_DETECTED -> message = "by user"
+                    CustomIntentFilter.ACTION_PHONE_CALL_DETECTED -> message = "by a call"
+                    CustomIntentFilter.ACTION_POWER_CONNECTED_DETECTED -> message = "by power connection"
+                }
+                LoggingUtils().showServiceStopped(applicationContext, message)
+                stopSelf()
+            }
+        }
+        applicationContext.registerReceiver(stopReasonBroadcastReceiver, intFilter)
     }
 }

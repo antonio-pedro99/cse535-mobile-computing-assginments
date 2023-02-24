@@ -11,12 +11,11 @@ import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Button
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.antonio20028.alarmapp.R
 import com.antonio20028.alarmapp.adapters.AlarmItemAdapter
+import com.antonio20028.alarmapp.broadcasts.CustomIntentFilter
 import com.antonio20028.alarmapp.data.AlarmsList
 import com.antonio20028.alarmapp.models.Alarm
 import com.antonio20028.alarmapp.services.AlarmService
@@ -53,8 +52,8 @@ class AlarmFragment: Fragment() , OnItemClickListener{
         alarmRecyclerView.layoutManager = LinearLayoutManager(context)
 
         alarmQuantityTextView.onItemClickListener = this
-        btnStopAlarmService.setOnClickListener(View.OnClickListener { stopAlarmService() })
-        btnStartAlarmService.setOnClickListener(View.OnClickListener { startAlarmService()})
+        btnStopAlarmService.setOnClickListener { stopAlarmService() }
+        btnStartAlarmService.setOnClickListener { startAlarmService() }
 
     }
 
@@ -68,9 +67,9 @@ class AlarmFragment: Fragment() , OnItemClickListener{
         }
     }
    private fun stopAlarmService(){
-        val intent = Intent(requireContext(), AlarmService::class.java)
         if (AlarmServiceUtils.serviceIsRunning){
-            requireContext().stopService(intent)
+            val intent = Intent(CustomIntentFilter.ACTION_USER_STOP_DETECTED)
+            requireContext().sendBroadcast(intent)
         }else {
             LoggingUtils().showCantStopService(requireContext())
         }
