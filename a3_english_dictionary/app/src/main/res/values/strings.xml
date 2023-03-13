@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">A3 - English Dictionary</string>
+    <string name="caption_1">Improve and enrich your english Vocabulary and pronunciation</string>
+    <string name="btn_text_1">Search now</string>
+    <string name="hint_1">Type an English word</string>
+    <string name="image">image</string>
 </resources>
