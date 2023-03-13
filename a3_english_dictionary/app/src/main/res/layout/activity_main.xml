@@ -14,10 +14,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/caption_1"
-        android:textSize="28sp"
-        android:textAppearance="?attr/textAppearanceHeadline3"
         android:textAlignment="center"
-        />
+        android:textAppearance="?attr/textAppearanceHeadline3"
+
+        android:textSize="28sp"
+        android:textStyle="bold" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
