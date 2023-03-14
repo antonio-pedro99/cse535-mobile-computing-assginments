@@ -40,4 +40,11 @@
         android:textSize="18sp"
         android:text="@string/meanings" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/word_meaning_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        />
+
 </LinearLayout>
