@@ -4,4 +4,6 @@
     <string name="btn_text_1">Search now</string>
     <string name="hint_1">Type an English word</string>
     <string name="image">image</string>
+    <string name="play_audio">Pronunciation</string>
+    <string name="meanings">Meanings</string>
 </resources>

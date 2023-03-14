@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal|top"
+    android:layout_gravity="center"
+    android:padding="12sp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txt_word"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Word"
+        android:textAlignment="center"
+        android:textAppearance="?attr/textAppearanceHeadline3"
+        android:textStyle="bold"
+        android:textColor="?attr/colorPrimary"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:icon="@drawable/baseline_play_arrow_24"
+        style="@style/Widget.Material3.Button.IconButton.Filled"
+        android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+        android:text="@string/play_audio"
+        />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="?attr/colorPrimary"
+        android:layout_marginTop="24sp"
+        android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+        android:textSize="18sp"
+        android:text="@string/meanings" />
+
+</LinearLayout>
