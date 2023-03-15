@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.RecyclerView
 import com.antonio20028.a3_englishdictionary.R
 import com.antonio20028.a3_englishdictionary.model.repository.GarbageWordsList
@@ -31,5 +33,6 @@ class ResultListFragment : Fragment(){
         val meanings = GarbageWordsList.getWords().first().meanings
         meaningRecyclerView.adapter =
             meanings?.let { WordMeaningItemAdapter(requireContext(), meanings = it) }
+
     }
 }

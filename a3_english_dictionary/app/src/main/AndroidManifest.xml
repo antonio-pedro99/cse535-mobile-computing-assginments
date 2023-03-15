@@ -12,6 +12,12 @@
         android:theme="@style/Theme.A3EnglishDictionary"
         tools:targetApi="31">
         <activity
+            android:name=".DefinitionListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ResultListActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
