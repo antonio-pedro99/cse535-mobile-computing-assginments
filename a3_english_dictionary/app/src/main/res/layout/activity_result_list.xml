@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ResultListActivity">
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/result_container_view"
         android:layout_width="match_parent"
