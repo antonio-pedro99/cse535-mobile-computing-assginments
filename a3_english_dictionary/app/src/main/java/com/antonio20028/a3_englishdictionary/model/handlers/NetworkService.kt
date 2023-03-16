@@ -14,7 +14,7 @@ class NetworkService(private val networkServiceState: NetworkServiceState):Async
 
     override fun doInBackground(vararg params: URL?): String {
         var con:HttpURLConnection? = null
-        var status: String? = "Failed"
+        var status: String? = "Failed for unknown cause"
         try {
             con = params.first()?.openConnection() as HttpURLConnection
             con.readTimeout = 5000
@@ -24,7 +24,7 @@ class NetworkService(private val networkServiceState: NetworkServiceState):Async
             con.connect()
 
             when(con.responseCode) {
-                200, 201 -> {
+                200, 201-> {
                     val br = BufferedReader(InputStreamReader(con.inputStream))
                     val sb = StringBuilder()
                     var raw :String?
@@ -33,12 +33,25 @@ class NetworkService(private val networkServiceState: NetworkServiceState):Async
                     }
                     br.close()
                     con.disconnect()
-                    Log.i("Network", sb.toString())
+
                     status = sb.toString()
                 }
+                404 -> {
+                    val br = BufferedReader(InputStreamReader(con.inputStream))
+                    val sb = StringBuilder()
+                    var raw :String?
+                    while (br.readLine().also { raw = it } != null){
+                        sb.append(raw)
+                    }
+                    br.close()
+                    con.disconnect()
+
+                    return sb.toString()
+                }
+
             }
         } catch (e:IOException) {
-           status =  e.stackTrace.toString()
+           status =  con?.responseMessage
         } finally {
            // status = "Disconnected"
             con?.disconnect()

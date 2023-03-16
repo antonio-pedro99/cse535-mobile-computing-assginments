@@ -8,6 +8,7 @@ import android.net.ConnectivityManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -38,18 +39,24 @@ class MainActivity : AppCompatActivity(), NetworkServiceState {
         edtWord = findViewById(R.id.edt_word)
 
         btnSearch.setOnClickListener(View.OnClickListener {
-
-            WordsRepository.fetchWords("a", this)
+            WordsRepository.fetchWords(edtWord.text.toString(), this)
         })
     }
-
     override fun updateUI(data: String) {
+        Log.d("Meaning", edtWord.validate().toString())
+        if (!edtWord.validate()) {
+            Toast.makeText(this, "Enter a valid word only", Toast.LENGTH_LONG).show()
+        } else if (data.contains("Failed")){
+            Toast.makeText(this, data, Toast.LENGTH_LONG).show()
+        } else if (data.contains("Not Found")) {
+            Toast.makeText(this, "${edtWord.text} $data", Toast.LENGTH_LONG).show()
+        }
+        else {
+            val intent = Intent(this, ResultListActivity::class.java)
+            intent.putExtra("ResponseDataJson", data)
+            startActivity(intent)
+        }
 
-        val ser = json.decodeFromString<List<WordModel>>(data)
-        Toast.makeText(this, ser[0].word, Toast.LENGTH_LONG).show()
-        /*val intent = Intent(this, ResultListActivity::class.java)
-        intent.putExtra("ResponseDataJson", data)
-        startActivity(intent)*/
     }
 
     override fun hasInternetConnection(context: Context): Boolean {
@@ -59,4 +66,7 @@ class MainActivity : AppCompatActivity(), NetworkServiceState {
         return status
     }
 
+    fun EditText.validate():Boolean {
+        return  this.text.matches(Regex("[a-zA-Z]+")) && this.text.isNotBlank().or(this.text.isNotEmpty())
+    }
 }

@@ -15,7 +15,6 @@ object WordsRepository {
     @Throws(IOException::class)
     fun fetchWords(searchWord:String, state : NetworkServiceState){
         val url: URL = URL("$urlBase/$searchWord")
-        Log.i("Network", "$urlBase/$searchWord")
         NetworkService(state).execute(url)
     }
 }
