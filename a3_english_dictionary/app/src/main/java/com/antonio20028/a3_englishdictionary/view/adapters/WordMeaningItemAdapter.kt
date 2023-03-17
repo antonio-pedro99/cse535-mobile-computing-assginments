@@ -1,11 +1,13 @@
 package com.antonio20028.a3_englishdictionary.view.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.antonio20028.a3_englishdictionary.DefinitionListActivity
 import com.antonio20028.a3_englishdictionary.R
 import com.antonio20028.a3_englishdictionary.model.data.WordMeaningModel
 
@@ -30,5 +32,10 @@ class WordMeaningItemAdapter(
     override fun onBindViewHolder(holder: WordMeaningItemViewHolder, position: Int) {
         val item  : WordMeaningModel = meanings[position]
         holder.partOfSpeech.text = item.partOfSpeech
+        holder.itemView.setOnClickListener(View.OnClickListener {
+            val intent = Intent(context, DefinitionListActivity::class.java)
+            intent.putExtra("MeaningDefinitions", item)
+            context.startActivity(intent)
+        })
     }
 }
