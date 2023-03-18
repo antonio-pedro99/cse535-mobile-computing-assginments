@@ -9,13 +9,16 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.recyclerview.widget.RecyclerView
 import com.antonio20028.a3_englishdictionary.R
 import com.antonio20028.a3_englishdictionary.model.data.WordDefinitionModel
 import com.antonio20028.a3_englishdictionary.model.data.WordMeaningModel
+import com.antonio20028.a3_englishdictionary.view.adapters.WordMeaningDefinitionItem
 
 class DefinitionListFragment : Fragment() {
 
     lateinit var txtDefinition:TextView
+    lateinit var definitionList:RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,7 +30,8 @@ class DefinitionListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        txtDefinition = view.findViewById(R.id.txt)
+        txtDefinition = view.findViewById(R.id.txt_pos)
+        definitionList = view.findViewById(R.id.definitions_recycler_view)
 
         val args = arguments
         var data: WordMeaningModel? = null
@@ -35,6 +39,10 @@ class DefinitionListFragment : Fragment() {
             data = args.getParcelable("MeaningDefinitionData")
 
             txtDefinition.text = data?.partOfSpeech
+
+            val definitions = data?.definitions!!
+            val definitionsAdapter: WordMeaningDefinitionItem = WordMeaningDefinitionItem(requireContext(), definitions)
+            definitionList.adapter = definitionsAdapter
         }
 
     }

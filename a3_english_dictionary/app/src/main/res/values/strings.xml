@@ -6,4 +6,6 @@
     <string name="image">image</string>
     <string name="play_audio">Pronunciation</string>
     <string name="meanings">Meanings</string>
+    <string name="antonyms">Sinynoms</string>
+    <string name="definitions">Definitions</string>
 </resources>
