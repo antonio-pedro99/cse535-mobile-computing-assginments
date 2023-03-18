@@ -38,7 +38,6 @@ class DefinitionListFragment : Fragment() {
         if (args != null) {
             data = args.getParcelable("MeaningDefinitionData")
 
-
             txtDefinition.text = "(${data?.partOfSpeech})"
 
             val definitions = data?.definitions!!

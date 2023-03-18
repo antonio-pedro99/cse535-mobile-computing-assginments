@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -30,7 +31,7 @@ class ResultListFragment : Fragment() {
 
     private val json = Json { ignoreUnknownKeys = true }
     lateinit var textWord: TextView
-    lateinit var btnAudioPlayer: Button
+    lateinit var btnAudioPlayer: ImageView
 
     var heading:String = ""
     override fun onCreateView(
