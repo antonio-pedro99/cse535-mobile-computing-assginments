@@ -68,7 +68,6 @@ class ResultListFragment : Fragment() {
 
                 val audioUrlString = word.phonetics.first { phonetic-> !phonetic.audio.isNullOrEmpty()}
 
-                Toast.makeText(requireContext(), audioUrlString.audio, Toast.LENGTH_LONG).show()
                 if (audioUrlString.audio.isNullOrEmpty()) {
                     Toast.makeText(requireContext(), "No Audio", Toast.LENGTH_LONG).show()
                 } else {
