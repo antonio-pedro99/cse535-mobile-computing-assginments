@@ -1,5 +1,6 @@
 package com.antonio20028.a3_englishdictionary.model.handlers
 
+import android.content.Context
 import android.media.MediaPlayer
 import android.os.AsyncTask
 import androidx.loader.content.AsyncTaskLoader
@@ -11,19 +12,26 @@ import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.URL
 
-class AudioDownloaderService(val callback:(Boolean)-> Unit): AsyncTask<URL, Integer, Boolean>() {
+class AudioDownloaderService(val context: Context, val callback: (Boolean) -> Unit) :
+    AsyncTask<URL, Integer, Boolean>() {
 
+
+    lateinit var fileName:String
 
     override fun doInBackground(vararg params: URL?): Boolean {
-        var con:HttpURLConnection? = null
+        var con: HttpURLConnection? = null
         return try {
-            con = params.first()?.openConnection() as HttpURLConnection
+            con = params[0]?.openConnection() as HttpURLConnection
+            con.requestMethod = "GET"
 
             con.connect()
 
-            val input =  con.inputStream
-            val output = FileOutputStream("test")
-            input.copyTo(output)
+            val input = con.inputStream
+
+            fileName = "Audio ${System.currentTimeMillis()}"
+            val output =
+                FileOutputStream(File(context.filesDir, fileName))
+            input.use { inp -> output.use { out -> inp.copyTo(out) } }
 
             true
         } catch (e: IOException) {
@@ -36,7 +44,7 @@ class AudioDownloaderService(val callback:(Boolean)-> Unit): AsyncTask<URL, Inte
     override fun onPostExecute(result: Boolean?) {
         if (result == true) {
             val mp = MediaPlayer()
-            mp.setDataSource(File("test").absolutePath)
+            mp.setDataSource(File(context.filesDir, fileName).absolutePath)
             mp.prepare()
             mp.start()
         }

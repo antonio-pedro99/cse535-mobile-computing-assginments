@@ -31,6 +31,8 @@ class ResultListFragment : Fragment() {
     private val json = Json { ignoreUnknownKeys = true }
     lateinit var textWord: TextView
     lateinit var btnAudioPlayer: Button
+
+    var heading:String = ""
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -54,9 +56,9 @@ class ResultListFragment : Fragment() {
 
         val ser = data?.let { json.decodeFromString<List<WordModel>>(it) }
         val word = ser?.first()
-        textWord.text = word?.word
+        heading = word?.word.toString()
+        textWord.text =heading
         val meanings = word?.meanings
-        Log.d("Meaning", ser?.get(0)?.meanings.toString())
 
         meaningRecyclerView.adapter =
             meanings?.let { WordMeaningItemAdapter(requireContext(), meanings = it) }
@@ -64,15 +66,14 @@ class ResultListFragment : Fragment() {
         btnAudioPlayer.setOnClickListener(View.OnClickListener {
             if ((word?.phonetics != null) && word.phonetics.isNotEmpty()) {
 
-                val audioUrlString = word.phonetics.asSequence().takeWhile {
-                    (it.audio?.isNotBlank() ?: it.audio) != null
-                }.first()
+                val audioUrlString = word.phonetics.first { phonetic-> !phonetic.audio.isNullOrEmpty()}
 
+                Toast.makeText(requireContext(), audioUrlString.audio, Toast.LENGTH_LONG).show()
                 if (audioUrlString.audio.isNullOrEmpty()) {
                     Toast.makeText(requireContext(), "No Audio", Toast.LENGTH_LONG).show()
                 } else {
                     val url: URL = URL(audioUrlString.audio)
-                    val audioDownloadTask = AudioDownloaderService(callback = {})
+                    val audioDownloadTask = AudioDownloaderService(callback = {}, context = requireContext())
 
                     audioDownloadTask.execute(url)
                 }

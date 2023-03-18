@@ -20,7 +20,6 @@
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:textSize="18sp"
-           android:textStyle="bold"
            android:textColor="?attr/colorPrimary"
            android:text="Definition" />
 
@@ -29,6 +28,7 @@
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:textSize="16sp"
+           android:textStyle="italic"
            android:text="Example"
            />
 
@@ -37,6 +37,7 @@
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:textSize="16sp"
+           android:textStyle="italic|bold"
            android:text="Synoyms"
           />
 
@@ -46,6 +47,7 @@
            android:layout_height="wrap_content"
            android:textSize="16sp"
            android:text="@string/antonyms"
+           android:textStyle="italic|bold"
             />
    </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

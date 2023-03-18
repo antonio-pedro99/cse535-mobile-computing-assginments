@@ -19,7 +19,7 @@ class DefinitionListFragment : Fragment() {
 
     lateinit var txtDefinition:TextView
     lateinit var definitionList:RecyclerView
-
+    lateinit var wordHeadingTextView: TextView
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -32,13 +32,14 @@ class DefinitionListFragment : Fragment() {
 
         txtDefinition = view.findViewById(R.id.txt_pos)
         definitionList = view.findViewById(R.id.definitions_recycler_view)
-
+        wordHeadingTextView = view.findViewById(R.id.txt_def_word)
         val args = arguments
         var data: WordMeaningModel? = null
         if (args != null) {
             data = args.getParcelable("MeaningDefinitionData")
 
-            txtDefinition.text = data?.partOfSpeech
+
+            txtDefinition.text = "(${data?.partOfSpeech})"
 
             val definitions = data?.definitions!!
             val definitionsAdapter: WordMeaningDefinitionItem = WordMeaningDefinitionItem(requireContext(), definitions)

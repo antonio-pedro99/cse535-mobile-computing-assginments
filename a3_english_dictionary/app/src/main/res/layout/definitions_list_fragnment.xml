@@ -9,6 +9,16 @@
     android:padding="12sp"
     >
 
+
+    <TextView
+        android:id="@+id/txt_def_word"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textAppearance="?attr/textAppearanceHeadline3"
+        android:textStyle="bold"
+        android:textColor="?attr/colorPrimary"/>
+
     <TextView
         android:id="@+id/txt_pos"
         android:layout_width="match_parent"

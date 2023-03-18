@@ -35,7 +35,21 @@ class WordMeaningDefinitionItem(private val context:Context, private val definit
         } else {
             holder.exampleTxt.text = "No Example found"
         }
-        holder.antonymsTxt.text = item?.antonyms.toString()
-        holder.synonymsTxt.text = item?.antonyms.toString()
+
+        holder.antonymsTxt.text = if  (listToStringView(item?.antonyms!!).isNotEmpty()) {listToStringView(
+            item.antonyms
+        )} else { "No antonyms"}
+        holder.synonymsTxt.text =  if (listToStringView(item.synonyms!!).isNotEmpty()) {listToStringView(
+            item.synonyms
+        )} else {"No synonyms"}
+    }
+
+    private fun listToStringView(words:List<String?>) :String{
+        return StringBuilder().apply {
+            words.forEach { w-> if (words.indexOf(w) != words.size - 1){append("$w, ")} else {
+                append("$w.")
+            }
+            }
+        }.toString()
     }
 }
