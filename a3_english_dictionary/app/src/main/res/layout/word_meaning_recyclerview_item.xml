@@ -5,7 +5,6 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="12sp">
 
-
     <TextView
         android:id="@+id/part_of_speech"
         android:layout_width="match_parent"
@@ -13,6 +12,6 @@
         android:layout_marginStart="4dp"
         android:gravity="center_vertical"
         android:paddingStart="4dp"
-        android:text="Test"
+        android:text="@string/part_of_speech_text"
         android:textAppearance="@style/TextAppearance.Material3.LabelLarge" />
 </com.google.android.material.card.MaterialCardView>

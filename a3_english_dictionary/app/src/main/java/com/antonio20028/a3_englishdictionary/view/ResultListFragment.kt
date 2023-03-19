@@ -32,6 +32,7 @@ class ResultListFragment : Fragment() {
     private val json = Json { ignoreUnknownKeys = true }
     lateinit var textWord: TextView
     lateinit var btnAudioPlayer: ImageView
+    lateinit var txtPhonetic:TextView
 
     var heading:String = ""
     override fun onCreateView(
@@ -47,6 +48,7 @@ class ResultListFragment : Fragment() {
         meaningRecyclerView = view.findViewById(R.id.word_meaning_recycler_view)
         textWord = view.findViewById(R.id.txt_word)
         btnAudioPlayer = view.findViewById(R.id.btn_audio_player)
+        txtPhonetic = view.findViewById(R.id.txt_phonetic)
         meaningRecyclerView.setHasFixedSize(true)
 
         val args = arguments
@@ -61,6 +63,8 @@ class ResultListFragment : Fragment() {
         textWord.text =heading
         val meanings = word?.meanings
 
+        val phonetic  = requireContext().resources.getString(R.string.phonetic, word?.phonetic ?: "")
+        txtPhonetic.text = phonetic
         meaningRecyclerView.adapter =
             meanings?.let { WordMeaningItemAdapter(requireContext(), meanings = it) }
 

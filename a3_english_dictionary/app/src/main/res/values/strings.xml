@@ -6,6 +6,9 @@
     <string name="image">image</string>
     <string name="play_audio">Pronunciation</string>
     <string name="meanings">Meanings</string>
-    <string name="antonyms">Sinynoms</string>
+    <string name="phonetic">(%s)</string>
+    <string name="antonyms">Synonyms</string>
     <string name="definitions">Definitions</string>
+    <string name="todo">Btn Image</string>
+    <string name="part_of_speech_text">Part of Speech</string>
 </resources>
