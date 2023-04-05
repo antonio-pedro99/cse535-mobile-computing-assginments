@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center|bottom"
+    android:layout_gravity="center"
+    android:padding="12dp"
+    >
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/caption_1"
+        android:textAlignment="center"
+        android:textAppearance="?attr/textAppearanceHeadline3"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:startIconDrawable="@drawable/baseline_search_24"
+        android:layout_marginTop="24sp"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_word"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:hint="@string/hint_1"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_search"
+        style="@style/Widget.Material3.Button"
+        android:layout_width="200sp"
+        android:layout_height="56sp"
+        android:enabled="true"
+        android:layout_marginTop="24sp"
+        android:text="@string/btn_text_1"
+        android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+
+        app:iconGravity="textStart"
+        app:iconPadding="8sp"
+        />
+
+
+    <ImageView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24sp"
+        app:srcCompat="@drawable/i2"
+        android:contentDescription="@string/image" />
+</LinearLayout>

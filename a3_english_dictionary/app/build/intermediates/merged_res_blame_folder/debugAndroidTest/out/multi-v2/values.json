@@ -1,0 +1,28 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.antonio20028.a3_englishdictionary.test.app-mergeDebugAndroidTestResources-4:/values/values.xml",
+            "map": [
+                {
+                    "source": "/home/antdev/.gradle/caches/transforms-3/4fa86b1501d50d32bbe534d8131db22d/transformed/core-1.5.0/res/values/values.xml",
+                    "from": {
+                        "startLines": "4,11",
+                        "startColumns": "0,0",
+                        "startOffsets": "176,544",
+                        "endLines": "10,17",
+                        "endColumns": "8,8",
+                        "endOffsets": "543,909"
+                    },
+                    "to": {
+                        "startLines": "2,9",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,427",
+                        "endLines": "8,15",
+                        "endColumns": "8,8",
+                        "endOffsets": "422,792"
+                    }
+                }
+            ]
+        }
+    ]
+}
