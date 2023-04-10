@@ -1,22 +1,16 @@
 package com.iiitd.antonio20028.sensorgrama.ui
 
 import android.content.Context
-import android.content.Context.SENSOR_SERVICE
 import android.hardware.*
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.Animation
-import android.view.animation.LinearInterpolator
-import android.view.animation.RotateAnimation
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.addCallback
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 import androidx.navigation.findNavController
 import com.iiitd.antonio20028.sensorgrama.R
 
@@ -55,7 +49,6 @@ class GeomagneticSensorFragment:Fragment(), SensorEventListener {
 
     override fun onResume() {
         super.onResume()
-
         sensorManager.registerListener(this, rotationVectorSensor, SensorManager.SENSOR_DELAY_NORMAL)
 
     }
@@ -95,7 +88,6 @@ class GeomagneticSensorFragment:Fragment(), SensorEventListener {
             if (Math.abs(diff)  < 0.1){
                 val success = "Success! Your device is now aligned with Earth's frame of reference.";
                 feedbackText.text = success
-             //   feedbackText.setTextColor(resources.getColor(R.color.green))
             }
 
             compassImageView.animate().rotation(-azimuth).start()

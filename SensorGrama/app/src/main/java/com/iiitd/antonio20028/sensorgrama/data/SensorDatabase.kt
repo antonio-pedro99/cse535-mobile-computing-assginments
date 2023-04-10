@@ -10,7 +10,6 @@ import com.iiitd.antonio20028.sensorgrama.data.interfaces.ProximitySensorTableDA
 import com.iiitd.antonio20028.sensorgrama.data.models.GeoRotationVectorSensorModel
 import com.iiitd.antonio20028.sensorgrama.data.models.LightSensorModel
 import com.iiitd.antonio20028.sensorgrama.data.models.ProximitySensorModel
-import kotlinx.coroutines.CompletableJob
 
 @Database(entities = [
     LightSensorModel::class,

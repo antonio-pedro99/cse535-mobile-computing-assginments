@@ -17,7 +17,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="136dp"
         app:layout_constraintEnd_toEndOf="@+id/feedbackTxt"
-        app:srcCompat="@drawable/_d_fluency_compass" />
+        app:srcCompat="@drawable/compass_rose_transparent" />
 
     <TextView
         android:id="@+id/feedbackTxt"
