@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top"
+    android:layout_gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="24sp"
+    >
+
+    <ImageView
+        android:id="@+id/compassImg"
+        android:layout_width="330dp"
+        android:layout_height="322dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="136dp"
+        app:layout_constraintEnd_toEndOf="@+id/feedbackTxt"
+        app:srcCompat="@drawable/_d_fluency_compass" />
+
+    <TextView
+        android:id="@+id/feedbackTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/feedback"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        />
+</LinearLayout>

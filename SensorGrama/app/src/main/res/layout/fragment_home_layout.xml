@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="50sp"
+    >
+
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/sensor2_background"
+        android:orientation="vertical"
+        android:paddingStart="24sp"
+        android:paddingTop="18sp"
+        android:paddingBottom="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:contentDescription="@string/light_sensor"
+                android:src="@drawable/baseline_light_24" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="24dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="@string/light_sensor_name"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="38sp" />
+
+        <Switch
+            android:id="@+id/switch_light"
+            style="@style/Widget.Material3.CompoundButton.MaterialSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:checked="false"
+            android:theme="?attr/materialSwitchStyle"
+            app:showText="false" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/sensor_background"
+        android:orientation="vertical"
+        android:paddingStart="24sp"
+        android:paddingTop="18sp"
+        android:paddingBottom="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/container">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/sensor_image"
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:contentDescription="@string/proximity_description"
+                android:src="@drawable/baseline_sensors_24" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="24dp" />
+
+        <TextView
+            android:id="@+id/sensor_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="Proximity"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="38sp" />
+
+        <Switch
+            android:id="@+id/switch_proximity"
+            style="@style/Widget.Material3.CompoundButton.MaterialSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:checked="false"
+            android:theme="?attr/materialSwitchStyle"
+            app:showText="false" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/geo_container"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/sensor3_background"
+        android:orientation="vertical"
+        android:paddingStart="24sp"
+        android:paddingTop="18sp"
+        android:paddingBottom="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:contentDescription="TODO"
+                android:src="@drawable/baseline_animation_24" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="24dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+
+            android:text="Geomagnetic"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="38sp" />
+
+        <Switch
+            android:id="@+id/switch_magnetic_rotation_vector"
+            style="@style/Widget.Material3.CompoundButton.MaterialSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:checked="false"
+            android:theme="?attr/materialSwitchStyle"
+            app:showText="false" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Sensor Grama</string>
+    <string name="start">Take me to the future</string>
+    <string name="on_label">the future of smartphone sensing is here, are you ready for it?</string>
+    <string name="activate">Activate</string>
+    <string name="light_sensor">light sensor</string>
+    <string name="light_sensor_name">Light</string>
+    <string name="proximity_description">proximity description</string>
+    <string name="feedback">Rotate your device %s by %s radians to align with Earth\'s frame of reference</string>
+</resources>
