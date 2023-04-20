@@ -18,6 +18,7 @@
         app:layout_constraintVertical_bias="0.5"
         app:defaultNavHost="false"
         app:navGraph="@navigation/mobile_navigation"
-        android:name="androidx.navigation.fragment.NavHostFragment" />
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        tools:ignore="FragmentTagUsage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

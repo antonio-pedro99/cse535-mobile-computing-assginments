@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/onboarding_fragment"
-        android:name="com.iiitd.antonio20028.a5_trajroadsensingx.ui.OnBoardingFragment"
+        android:name="com.iiitd.antonio20028.a5_trajroadsensingx.ui.onboarding.OnBoardingFragment"
         android:label="OnBoardingFragment"
         tools:layout="@layout/fragment_onboarding"
         >
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.iiitd.antonio20028.a5_trajroadsensingx.ui.HomeFragment"
+        android:name="com.iiitd.antonio20028.a5_trajroadsensingx.ui.home.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home"
         />

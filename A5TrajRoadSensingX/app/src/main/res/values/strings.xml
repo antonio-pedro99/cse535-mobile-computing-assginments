@@ -3,4 +3,10 @@
     <string name="on_boarding_previous">Previous</string>
     <string name="on_boarding_next">Next</string>
     <string name="on_boarding_start">Start</string>
+    <string name="onboarding_body">We count the number of steps you give and help you monitor your fitness</string>
+    <string name="onboarding_title">Monitor your walk</string>
+    <string name="onboarding_second_title">We need your height and weight</string>
+    <string name="onboarding_second_body">In order to determine how you walk and your steps, we need your height and weight information.</string>
+    <string name="hint_height">Height</string>
+    <string name="hint_weight">Weight</string>
 </resources>

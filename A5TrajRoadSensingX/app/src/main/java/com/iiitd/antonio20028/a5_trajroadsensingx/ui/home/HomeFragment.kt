@@ -1,4 +1,4 @@
-package com.iiitd.antonio20028.a5_trajroadsensingx.ui
+package com.iiitd.antonio20028.a5_trajroadsensingx.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater

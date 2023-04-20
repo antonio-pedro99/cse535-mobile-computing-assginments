@@ -1,4 +1,4 @@
-package com.iiitd.antonio20028.a5_trajroadsensingx.ui
+package com.iiitd.antonio20028.a5_trajroadsensingx.ui.onboarding
 
 import android.os.Bundle
 import android.util.Log
@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.iiitd.antonio20028.a5_trajroadsensingx.R
+import com.iiitd.antonio20028.a5_trajroadsensingx.ui.onboarding.OnBoardingPageAdapter
 
 class OnBoardingFragment: Fragment() {
 
