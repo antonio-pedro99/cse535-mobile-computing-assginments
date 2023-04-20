@@ -1,11 +1,13 @@
 package com.iiitd.antonio20028.a5_trajroadsensingx.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.iiitd.antonio20028.a5_trajroadsensingx.R
 
@@ -50,24 +52,36 @@ class OnBoardingFragment: Fragment() {
             ) {
                 if (position == 0){
                     btnPrevious.visibility = View.INVISIBLE
+                    btnNext.text = activity?.resources?.getString(R.string.on_boarding_next)
                 } else if(position == fragments.size - 1) {
                     btnPrevious.visibility = View.VISIBLE
+                    btnNext.text = activity?.resources?.getString(R.string.on_boarding_start)
                 }
-            }
-
-            override fun onPageSelected(position: Int) {
-                super.onPageSelected(position)
+                currentPage = position
+                Log.d("P", currentPage.toString())
             }
         })
 
         btnNext.setOnClickListener {
-            currentPage += 1
-            viewPager.currentItem = currentPage
+            Log.d("P", currentPage.toString())
+            if (currentPage == 0){
+                currentPage += 1
+                viewPager.currentItem = currentPage
+            } else if (currentPage == 1) {
+              Log.d("P", "Navigate")
+             try {
+                 it.findNavController().navigate(R.id.action_onboarding_fragment_to_homeFragment)
+             }  catch (e:IllegalStateException) {
+                 Log.d("EX", e.message.toString())
+             }
+            }
         }
 
         btnPrevious.setOnClickListener {
-            currentPage -= 1
-            viewPager.currentItem = currentPage
+            if (currentPage >= 0){
+                currentPage -= 1
+                viewPager.currentItem = currentPage
+            }
         }
     }
 
