@@ -1,3 +1,0 @@
-com.antonio20028.a3_englishdictionary.test
-style WhiteBackgroundDialogTheme
-style WhiteBackgroundTheme

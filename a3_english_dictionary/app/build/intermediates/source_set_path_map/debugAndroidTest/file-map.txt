@@ -1,7 +1,0 @@
-com.antonio20028.a3_englishdictionary.test.app-core-1.5.0-0 /home/antdev/.gradle/caches/transforms-3/4fa86b1501d50d32bbe534d8131db22d/transformed/core-1.5.0/res
-com.antonio20028.a3_englishdictionary.test.app-annotation-experimental-1.3.0-1 /home/antdev/.gradle/caches/transforms-3/a2aa940e3a30e55b4aab9099190539e9/transformed/annotation-experimental-1.3.0/res
-com.antonio20028.a3_englishdictionary.test.app-androidTest-2 /home/antdev/AndroidStudioProjects/assignment-0-antonio-pedro99/a3_english_dictionary/app/build/generated/res/resValues/androidTest/debug
-com.antonio20028.a3_englishdictionary.test.app-androidTest-3 /home/antdev/AndroidStudioProjects/assignment-0-antonio-pedro99/a3_english_dictionary/app/build/generated/res/rs/androidTest/debug
-com.antonio20028.a3_englishdictionary.test.app-mergeDebugAndroidTestResources-4 /home/antdev/AndroidStudioProjects/assignment-0-antonio-pedro99/a3_english_dictionary/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
-com.antonio20028.a3_englishdictionary.test.app-mergeDebugAndroidTestResources-5 /home/antdev/AndroidStudioProjects/assignment-0-antonio-pedro99/a3_english_dictionary/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
-com.antonio20028.a3_englishdictionary.test.app-merged_res-6 /home/antdev/AndroidStudioProjects/assignment-0-antonio-pedro99/a3_english_dictionary/app/build/intermediates/merged_res/debugAndroidTest
