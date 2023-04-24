@@ -6,9 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.viewpager2.widget.ViewPager2
+import com.iiitd.antonio20028.a5_trajroadsensingx.MainActivity
 import com.iiitd.antonio20028.a5_trajroadsensingx.R
 import com.iiitd.antonio20028.a5_trajroadsensingx.ui.onboarding.OnBoardingPageAdapter
 
@@ -41,6 +46,7 @@ class OnBoardingFragment: Fragment() {
         val viewPagerAdapter = OnBoardingPageAdapter(requireActivity(), fragments)
         viewPager.adapter = viewPagerAdapter
 
+        val userInfoViewModel = (activity as MainActivity).getViewModel()
 
         var currentPage = fragments.indexOf(fragments.first())
 
@@ -63,15 +69,30 @@ class OnBoardingFragment: Fragment() {
             }
         })
 
+        var height:Double = .0
+        var weight:Double = .0
+
+        userInfoViewModel.getHeight().observe(viewLifecycleOwner){
+            it?.let {
+                height = it
+            }
+        }
+
+        userInfoViewModel.getWeight().observe(viewLifecycleOwner){
+            it?.let {
+                weight = it
+            }
+        }
+
         btnNext.setOnClickListener {
             Log.d("P", currentPage.toString())
             if (currentPage == 0){
                 currentPage += 1
                 viewPager.currentItem = currentPage
             } else if (currentPage == 1) {
-              Log.d("P", "Navigate")
              try {
-                 it.findNavController().navigate(R.id.action_onboarding_fragment_to_homeFragment)
+                userInfoViewModel.computeStrideLength(height, weight)
+                it.findNavController().navigate(R.id.action_onboarding_fragment_to_homeFragment)
              }  catch (e:IllegalStateException) {
                  Log.d("EX", e.message.toString())
              }

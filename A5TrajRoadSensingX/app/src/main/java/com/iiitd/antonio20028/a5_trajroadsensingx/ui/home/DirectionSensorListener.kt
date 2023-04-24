@@ -4,6 +4,7 @@ import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
+import android.util.Log
 import androidx.lifecycle.ViewModel
 
 
@@ -32,8 +33,6 @@ class DirectionSensorListener(private val viewModel: HomeFragmentViewModel): Sen
 
             val diff = azimuth - magneticNorthAzimuth
 
-            val dataDiff = "$diff data"
-            //compassImageView.animate().rotation(-azimuth).start()
             viewModel.trackUserDirection(direction = -azimuth)
         }
     }
