@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import android.Manifest
 import android.util.Log
+import android.widget.LinearLayout
 import android.widget.TextView
 import com.iiitd.antonio20028.a5_trajroadsensingx.MainActivity
 import com.iiitd.antonio20028.a5_trajroadsensingx.R
@@ -26,11 +27,16 @@ class HomeFragment : Fragment() {
 
     private lateinit var homeFragmentViewModel: HomeFragmentViewModel
     private lateinit var directionSensorListener: DirectionSensorListener
+    private lateinit var mySensorEventListener: MySensorEventListener
     private lateinit var stepCounterSensorListener: StepCounterSensorListener
     private lateinit var sensorManager: SensorManager
     private lateinit var rotationVectorSensor: Sensor
     private lateinit var accelerometerSensor: Sensor
     private lateinit var locationViewModel: LocationViewModel
+    private var currentMovementState = UserMovementState.STATIONARY
+    lateinit var linearLayoutWalking : LinearLayout
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -49,58 +55,77 @@ class HomeFragment : Fragment() {
             ),
             true
         )
+
         locationViewModel = ViewModelProvider(this).get(LocationViewModel::class.java)
         checkLocationPermission()
         val directionImageView = view.findViewById<ImageView>(R.id.img_compass)
+        linearLayoutWalking = view.findViewById<LinearLayout>(R.id.ll_walking)
 
         val distanceTextView = view.findViewById<TextView>(R.id.txt_distance)
 
-        //get geomagnetic or rotation vector
+
         sensorManager =  requireContext().getSystemService(Context.SENSOR_SERVICE) as SensorManager
         accelerometerSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
         rotationVectorSensor = sensorManager.getDefaultSensor(Sensor.TYPE_GEOMAGNETIC_ROTATION_VECTOR)
             ?: sensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR)
 
-
+        val userInfoViewModel = (activity as MainActivity).getViewModel()
         homeFragmentViewModel = ViewModelProvider(this).get(HomeFragmentViewModel::class.java)
-        directionSensorListener = DirectionSensorListener(homeFragmentViewModel)
-        stepCounterSensorListener = StepCounterSensorListener(homeFragmentViewModel)
+
+
+        mySensorEventListener = MySensorEventListener(homeFragmentViewModel, currentMovementState, userInfoViewModel.getStrideLength().value!!)
 
         homeFragmentViewModel.getUserDirection().observe(viewLifecycleOwner){
             directionImageView.animate().rotation(it).start()
         }
-        val userInfoViewModel = (activity as MainActivity).getViewModel()
+
+
 
         locationViewModel.location.observe(viewLifecycleOwner){
-            //Toast.makeText(requireContext(), "Lat ${it.latitude}, Lon ${it.longitude}", Toast.LENGTH_LONG).show()
-            //distanceTextView.text = "Lat ${it.latitude}, Lon ${it.longitude}"
-
+            //distanceTextView.text = it.toString()
             Log.d("D", "Lat ${it.latitude}, Lon ${it.longitude}")
         }
 
-        userInfoViewModel.getStrideLength().observe(viewLifecycleOwner){
-            //distanceTextView.text = it.toString()
-            Log.d("D", it.toString())
-        }
 
         homeFragmentViewModel.getUserStepsCount().observe(viewLifecycleOwner){
             val txtCount:TextView = view.findViewById(R.id.txt_steps)
             txtCount.text = it.toString()
+        }
+        homeFragmentViewModel.getPhoneAcceleration().observe(viewLifecycleOwner){
+
+            when (it!!){
+                UserMovementState.STATIONARY -> {
+
+                    updateWalkingUI(view)
+                }
+                UserMovementState.WALKING -> {
+                   updateWalkingUI(view)
+                }
+
+                UserMovementState.TAKING_ELEVATOR -> {
+
+                }
+                UserMovementState.TAKING_STAIRS -> {
+
+                }
+            }
+
+          //  Toast.makeText(requireContext(), it.toString(), Toast.LENGTH_SHORT).show()
+            currentMovementState    = it
         }
 
     }
 
     override fun onResume() {
         super.onResume()
-        sensorManager.registerListener(stepCounterSensorListener, accelerometerSensor, SensorManager.SENSOR_DELAY_NORMAL)
-        sensorManager.registerListener(directionSensorListener, rotationVectorSensor, SensorManager.SENSOR_DELAY_NORMAL)
+        sensorManager.registerListener(mySensorEventListener, accelerometerSensor, SensorManager.SENSOR_DELAY_NORMAL)
+        sensorManager.registerListener(mySensorEventListener, rotationVectorSensor, SensorManager.SENSOR_DELAY_NORMAL)
     }
 
     override fun onDestroy() {
         super.onDestroy()
         locationViewModel.stopLocationUpdates()
-        sensorManager.unregisterListener(directionSensorListener)
-        sensorManager.unregisterListener(stepCounterSensorListener)
+        sensorManager.unregisterListener(mySensorEventListener)
     }
 
 
@@ -129,10 +154,29 @@ class HomeFragment : Fragment() {
                 arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
                 REQUEST_LOCATION_PERMISSION)
         } else {
-
            locationViewModel.startLocationUpdates(requireContext())
         }
     }
 
+
+    private fun updateWalkingUI(view: View){
+       if (currentMovementState == UserMovementState.WALKING){
+           linearLayoutWalking.setBackgroundResource(R.drawable.btn_background_selected)
+           view.findViewById<TextView?>(R.id.txt_walking).also {
+               it?.setTextColor(resources.getColor(R.color.black))
+           }
+           view.findViewById<ImageView>(R.id.img_walking).also {
+               it.setImageDrawable(resources.getDrawable(R.drawable.baseline_directions_walk_black_24))
+           }
+       } else if (currentMovementState == UserMovementState.STATIONARY){
+           linearLayoutWalking.setBackgroundResource(R.drawable.btn_background_unselected)
+           view.findViewById<TextView?>(R.id.txt_walking).also {
+               it?.setTextColor(resources.getColor(R.color.white))
+           }
+           view.findViewById<ImageView>(R.id.img_walking).also {
+               it.setImageDrawable(resources.getDrawable(R.drawable.baseline_directions_walk_24))
+           }
+       }
+    }
 
 }
