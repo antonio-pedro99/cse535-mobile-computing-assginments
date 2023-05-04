@@ -4,6 +4,8 @@ import android.Manifest
 import android.app.Activity
 import android.content.Context
 import android.content.pm.PackageManager
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.MutableLiveData
@@ -18,7 +20,9 @@ class HomeFragmentViewModel:ViewModel() {
     private val userDirection = MutableLiveData<Float>()
     private val userLocation = MutableLiveData<HashMap<Any, Double>>()
     private val userSteps = MutableLiveData<Int>()
-    private val phoneAcceleration = MutableLiveData<UserMovementState>()
+    private val userMovement = MutableLiveData<UserMovementState>()
+    private var movingTimer: Runnable? = null
+    private val handler = Handler(Looper.getMainLooper())
 
     fun trackUserDirection(direction:Float){
         userDirection.apply {
@@ -26,65 +30,34 @@ class HomeFragmentViewModel:ViewModel() {
         }
     }
 
-
-    fun trackPhoneAcceleration(acceleration:FloatArray, state: UserMovementState){
-        var  lastAcceleration = 0f
-        var lastStateChangeTime = 0L
-        var currentState = state
-
-        phoneAcceleration.apply {
-            var peak = Math.max(Math.abs(acceleration[0]), Math.abs(acceleration[1]))
-            peak     = Math.max(peak, Math.abs(acceleration[2]))
-
-            lastAcceleration = Math.sqrt(acceleration[0].toDouble()*acceleration[0].toDouble() + acceleration[1].toDouble()*acceleration[1].toDouble() + acceleration[2].toDouble()*acceleration[2].toDouble()).toFloat()
-            val currentTime = System.currentTimeMillis()
-
-            Log.d("ACC", lastAcceleration.toString())
-
-            when(currentState){
-                UserMovementState.TAKING_ELEVATOR -> {
-
-                }
-                UserMovementState.STATIONARY -> {
-                    if (lastAcceleration > 10f){
-                        currentState = UserMovementState.WALKING
-                        lastStateChangeTime = currentTime
-                    }
-                }
-                UserMovementState.TAKING_STAIRS -> {
-                    if (lastAcceleration < 15f){
-                        currentState = UserMovementState.WALKING
-                        lastStateChangeTime = currentTime
-                    }
-                }
-                UserMovementState.WALKING -> {
-                   if (lastAcceleration < 10f){
-                        currentState = UserMovementState.STATIONARY
-                        lastStateChangeTime = currentTime
-                   } else if (lastAcceleration > 15f){
-                        currentState = UserMovementState.TAKING_STAIRS
-                       lastStateChangeTime = currentTime
-                   }
+    fun trackPhoneAcceleration(acceleration:Float){
+        movingTimer = Runnable {
+            userMovement.apply {
+                value = when(acceleration){
+                    in 0.0..0.5 -> UserMovementState.STATIONARY
+                    in 0.5..1.5 -> UserMovementState.WALKING
+                    in 1.5..2.5 -> UserMovementState.TAKING_STAIRS
+                    else -> UserMovementState.TAKING_ELEVATOR
                 }
             }
-            if (currentState == UserMovementState.STATIONARY || currentState == UserMovementState.WALKING){
-
-                val stateDuration = currentTime - lastStateChangeTime
-                if (stateDuration < 10000){
-                    currentState = UserMovementState.STATIONARY
-                    Log.d("STA", lastAcceleration.toString())
-                }
-            }
-            value = currentState
+            handler.postDelayed(movingTimer!!, 1000)
         }
+        handler.postDelayed(movingTimer!!, 1000)
 
     }
     fun countUserSteps(count: Int) = userSteps.apply { value = count }
 
     fun getUserDirection():MutableLiveData<Float> = userDirection
     fun getUserStepsCount() :MutableLiveData<Int> = userSteps
-    fun getPhoneAcceleration():MutableLiveData<UserMovementState> = phoneAcceleration
+    fun getPhoneMovement():MutableLiveData<UserMovementState> = userMovement
 
+    fun stopMoveTimer(){
+        handler.removeCallbacks(movingTimer!!)
+    }
+
+    private fun updateMovingState(state: UserMovementState){
+        userMovement.value = state
+    }
 }
 
 enum class UserMovementState{

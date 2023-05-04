@@ -70,7 +70,7 @@ class OnBoardingFragment: Fragment() {
         })
 
         var height:Double = .0
-        var weight:Double = .0
+        var genre:String = "Male"
 
         userInfoViewModel.getHeight().observe(viewLifecycleOwner){
             it?.let {
@@ -80,7 +80,7 @@ class OnBoardingFragment: Fragment() {
 
         userInfoViewModel.getWeight().observe(viewLifecycleOwner){
             it?.let {
-                weight = it
+                genre = it
             }
         }
 
@@ -91,7 +91,7 @@ class OnBoardingFragment: Fragment() {
                 viewPager.currentItem = currentPage
             } else if (currentPage == 1) {
              try {
-                userInfoViewModel.computeStrideLength(height, weight)
+                userInfoViewModel.computeStrideLength(height, genre)
                 it.findNavController().navigate(R.id.action_onboarding_fragment_to_homeFragment)
              }  catch (e:IllegalStateException) {
                  Log.d("EX", e.message.toString())

@@ -1,16 +1,21 @@
 package com.iiitd.antonio20028.a5_trajroadsensingx.ui.onboarding
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class OnBoardingFragmentViewModel:ViewModel() {
     private val userHeight = MutableLiveData<Double>()
-    private val userWeight = MutableLiveData<Double>()
+    private val userGenre = MutableLiveData<String>()
     private val strideLength = MutableLiveData<Double>()
 
-    fun computeStrideLength(height: Double, weight: Double){
+    fun computeStrideLength(height: Double, genre: String){
         strideLength.apply {
-            value = .4 * height + .0003 * weight + .15
+            when(genre.lowercase()){
+                "male"-> value = height * .415
+                "female"-> value = height * .413
+            }
+            Log.d("F", value.toString())
         }
     }
     fun setUserHeight(height: Double){
@@ -18,13 +23,13 @@ class OnBoardingFragmentViewModel:ViewModel() {
             value = height
         }
     }
-    fun setUserWeight(weight: Double){
-        userWeight.apply {
-            value = weight
+    fun setUserGenre(genre: String){
+        userGenre.apply {
+            value = genre
         }
     }
 
     fun getStrideLength() = strideLength
     fun getHeight() = userHeight
-    fun getWeight() = userWeight
+    fun getWeight() = userGenre
 }

@@ -5,6 +5,10 @@ import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.AdapterView.OnItemSelectedListener
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
@@ -23,27 +27,34 @@ class OnBoardingSecondFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_onboarding_second, container, false)
     }
 
+
+
+    private val genres = listOf<String>("Male", "Female")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val editViewHeight = view.findViewById<EditText>(R.id.user_height)
-        val editViewWeight = view.findViewById<EditText>(R.id.user_weight)
+        val editViewGenre = view.findViewById<AutoCompleteTextView>(R.id.user_genre)
 
         val onBoardingFragmentViewModel = (activity as MainActivity).getViewModel()
 
         validateEditText(editViewHeight, {
-            Toast.makeText(requireContext(), it, Toast.LENGTH_LONG).show()
             onBoardingFragmentViewModel.setUserHeight(it.toDouble())
         }){
             Toast.makeText(requireContext(), "Enter a valid entry", Toast.LENGTH_LONG).show()
         }
 
-        validateEditText(editViewWeight, {
-            Toast.makeText(requireContext(), it, Toast.LENGTH_LONG).show()
-            onBoardingFragmentViewModel.setUserWeight(it.toDouble())
-        }){
-            Toast.makeText(requireContext(), "Enter a valid entry", Toast.LENGTH_LONG).show()
+        editViewGenre.setAdapter(
+            ArrayAdapter<String>(
+                requireContext(),
+                android.R.layout.simple_dropdown_item_1line,
+                genres
+            )
+        )
+
+
+        editViewGenre.setOnItemClickListener(){ parent, view, position, id ->
+            onBoardingFragmentViewModel.setUserGenre(genres[position])
         }
-        //onBoardingFragmentViewModel.setUserHeight(editViewHeight.text.toString().toDouble())
 
     }
 

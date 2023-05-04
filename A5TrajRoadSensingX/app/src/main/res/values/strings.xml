@@ -8,5 +8,6 @@
     <string name="onboarding_second_title">We need your height and weight</string>
     <string name="onboarding_second_body">In order to determine how you walk and your steps, we need your height and weight information.</string>
     <string name="hint_height">Height</string>
-    <string name="hint_weight">Weight</string>
+    <string name="hint_genre">Genre</string>
+    <string name="txt_distance">%s</string>
 </resources>

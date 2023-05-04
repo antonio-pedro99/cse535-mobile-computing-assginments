@@ -63,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="20.4"
+                    android:text="@string/txt_distance"
                     android:textSize="30sp"
                     android:textStyle="bold" />
 

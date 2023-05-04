@@ -67,18 +67,18 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
             android:layout_width="130dp"
             android:layout_height="wrap_content"
-            android:hint="@string/hint_weight"
+            android:hint="@string/hint_genre"
             android:layout_marginStart="12sp"
             >
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/user_weight"
+            <AutoCompleteTextView
+                android:id="@+id/user_genre"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:inputType="numberDecimal" />
+                android:inputType="textAutoComplete" />
 
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>

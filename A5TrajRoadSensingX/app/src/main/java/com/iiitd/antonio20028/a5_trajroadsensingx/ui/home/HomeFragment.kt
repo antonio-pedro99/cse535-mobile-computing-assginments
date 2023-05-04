@@ -26,16 +26,12 @@ private const val REQUEST_LOCATION_PERMISSION = 1
 class HomeFragment : Fragment() {
 
     private lateinit var homeFragmentViewModel: HomeFragmentViewModel
-    private lateinit var directionSensorListener: DirectionSensorListener
     private lateinit var mySensorEventListener: MySensorEventListener
-    private lateinit var stepCounterSensorListener: StepCounterSensorListener
     private lateinit var sensorManager: SensorManager
     private lateinit var rotationVectorSensor: Sensor
     private lateinit var accelerometerSensor: Sensor
     private lateinit var locationViewModel: LocationViewModel
-    private var currentMovementState = UserMovementState.STATIONARY
     lateinit var linearLayoutWalking : LinearLayout
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -61,9 +57,6 @@ class HomeFragment : Fragment() {
         val directionImageView = view.findViewById<ImageView>(R.id.img_compass)
         linearLayoutWalking = view.findViewById<LinearLayout>(R.id.ll_walking)
 
-        val distanceTextView = view.findViewById<TextView>(R.id.txt_distance)
-
-
         sensorManager =  requireContext().getSystemService(Context.SENSOR_SERVICE) as SensorManager
         accelerometerSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
         rotationVectorSensor = sensorManager.getDefaultSensor(Sensor.TYPE_GEOMAGNETIC_ROTATION_VECTOR)
@@ -72,34 +65,34 @@ class HomeFragment : Fragment() {
         val userInfoViewModel = (activity as MainActivity).getViewModel()
         homeFragmentViewModel = ViewModelProvider(this).get(HomeFragmentViewModel::class.java)
 
-
-        mySensorEventListener = MySensorEventListener(homeFragmentViewModel, currentMovementState, userInfoViewModel.getStrideLength().value!!)
+        mySensorEventListener = MySensorEventListener(homeFragmentViewModel, userInfoViewModel.getStrideLength().value!!)
 
         homeFragmentViewModel.getUserDirection().observe(viewLifecycleOwner){
             directionImageView.animate().rotation(it).start()
         }
-
-
 
         locationViewModel.location.observe(viewLifecycleOwner){
             //distanceTextView.text = it.toString()
             Log.d("D", "Lat ${it.latitude}, Lon ${it.longitude}")
         }
 
-
         homeFragmentViewModel.getUserStepsCount().observe(viewLifecycleOwner){
             val txtCount:TextView = view.findViewById(R.id.txt_steps)
+            val distanceTextView = view.findViewById<TextView>(R.id.txt_distance)
             txtCount.text = it.toString()
+            val stride = Math.sqrt(userInfoViewModel.getStrideLength().value!!)
+            val distance = it * stride/1000
+            distanceTextView.text = activity?.resources?.getString(R.string.txt_distance, String.format("%.3f", distance))
         }
-        homeFragmentViewModel.getPhoneAcceleration().observe(viewLifecycleOwner){
 
+        homeFragmentViewModel.getPhoneMovement().observe(viewLifecycleOwner){
             when (it!!){
                 UserMovementState.STATIONARY -> {
 
-                    updateWalkingUI(view)
+                    updateWalkingUI(view, it)
                 }
                 UserMovementState.WALKING -> {
-                   updateWalkingUI(view)
+                   updateWalkingUI(view, it)
                 }
 
                 UserMovementState.TAKING_ELEVATOR -> {
@@ -110,8 +103,6 @@ class HomeFragment : Fragment() {
                 }
             }
 
-          //  Toast.makeText(requireContext(), it.toString(), Toast.LENGTH_SHORT).show()
-            currentMovementState    = it
         }
 
     }
@@ -126,6 +117,7 @@ class HomeFragment : Fragment() {
         super.onDestroy()
         locationViewModel.stopLocationUpdates()
         sensorManager.unregisterListener(mySensorEventListener)
+        homeFragmentViewModel.stopMoveTimer()
     }
 
 
@@ -159,8 +151,8 @@ class HomeFragment : Fragment() {
     }
 
 
-    private fun updateWalkingUI(view: View){
-       if (currentMovementState == UserMovementState.WALKING){
+    private fun updateWalkingUI(view: View, userMovementState: UserMovementState){
+       if (userMovementState == UserMovementState.WALKING){
            linearLayoutWalking.setBackgroundResource(R.drawable.btn_background_selected)
            view.findViewById<TextView?>(R.id.txt_walking).also {
                it?.setTextColor(resources.getColor(R.color.black))
@@ -168,7 +160,7 @@ class HomeFragment : Fragment() {
            view.findViewById<ImageView>(R.id.img_walking).also {
                it.setImageDrawable(resources.getDrawable(R.drawable.baseline_directions_walk_black_24))
            }
-       } else if (currentMovementState == UserMovementState.STATIONARY){
+       } else if (userMovementState == UserMovementState.STATIONARY){
            linearLayoutWalking.setBackgroundResource(R.drawable.btn_background_unselected)
            view.findViewById<TextView?>(R.id.txt_walking).also {
                it?.setTextColor(resources.getColor(R.color.white))

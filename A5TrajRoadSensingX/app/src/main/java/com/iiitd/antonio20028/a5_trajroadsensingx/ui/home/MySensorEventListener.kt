@@ -7,7 +7,7 @@ import android.hardware.SensorManager
 import android.util.Log
 import kotlin.math.roundToInt
 
-class MySensorEventListener(private val viewModel: HomeFragmentViewModel, private val currentState: UserMovementState, private val strideLength:Double): SensorEventListener {
+class MySensorEventListener(private val viewModel: HomeFragmentViewModel, private val strideLength:Double): SensorEventListener {
 
     private var currentOrientation = FloatArray(3)
     private var magneticNorthAzimuth = 0f
@@ -19,6 +19,7 @@ class MySensorEventListener(private val viewModel: HomeFragmentViewModel, privat
     private var gravity = floatArrayOf(0f, 0f, 0f)
     private var linearAcceleration = floatArrayOf(0f, 0f, 0f)
     private var magnetometer = floatArrayOf(0f, 0f, 0f)
+    private var lastDisplacement = 0.0
 
     override fun onSensorChanged(event: SensorEvent?) {
         val values = event?.values ?: return
@@ -28,7 +29,7 @@ class MySensorEventListener(private val viewModel: HomeFragmentViewModel, privat
         } else if (event.sensor?.type == Sensor.TYPE_ACCELEROMETER) {
             handleAccelerometer(event)
         }
-        viewModel.trackPhoneAcceleration(values, currentState)
+
     }
 
     private fun isPeakValley(
@@ -66,6 +67,17 @@ class MySensorEventListener(private val viewModel: HomeFragmentViewModel, privat
             }
         }
 
+        // compute absolute acceleration
+        val aX = linearAcceleration[0]
+        val aY = linearAcceleration[1]
+        val aZ = linearAcceleration[2]
+        val aAbs = Math.sqrt((aX*aX + aY*aY + aZ*aZ).toDouble())
+
+
+        Log.d("L", aAbs.toString())
+
+        viewModel.trackPhoneAcceleration(aAbs.toFloat())
+        
        viewModel.countUserSteps(count = stepCount)
 
     }
@@ -86,8 +98,6 @@ class MySensorEventListener(private val viewModel: HomeFragmentViewModel, privat
         currentOrientation[1] = pitch
         currentOrientation[2] = roll
 
-        val diff = azimuth - magneticNorthAzimuth
-
         viewModel.trackUserDirection(direction = -azimuth)
     }
     private fun detectStep(acceleration: FloatArray): Boolean {
@@ -96,15 +106,13 @@ class MySensorEventListener(private val viewModel: HomeFragmentViewModel, privat
 
         // Check if the magnitude of the acceleration vector exceeds the step threshold
 
-        val verticalAcceleration = acceleration[1]
-        val strideThreshold = STRIDE_FACTOR * Math.sqrt(strideLength)
+        val strideThreshold = STRIDE_FACTOR * strideLength
         Log.d("MAG"," Magnetudi: ${magnitude.toString()}\n Stride: ${strideThreshold.toString()}")
         return magnitude > strideThreshold
     }
 
     companion object {
         private const val STEP_INTERVAL = 500 // Minimum time interval between steps (in milliseconds)
-        private const val STEP_THRESHOLD = 1 // Minimum acceleration magnitude required to detect a step
-        private const val STRIDE_FACTOR = 1.5 // Stride factor used to estimate step length
+        private const val STRIDE_FACTOR = 4 // Stride factor used to estimate step length
     }
 }
