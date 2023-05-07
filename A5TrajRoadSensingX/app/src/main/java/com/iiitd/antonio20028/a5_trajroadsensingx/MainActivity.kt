@@ -18,5 +18,10 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.fragment_view_container)
     }
 
+    private val runTaskOnUiThread = { task: () -> Unit ->
+        runOnUiThread(task)
+    }
     fun getViewModel():OnBoardingFragmentViewModel = userInfoViewModel
+    fun getRunTaskOnUiThread(): (task: () -> Unit) -> Unit = runTaskOnUiThread
+
 }

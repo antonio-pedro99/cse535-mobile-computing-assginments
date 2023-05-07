@@ -7,7 +7,7 @@ import android.hardware.SensorManager
 import android.util.Log
 import kotlin.math.roundToInt
 
-class MySensorEventListener(private val viewModel: HomeFragmentViewModel, private val strideLength:Double): SensorEventListener {
+class MySensorEventListener(private val strideLength:Double): SensorEventListener {
 
     private var currentOrientation = FloatArray(3)
     private var magneticNorthAzimuth = 0f
@@ -24,7 +24,7 @@ class MySensorEventListener(private val viewModel: HomeFragmentViewModel, privat
     override fun onSensorChanged(event: SensorEvent?) {
         val values = event?.values ?: return
         if (event.sensor?.type == Sensor.TYPE_GEOMAGNETIC_ROTATION_VECTOR ||
-            event.sensor?.type == Sensor.TYPE_ROTATION_VECTOR){
+            event.sensor?.type == Sensor.TYPE_ROTATION_VECTOR || event.sensor?.type == Sensor.TYPE_MAGNETIC_FIELD){
             handleMagneticRotationVector(event)
         } else if (event.sensor?.type == Sensor.TYPE_ACCELEROMETER) {
             handleAccelerometer(event)
@@ -76,10 +76,6 @@ class MySensorEventListener(private val viewModel: HomeFragmentViewModel, privat
 
         Log.d("L", aAbs.toString())
 
-        viewModel.trackPhoneAcceleration(aAbs.toFloat())
-        
-       viewModel.countUserSteps(count = stepCount)
-
     }
 
     private fun handleMagneticRotationVector(event: SensorEvent){
@@ -94,11 +90,11 @@ class MySensorEventListener(private val viewModel: HomeFragmentViewModel, privat
         val pitch = Math.toDegrees(orientation[1].toDouble()).toFloat()
         val roll = Math.toDegrees(orientation[2].toDouble()).toFloat()
 
-        currentOrientation[0] = azimuth
-        currentOrientation[1] = pitch
-        currentOrientation[2] = roll
 
-        viewModel.trackUserDirection(direction = -azimuth)
+     /*   currentOrientation[0] = azimuth
+        currentOrientation[1] = pitch
+        currentOrientation[2] = roll*/
+
     }
     private fun detectStep(acceleration: FloatArray): Boolean {
         // Compute the magnitude of the acceleration vector
