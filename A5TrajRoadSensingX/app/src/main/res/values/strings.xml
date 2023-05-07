@@ -10,4 +10,5 @@
     <string name="hint_height">Height</string>
     <string name="hint_genre">Genre</string>
     <string name="txt_distance">%s</string>
+    <string name="txt_velocity">%s</string>
 </resources>

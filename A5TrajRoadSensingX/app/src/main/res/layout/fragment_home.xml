@@ -85,11 +85,12 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/txt_velocity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="10.4"
+                    android:text="@string/txt_velocity"
                     android:textSize="30sp"
                     android:textStyle="bold" />
 
@@ -112,12 +113,15 @@
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:background="@drawable/compass_background"
+        android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3">
+
 
         <ImageView
             android:id="@+id/img_compass"
@@ -255,11 +259,31 @@
         android:id="@+id/txtValues"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:text="TextView"
+        android:layout_marginTop="12dp"
+        android:text=""
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/ll_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <com.iiitd.antonio20028.a5_trajroadsensingx.TrajectoryView
+            android:id="@+id/trajectoryView"
+            android:layout_width="400dp"
+            android:layout_height="300dp"
+            android:background="@drawable/trajectory_view_background"
+            />
+    </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,9 +1,6 @@
 package com.iiitd.antonio20028.a5_trajroadsensingx.ui.home
 
-import android.Manifest
-import android.app.Activity
 import android.content.Context
-import android.content.pm.PackageManager
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
@@ -18,19 +15,15 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.iiitd.antonio20028.a5_trajroadsensingx.MainActivity
 import com.iiitd.antonio20028.a5_trajroadsensingx.R
+import com.iiitd.antonio20028.a5_trajroadsensingx.TrajectoryView
 import com.iiitd.antonio20028.a5_trajroadsensingx.ui.onboarding.OnBoardingFragmentViewModel
 import com.iiitd.antonio20028.a5_trajroadsensingx.utils.UserMovementState
 import com.iiitd.antonio20028.a5_trajroadsensingx.utils.changeStatusBarColor
-import java.util.Timer
-import java.util.TimerTask
 import java.util.concurrent.atomic.AtomicInteger
+import kotlin.math.abs
 import kotlin.math.sqrt
 
 
@@ -61,6 +54,8 @@ class HomeFragment : Fragment() {
     lateinit var backgroundLayoutUserInStairs:LinearLayout
     private var stepsIsCounting = false
     lateinit var values:TextView
+    lateinit var txtVelocity:TextView
+    lateinit var trajectoryView: TrajectoryView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -106,6 +101,7 @@ class HomeFragment : Fragment() {
                 handleMagneticField(event)
                 //Log.d("HomeFragment", "Magnetic field data: ${event.values[0]}, ${event.values[1]}, ${event.values[2]}")
             }
+            trajectoryView.trackUserTrajectory(event)
         }
 
         override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
@@ -126,6 +122,8 @@ class HomeFragment : Fragment() {
 
     private var magnitudeDelta = 0.0
     private val magnitudeStepThreshold = 2.5
+    private var strideFrequency = 0.0
+    private var strideTime = 0.0
     private fun trackSteps(event: SensorEvent){
         val x = event.values[0]
         val y = event.values[1]
@@ -140,7 +138,6 @@ class HomeFragment : Fragment() {
 
             stepsIsCounting = if (delta > magnitudeStepThreshold){
                 steps.incrementAndGet()
-                stepsCount++
                 true
             } else {
                 false
@@ -151,8 +148,17 @@ class HomeFragment : Fragment() {
             val strideLength = userInformationViewModel.getStrideLength().value!!
 
             val distance = (steps.get() * strideLength).toFloat() / 100000f
-            values.text = "Magnitude: $magnitude\nDelta: $delta\nX: $x\nY: $y\n Z: $z\nState: $state"
-            tvDistance.text = String.format("%.4f", distance)
+
+            tvDistance.text = String.format("%.3f", distance)
+
+            strideTime = delta.toDouble() / 1000000000.0 // convert from nanoseconds to seconds
+            strideFrequency = 1.0 / strideTime
+
+            val velocity = distance / strideTime
+
+            // Display the velocity on the screen
+            txtVelocity.text = String.format("%.2f", abs(velocity))
+
         }
     }
 
@@ -172,41 +178,43 @@ class HomeFragment : Fragment() {
 
             val degree = (Math.toDegrees(azimut)).toFloat()
 
-            imgDirection.rotation = -degree
+            imgDirection.rotation = degree
         }
     }
 
     private var movingTimer: Runnable? = null
     private val handler = Handler(Looper.getMainLooper())
     private var state = UserMovementState.STATIONARY
+    private var lastStateChangeTime = System.currentTimeMillis()
     private fun trackUserMovementState(event: SensorEvent){
         val x = event.values[0]
         val y = event.values[1]
         val z = event.values[2]
         val magnitude = sqrt((x*x + y*y + z*z).toDouble())
         Log.d("HomeFragment", "Magnitude: $magnitude")
-        movingTimer = Runnable {
-            state  =  when(magnitude){
-                in 0.0..11.0 -> UserMovementState.STATIONARY
-                in 11.0..13.0 -> UserMovementState.WALKING
-                else -> {
-                    Log.d("HomeFragment", "Z: $z")
-                    if (z > -.5 && z < .6){
-                        UserMovementState.WALKING
-                    } else {
-                        UserMovementState.STATIONARY
-                    }
-                }}
-            handler.postDelayed(movingTimer!!, 1000)
-        }
-        handler.postDelayed(movingTimer!!, 1000)
 
-        updateWalkingUI(state)
+        val newState = if (z > 4 && y > 0.8) {
+            UserMovementState.TAKING_STAIRS
+        } else if  (((z > 9.2 && z < 9.6) || (z > 10.3 && z < 10.6))
+            && (y > -0.1 && y < 0.1) && (x > -0.1 && x < 0.1)) {
+            UserMovementState.TAKING_ELEVATOR
+        }else {
+            UserMovementState.STATIONARY
+        }
+
+        if (newState != state) {
+            state = newState
+            lastStateChangeTime = System.currentTimeMillis()
+            updateWalkingUI(state)
+        }
+        //values.text = "Magnitude: $magnitude\nX: $x\nY: $y\n Z: $z\nState: $state"
+
     }
+
 
     private fun updateWalkingUI( userMovementState: UserMovementState){
         Log.d("HomeFragment", "Counting: $stepsIsCounting")
-        if (userMovementState == UserMovementState.WALKING || stepsIsCounting){
+        if (stepsIsCounting){
             backgroundLayoutUserWalking.setBackgroundResource(R.drawable.btn_background_selected)
             txtUserIsWalking.setTextColor(resources.getColor(R.color.black))
             imgUserWalking .setImageDrawable(activity?.resources?.getDrawable(R.drawable.baseline_directions_walk_black_24))
@@ -242,8 +250,13 @@ class HomeFragment : Fragment() {
 
         sensorManager.registerListener(handleSensorEventListener, accelerometerSensor, SensorManager.SENSOR_DELAY_NORMAL)
         sensorManager.registerListener(handleSensorEventListener, rotationVectorSensor, SensorManager.SENSOR_DELAY_NORMAL)
+
     }
 
+
+    override fun onPause() {
+        super.onPause()
+    }
     override fun onDestroy() {
         super.onDestroy()
         handler.removeCallbacks(movingTimer!!)
@@ -265,6 +278,8 @@ class HomeFragment : Fragment() {
         imgUserInStairs = view.findViewById(R.id.img_stairs)
         imgUserWalking = view.findViewById(R.id.img_walking)
         values = view.findViewById(R.id.txtValues)
+        txtVelocity = view.findViewById(R.id.txt_velocity)
+        trajectoryView = view.findViewById(R.id.trajectoryView)
     }
 
 }
