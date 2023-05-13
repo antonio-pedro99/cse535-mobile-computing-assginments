@@ -8,7 +8,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.iiitd.antonio20028.a5_trajroadsensingx"
+        applicationId "com.iiitd.antonio20028.assignment5"
         minSdk 24
         targetSdk 33
         versionCode 1

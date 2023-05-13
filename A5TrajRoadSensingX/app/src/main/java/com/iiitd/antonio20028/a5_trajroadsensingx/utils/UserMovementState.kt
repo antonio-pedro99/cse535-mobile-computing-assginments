@@ -4,5 +4,6 @@ enum class UserMovementState{
     STATIONARY,
     WALKING,
     TAKING_STAIRS,
-    TAKING_ELEVATOR
+    TAKING_ELEVATOR,
+    UNKNOWN
 }
